@@ -2,7 +2,7 @@ import {BrowserRouter as Router,Routes,Route}from 'react-router-dom'
 import './App.css';
 import Content from './components/content';
 import Contact from './components/contact';
-import Footer from './components/footer';
+// import Footer from './components/footer';
 import Navbar from './components/navbar';
 import Map from './components/Map';
 import Form from './components/form';
@@ -10,6 +10,9 @@ import Contactteam from './components/contact-team';
 import Login from './components/login';
 import Api from './components/api';
 import Test from './components/test';
+import Default from './components/defaultPage';
+import Beneficiary from './components/Beneficiary';
+import Medical from './components/Medical';
 
 // import LoadingBar from 'react-top-loading-bar'
 // import { Loader } from "@googlemaps/js-api-loader"
@@ -19,8 +22,11 @@ function App() {
   return (
   <Router>
     <Navbar/>
+    <Default/>
     <Routes>
     <Route exact path="/content"  element={<Content/>}/>
+    <Route exact path="/default-beneficiary"  element={<Beneficiary/>}/>
+    <Route exact path="/default-medical"  element={<Medical/>}/>
     <Route exact path="/contact" element={<Contact/>}/>
     <Route exact path="/map" element={<Map/>}/>
     <Route exact path="/form" element={<Form/>}/>
