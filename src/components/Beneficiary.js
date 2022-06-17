@@ -1,5 +1,6 @@
 import React from 'react'
 import pic from "../pic1.png";
+import pic1 from"../Ellipse1.png";
 
 const Beneficiary = () => {
   return (
@@ -9,6 +10,7 @@ const Beneficiary = () => {
         <h3 className='beneficiary'>Beneficiary Details</h3>
         <h4 className='name'>Name</h4>
         <h4 className='nameR'>*</h4>
+        <img src={pic1} className="chang" alt="sidebar" />
         
       <input type="text" className='rectangleName' placeholder="Enter Beneficiary's Name" />
 

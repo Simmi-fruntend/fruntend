@@ -297,7 +297,7 @@ color: white;
     position: absolute;
 width: 222px;
 height: 29px;
-left: 153px;
+left: 139px;
 top: 246px;
 
 font-family: 'Inter';
@@ -963,6 +963,16 @@ z-index: -1;
 background: #D9D9D9;
 border-radius: 47px;
 }
+.rectangle9000{
+    position: absolute;
+width: 895px;
+height: 1302px;
+left: 502px;
+top: 201px;
+z-index: -1;
+background: #D9D9D9;
+border-radius: 47px;
+}
 
 .cause{
     position: absolute;
@@ -1240,12 +1250,36 @@ border-radius: 5px;
     border: 6.5px solid #FF8C21;
     border-radius: 9px;
 }
+.backRectangle3{
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 174px;
+    height: 78px;
+    left: 592px;
+    top: 1374px;
+    
+    background: #FFFFFF;
+    border: 6.5px solid #FF8C21;
+    border-radius: 9px;
+}
 .scRectangle2{
     position: absolute;
     width: 279px;
     height: 78px;
     left: 1060px;
     top: 1304px;
+    
+    background: #FF8C21;
+    box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.25);
+    border-radius: 9px;
+}
+.scRectangle3{
+    position: absolute;
+    width: 279px;
+    height: 78px;
+    left: 1060px;
+    top: 1374px;
     
     background: #FF8C21;
     box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.25);
@@ -1258,6 +1292,22 @@ border-radius: 5px;
     height: 31px;
     left: 40px;
     top: 17px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 31px;
+    
+    color: #000000;
+}
+.back3{
+    position: absolute;
+    width: 61px;
+    height: 31px;
+    left: 40px;
+    top: 15px;
+    z-index: 6;
     
     font-family: 'Inter';
     font-style: normal;
@@ -1283,6 +1333,23 @@ border-radius: 5px;
     line-height: 31px;
     
     color: #000000;
+}
+.SC3{
+
+    position: absolute;
+width: 279px;
+height: 31px;
+left: 1px;
+top: 20px;
+z-index: 8;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 26px;
+line-height: 31px;
+
+color: white;
 }
 
 .phoneDoctor{
@@ -1426,7 +1493,38 @@ box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 border-radius: 5px;
 }
 
+.chang{
+    position: absolute;
+    width: 49px;
+    height: 51px;
+    left: 62px;
+    top: 369px;
+    border-radius: 50% ;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background: #F7CCA8;
+}
+
 .change{
+    position: absolute;
+    width: 49px;
+    height: 51px;
+    left: 63px;
+    top: 366px;
+    border-radius: 50% ;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background: #F7CCA8;
+}
+.change2{
+    position: absolute;
+    width: 49px;
+    height: 51px;
+    left: 63px;
+    top: 366px;
+    border-radius: 50% ;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    background: #F7CCA8;
+}
+.change4{
     position: absolute;
     width: 49px;
     height: 51px;
@@ -1449,6 +1547,32 @@ backdrop-filter: blur(50px);
 
 border-radius: 50% ;
 }
+.change3{
+    position: absolute;
+width: 50px;
+height: 51px;
+left: 60px;
+top: 569px;
+
+/* background: url(../image1.png); */
+backdrop-filter: blur(50px);
+/* Note: backdrop-filter has minimal browser support */
+
+border-radius: 50% ;
+}
+.change5{
+    position: absolute;
+width: 50px;
+height: 51px;
+left: 60px;
+top: 679px;
+
+/* background: url(../image1.png); */
+backdrop-filter: blur(50px);
+/* Note: backdrop-filter has minimal browser support */
+
+border-radius: 50% ;
+}
 
 .polygon1{
     position: absolute;
@@ -1456,6 +1580,26 @@ width: 110px;
 height: 80px;
 left: 369px;
 top: 450px;
+border-top: 45px solid transparent;
+border-right: 50px solid #f9ece7;
+border-bottom: 45px solid transparent;
+}
+.polygon2{
+    position: absolute;
+width: 110px;
+height: 80px;
+left: 369px;
+top: 550px;
+border-top: 45px solid transparent;
+border-right: 50px solid #f9ece7;
+border-bottom: 45px solid transparent;
+}
+.polygon3{
+    position: absolute;
+width: 110px;
+height: 80px;
+left: 369px;
+top: 650px;
 border-top: 45px solid transparent;
 border-right: 50px solid #f9ece7;
 border-bottom: 45px solid transparent;
@@ -1490,4 +1634,179 @@ color: #FFFFFF;
 
 }
 
+.fundDetails{
+    position: absolute;
+width: 243px;
+height: 48px;
+left: 618px;
+top: 248px;
 
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 40px;
+line-height: 48px;
+text-decoration-line: underline;
+
+color: #000000;
+}
+
+
+.Click{
+box-sizing: border-box;
+
+position: absolute;
+width: 374px;
+height: 216px;
+left: 753px;
+top: 332px;
+
+/* background: url(image.png); */
+border: 1px solid #000000;
+filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+border-radius: 38px;
+}
+
+.uploadC{
+    position: absolute;
+width: 333px;
+height: 39px;
+left: 813px;
+top: 571px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 32px;
+line-height: 39px;
+/* identical to box height */
+
+
+color: #000000;
+}
+
+.fundName{
+    position: absolute;
+width: 261px;
+height: 39px;
+left: 849px;
+top: 740px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 32px;
+line-height: 39px;
+/* identical to box height */
+
+
+color: #000000;
+}
+
+.fundText{
+
+box-sizing: border-box;
+
+position: absolute;
+width: 558px;
+height: 78px;
+left: 708px;
+top: 794px;
+
+background: #FFFFFF;
+border: 3px solid #22B4E2;
+border-radius: 5px;
+}
+
+.story{
+    position: absolute;
+width: 288px;
+height: 39px;
+left: 849px;
+top: 940px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 32px;
+line-height: 39px;
+/* identical to box height */
+
+
+color: #000000;
+}
+
+.textArea{
+    position: absolute;
+width: 358px;
+height: 213px;
+left: 798px;
+top: 1005px;
+background: #FFFFFF;
+border: 1px solid #000000;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 5px;
+}
+
+.preview{
+position: absolute;
+width: 190px;
+height: 48px;
+left: 715px;
+top: 1250px;
+
+background: #FF8C21;
+border-radius: 24px;
+}
+
+.previewText{
+    position: absolute;
+width: 120px;
+height: 39px;
+left: 40px;
+top: 1px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 32px;
+line-height: 39px;
+/* identical to box height */
+
+
+color: #FFFFFF;
+}
+
+.play{
+    position: absolute;
+width: 25.62px;
+height: 20.41px;
+left: 726.56px;
+top: 1263.18px;
+z-index: 6;
+border-left: 5px solid transparent;
+border-right: 5px solid transparent;
+
+border-bottom: 5px solid whitek;
+/* background: #FFFFFF;
+transform: rotate(90.34deg); */
+}
+
+
+.build{
+    position: absolute;
+width: 247px;
+height: 37px;
+left: 1119px;
+top: 1261.18px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 26px;
+line-height: 31px;
+text-decoration-line: underline;
+
+color: #005C79;
+
+}
