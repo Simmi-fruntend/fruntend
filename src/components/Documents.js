@@ -3,7 +3,7 @@ import pic from "../image3.png";
 import pic1 from"../Ellipse2.png";
 import pic2 from"../Ellipse1.png";
 import pic4 from"../Ellipse4.png";
-import pic3 from"../image5.png";
+// import pic3 from"../image5.png";
 import pic5 from"../image6.png";
 import pic6 from"../image7.png";
 
@@ -40,6 +40,7 @@ class Documents extends React.Component{
     console.log("second function called")
 
   }
+
   render(){
   return (
     <div>
@@ -55,10 +56,10 @@ class Documents extends React.Component{
         <h1 className='head2'>2. Medical bill</h1>
         <h1 className='head3'>3. Medical Reports</h1>
 
-        {/* <img src={pic3} alt="checkmark" className='checkmark' /> */}
-        <img src={pic4} alt="sphere" className='sphere' />
-        <img src={pic4} alt="sphere" className='sphere1' />
-        <img src={pic4} alt="sphere" className='sphere2' />
+        {/* <img src={pic3} alt="checkmark" id='checkmark' className='checkmark' /> */}
+        <div className="toggle"><img src={pic4} alt="sphere" className='sphere' /></div>
+        <img src={pic4} alt="sphere" id='sphere1' className='sphere1 ' />
+        <img src={pic4} alt="sphere" id='sphere2' className='sphere2' />
 
 
         <button className="plus"   onClick={this.uploadFiles.bind(this)} >+</button>
