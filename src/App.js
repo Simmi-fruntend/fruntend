@@ -7,6 +7,9 @@ import Medical from './components/Medical';
 import Fund from './components/Fund';
 import Documents from './components/Documents';
 import Others from './components/Others';
+import Others1 from './components/Others1';
+import Others2 from './components/Others2';
+import Others3 from './components/Others3';
 
 function App() {
 
@@ -20,6 +23,9 @@ function App() {
     <Route exact path="/default-medical"  element={<Medical/>}/>
     <Route exact path="/default-fund"  element={<Fund/>}/>
     <Route exact path="/default-documents"  element={<Documents/>}/>
+    <Route exact path="/others-fundraiser"  element={<Others1/>}/>
+    <Route exact path="/others-beneficiary"  element={<Others2/>}/>
+    <Route exact path="/others-congratulations"  element={<Others3/>}/>
     </Routes>
     </Router>
   );

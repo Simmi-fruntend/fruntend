@@ -10,31 +10,43 @@ export default class Others extends Component {
         document.getElementById("1").style.color = "#FF5F24";
         document.getElementById("2").style.color = "white";
         document.getElementById("3").style.color = "white";
+
+        document.getElementById("6").style.border = "";
+        document.getElementById("5").style.border = "";
+        document.getElementById("4").style.border = "2px solid #FF5F24";
     }
     function changeColor1(){
         document.getElementById("2").style.color = "#FF5F24";
         document.getElementById("1").style.color = "white";
         document.getElementById("3").style.color = "white";
+
+        document.getElementById("4").style.border = "";
+        document.getElementById("6").style.border = "";
+        document.getElementById("5").style.border = "2px solid #FF5F24";
     }
     function changeColor2(){
         document.getElementById("3").style.color = "#FF5F24";
         document.getElementById("1").style.color = "white";
         document.getElementById("2").style.color = 'white';
+
+        document.getElementById("4").style.border = "";
+        document.getElementById("5").style.border = "";
+        document.getElementById("6").style.border = "2px solid #FF5F24";
     }
     return (
         <>
       <div className='rec2677'></div>
       <div className="number1">1</div>
-      <img className='otherPic' src={pic} alt="" />
+      <img className='otherPic' id='4' src={pic} alt="" />
       <div className="number2">2</div>
-      <img className='otherPic1' src={pic} alt="" />
+      <img className='otherPic1' id='5' src={pic} alt="" />
       <div className="number3">3</div>
-      <img className='otherPic2' src={pic} alt="" />
+      <img className='otherPic2' id='6' src={pic} alt="" />
       <img src={pic1} alt="" className="line" />
       <img src={pic1} alt="" className="line1" />
-      <Link to='/others-fundraiser'><button  onClick={changeColor } id='1' className='hover:text-orange-500 start'>Start a Fundraiser</button></Link>
-      <Link to='/others-beneficiary'><button onClick={changeColor1} id='2'  className='hover:text-orange-500 start1'>Beneficiary Details</button></Link>
-      <Link to='/others-congratulations'><button id='3'  onClick={changeColor2} className='hover:text-orange-500  start2'>Congratulations</button></Link>
+      <Link to='/others-fundraiser'><button  onClick={changeColor } id='1' className='hover:text-black start'>Start a Fundraiser</button></Link>
+      <Link to='/others-beneficiary'><button onClick={changeColor1} id='2'  className='hover:text-black start1'>Beneficiary Details</button></Link>
+      <Link to='/others-congratulations'><button id='3'  onClick={changeColor2} className='hover:text-black start2'>Congratulations</button></Link>
 
       <h1 className='platform'>Fundraise on India's most trusted giving platform</h1>
       <h3 className='platform1'>#Help poor #Human development #Rural areas</h3>

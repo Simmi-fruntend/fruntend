@@ -2166,7 +2166,6 @@ left: 40px;
 top: 181px;
 border-radius: 50%;
 background: #000000;
-border: 2px solid #FF5F24;
 }
 .otherPic1{
     position: absolute;
@@ -2298,4 +2297,459 @@ top: 187px;
 z-index: -1;
 
 background: url(../Assets/Logo2.png);
+}
+
+.firstheading{
+    position: absolute;
+width: 647px;
+height: 73px;
+left: 40px;
+top: 516px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 60px;
+line-height: 73px;
+/* identical to box height */
+
+
+color: rgba(39, 39, 38, 0.7);
+}
+
+.boxone{
+    position: absolute;
+width: 1440px;
+height: 1686px;
+left: 0px;
+top: 485px;
+
+background: url(../Assets/bg.png);
+}
+
+.firstblank{
+    position: absolute;
+left: 70px;
+right: 34.95%;
+top: 150px;
+bottom: 96.2%;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 25px;
+line-height: 40px;
+/* identical to box height, or 160% */
+
+letter-spacing: 0.005em;
+
+color: rgba(0, 0, 0, 0.65);
+}
+
+.secondblank{
+    position: absolute;
+left: 70px;
+right: 34.95%;
+top: 270px;
+bottom: 84.16%;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 25px;
+line-height: 40px;
+/* identical to box height, or 160% */
+
+letter-spacing: 0.005em;
+
+color: rgba(0, 0, 0, 0.65);
+}
+.thirdblank{
+    position: absolute;
+left: 70px;
+right: 34.95%;
+top: 370px;
+bottom: 84.16%;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 25px;
+line-height: 40px;
+/* identical to box height, or 160% */
+
+letter-spacing: 0.005em;
+
+color: rgba(0, 0, 0, 0.65);
+}
+.fourthblank{
+    position: absolute;
+left: 70px;
+right: 34.95%;
+top: 520px;
+bottom: 84.16%;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 25px;
+line-height: 40px;
+/* identical to box height, or 160% */
+
+letter-spacing: 0.005em;
+
+color: rgba(0, 0, 0, 0.65);
+}
+.fifthblank{
+    position: absolute;
+left: 70px;
+right: 34.95%;
+top: 980px;
+bottom: 84.16%;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 25px;
+line-height: 40px;
+/* identical to box height, or 160% */
+
+letter-spacing: 0.005em;
+
+color: rgba(0, 0, 0, 0.65);
+}
+
+.firstblankR{
+    position: absolute;
+    left: 170px;
+    right: 34.95%;
+    top: 150px;
+    bottom: 96.2%;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 25px;
+line-height: 40px;
+/* identical to box height, or 160% */
+
+letter-spacing: 0.005em;
+
+color: red;
+}
+.secondblankR{
+    position: absolute;
+    left: 270px;
+    right: 34.95%;
+    top: 270px;
+    bottom: 96.2%;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 25px;
+line-height: 40px;
+/* identical to box height, or 160% */
+
+letter-spacing: 0.005em;
+
+color: red;
+}
+
+.firstblankinput{
+    position: absolute;
+    width: 900px;
+    left: 70px;
+    right: -33.68%;
+    height: 40px;
+    top: 200px;
+    bottom: 90.51%;
+    
+    background: #FFFFFF;
+    border: 2px solid #272726;
+    border-radius: 6px;
+}
+.secondblankinput{
+    position: absolute;
+    width: 600px;
+    left: 70px;
+    right: -33.68%;
+    height: 40px;
+    top: 320px;
+    bottom: 90.51%;
+    
+    background: #FFFFFF;
+    border: 2px solid #272726;
+    border-radius: 6px;
+}
+.thirdblankinput{
+    position: absolute;
+    width: 600px;
+    left: 70px;
+    right: -33.68%;
+    height: 40px;
+    top: 420px;
+    bottom: 90.51%;
+    
+    background: #FFFFFF;
+    border: 2px solid #272726;
+    border-radius: 6px;
+}
+.fourthblankinput{
+    position: absolute;
+    width: 900px;
+    left: 70px;
+    right: -33.68%;
+    height: 40px;
+    top: 570px;
+    bottom: 90.51%;
+    
+    background: #FFFFFF;
+    border: 2px solid #272726;
+    border-radius: 6px;
+}
+.fifthblankinput{
+    position: absolute;
+    width: 900px;
+    left: 70px;
+    right: -33.68%;
+    height: 40px;
+    top: 670px;
+    bottom: 90.51%;
+    
+    background: #FFFFFF;
+    border: 2px solid #272726;
+    border-radius: 6px;
+}
+.sixthblankinput{
+    position: absolute;
+    width: 300px;
+    left: 70px;
+    right: -33.68%;
+    height: 40px;
+    top: 770px;
+    bottom: 90.51%;
+    
+    background: #FFFFFF;
+    border: 2px solid #272726;
+    border-radius: 6px;
+}
+.seventhblankinput{
+    position: absolute;
+    width: 300px;
+    left: 440px;
+    right: -33.68%;
+    height: 40px;
+    top: 770px;
+    bottom: 90.51%;
+    
+    background: #FFFFFF;
+    border: 2px solid #272726;
+    border-radius: 6px;
+}
+.eigthblankinput{
+    position: absolute;
+    width: 300px;
+    left: 70px;
+    right: -33.68%;
+    height: 40px;
+    top: 870px;
+    bottom: 90.51%;
+    
+    background: #FFFFFF;
+    border: 2px solid #272726;
+    border-radius: 6px;
+}
+.ninthblankinput{
+    position: absolute;
+    width: 300px;
+    left: 70px;
+    right: -33.68%;
+    height: 40px;
+    top: 1030px;
+    bottom: 90.51%;
+    
+    background: #FFFFFF;
+    border: 2px solid #272726;
+    border-radius: 6px;
+}
+
+.example{
+    position: absolute;
+left: 70px;
+right: 42.45%;
+top: 470px;
+bottom: 62.62%;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 25px;
+line-height: 30px;
+
+color: rgba(39, 39, 38, 0.57)
+}
+.example1{
+    position: absolute;
+left: 70px;
+right: 42.45%;
+top: 620px;
+bottom: 62.62%;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 25px;
+line-height: 30px;
+
+color: rgba(39, 39, 38, 0.57)
+}
+.example2{
+    position: absolute;
+left: 70px;
+right: 42.45%;
+top: 720px;
+bottom: 62.62%;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 25px;
+line-height: 30px;
+
+color: rgba(39, 39, 38, 0.57)
+}
+.example3{
+    position: absolute;
+left: 70px;
+right: 42.45%;
+top: 820px;
+bottom: 62.62%;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 25px;
+line-height: 30px;
+
+color: rgba(39, 39, 38, 0.57)
+}
+.example4{
+    position: absolute;
+left: 450px;
+right: 42.45%;
+top: 820px;
+bottom: 62.62%;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 25px;
+line-height: 30px;
+
+color: rgba(39, 39, 38, 0.57)
+}
+.example5{
+    position: absolute;
+left: 70px;
+right: 42.45%;
+top: 920px;
+bottom: 62.62%;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 25px;
+line-height: 30px;
+
+color: rgba(39, 39, 38, 0.57)
+}
+
+#checkbox{
+    box-sizing: border-box;
+
+position: absolute;
+width: 31px;
+height: 32px;
+left: 44px;
+top: 1177px;
+
+border: 2px solid #000000;
+border-radius: 3px;
+}
+#checkbox2{
+    box-sizing: border-box;
+
+position: absolute;
+width: 31px;
+height: 32px;
+left: 44px;
+top: 1277px;
+
+border: 2px solid #000000;
+border-radius: 3px;
+}
+
+
+.checkboxtext{
+    position: absolute;
+width: 1313px;
+height: 36px;
+left: 90px;
+top: 1178px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 25px;
+line-height: 30px;
+
+color: rgba(39, 39, 38, 0.57);
+}
+
+.checkboxtext1{
+    position: absolute;
+width: 1313px;
+height: 36px;
+left: 90px;
+top: 1278px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 25px;
+line-height: 30px;
+
+color: rgba(39, 39, 38, 0.57);
+}
+
+.othersbox{
+    position: absolute;
+width: 306px;
+height: 62px;
+left: 601px;
+top: 1521px;
+
+background: #FF5F24;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 10px;
+}
+.otherssave{
+    position: absolute;
+width: 306px;
+height: 62px;
+left: 665.08px;
+top: 1521px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 25px;
+line-height: 30px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #FFFFFF;
+
 }
