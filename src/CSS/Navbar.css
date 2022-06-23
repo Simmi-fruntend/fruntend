@@ -2729,7 +2729,7 @@ width: 306px;
 height: 62px;
 left: 601px;
 top: 1521px;
-
+z-index: -1;
 background: #FF5F24;
 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 border-radius: 10px;
@@ -2738,7 +2738,7 @@ border-radius: 10px;
     position: absolute;
 width: 306px;
 height: 62px;
-left: 665.08px;
+left: 605.08px;
 top: 1521px;
 
 font-family: 'Inter';
@@ -2749,7 +2749,10 @@ line-height: 30px;
 display: flex;
 align-items: center;
 text-align: center;
+justify-content: center;
 
-color: #FFFFFF;
+color: white;
+/* box-shadow: 0px 4px 4px #FF5F24;
+border-radius: 10px; */ 
 
 }
