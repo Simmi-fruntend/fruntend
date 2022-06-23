@@ -1,9 +1,9 @@
 import React from "react";
 import {Link} from 'react-router-dom'
-import pic from "../image1.png";
-import pic1 from "../Ellipse1.png";
-import pic2 from "../Ellipse2.png";
-import pic3 from "../Polygon.png";
+import pic from "../Assets/image1.png";
+import pic1 from "../Assets/Ellipse1.png";
+import pic2 from "../Assets/Ellipse2.png";
+import pic3 from "../Assets/Polygon.png";
 class Default extends React.Component{
   render(){
     function changeColor() {

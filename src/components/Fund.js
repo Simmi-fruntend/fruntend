@@ -1,9 +1,9 @@
 import React from 'react'
-import pic from "../image3.png";
-import pic1 from"../Ellipse2.png";
-import pic2 from"../Ellipse1.png";
-import pic3 from"../image4.png";
-import pic4 from"../Polygon3.png";
+import pic from "../Assets/image3.png";
+import pic1 from"../Assets/Ellipse2.png";
+import pic2 from"../Assets/Ellipse1.png";
+import pic3 from"../Assets/image4.png";
+import pic4 from"../Assets/Polygon3.png";
 import {Link} from 'react-router-dom'
 
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import  '/Users/mudit/Documents/Vs Code React/intern/src/CSS/Navbar.css'
-import pic from'../logo.png'
-import pic1 from'../outline.png'
+import pic from'../Assets/logo.png'
+import pic1 from'../Assets/outline.png'
 
 const Navbar= () => {
   return (<>

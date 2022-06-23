@@ -1,6 +1,6 @@
 import React from 'react'
-import pic from "../pic1.png";
-import pic1 from"../Ellipse1.png";
+import pic from "../Assets/pic1.png";
+import pic1 from"../Assets/Ellipse1.png";
 
 const Beneficiary = () => {
   return (
