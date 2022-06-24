@@ -8,7 +8,7 @@ import PhoneInput from "react-phone-number-input";
 export default class Others1 extends Component {
   constructor(props) {
     super(props);
-    this.state = { name:"", phone: "",email:"",address:"",city:"",state:"",zip:"",tax:""};
+    this.state = { name:"", phone: "",email:"",address:"",city:"",state:"",zip:"",tax:"",message:""};
     // this.state = { value:""};
     this.handleChange = this.handleChange.bind(this);
     this.handleChangeEmail = this.handleChangeEmail.bind(this);
@@ -42,14 +42,41 @@ export default class Others1 extends Component {
     this.setState({tax: event.target.value});
   }
 
-  handleSubmit(event) {
-    alert('A name was submitted: ' + this.state.name);
-    alert('A phone was submitted: ' + this.state.phone);
-    alert('A email was submitted: ' + this.state.email);
-    alert('A address was submitted: ' + this.state.address);
-    alert('A city was submitted: ' + this.state.city);
-    alert('A tax was submitted: ' + this.state.tax);
-    event.preventDefault();
+  handleSubmit=async(e)=> {
+    // alert('A name was submitted: ' + this.state.name);
+    // alert('A phone was submitted: ' + this.state.phone);
+    // alert('A email was submitted: ' + this.state.email);
+    // alert('A address was submitted: ' + this.state.address);
+    // alert('A city was submitted: ' + this.state.city);
+    // alert('A tax was submitted: ' + this.state.tax);
+    // event.preventDefault();
+    e.preventDefault();
+    try{
+      let res=await fetch("https://httpbin.org/post",{
+        method:"POST",
+        body: JSON.stringify({
+          Name: this.state.name,
+          Email: this.state.email,
+          MobileNumber: this.state.phone,
+          Address: this.state.address,
+          City: this.state.city,
+          State: this.state.state,
+          PinCode:this.state.zip,
+          Tax:this.state.tax,
+        }),
+      })
+      let resJson=await res.json()
+      console.log(resJson)
+      if(res.status===200){
+        this.setState({message:"Form submmited to the api succesfully"})
+        console.log(this.state.message)
+      }else{
+        this.setState({message:"Some error occured"})
+        console.log(this.state.message)
+      }
+    }catch(err){
+      console.log(err)
+    }
   }
  
 
