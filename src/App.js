@@ -18,23 +18,23 @@ import Campaign from './components/Campagn/Campaign';
 function App() {
 
   return (
-  <Router>
-    <Navbar/>
-    <Routes>
-    <Route exact path="/content"  element={<Content/>}/>
-    <Route exact path="/contact" element={<Contact/>}/>
-    <Route exact path="/map" element={<Map/>}/>
-    <Route exact path="/form" element={<Form/>}/>
-    <Route exact path="/contact-team" element={<Contactteam/>}/>
-    <Route exact path="/login" element={<Login/>}/>
-    <Route exact path="/api" element={<Api/>}/>
-    <Route exact path="/test" element={<Test/>}/>
-    <Route exact path= '/start-fundraiser' element={<Campaign />} />
-    </Routes>
-    </Router>
-  // <>
-  //  <Campaign /> *
-  // </>
+  // <Router>
+  //   <Navbar/>
+  //   <Routes>
+  //   <Route exact path="/content"  element={<Content/>}/>
+  //   <Route exact path="/contact" element={<Contact/>}/>
+  //   <Route exact path="/map" element={<Map/>}/>
+  //   <Route exact path="/form" element={<Form/>}/>
+  //   <Route exact path="/contact-team" element={<Contactteam/>}/>
+  //   <Route exact path="/login" element={<Login/>}/>
+  //   <Route exact path="/api" element={<Api/>}/>
+  //   <Route exact path="/test" element={<Test/>}/>
+  //   <Route exact path= '/start-fundraiser' element={<Campaign />} />
+  //   </Routes>
+  //   </Router>
+  <>
+   <Campaign /> *
+  </>
   );
 }
 
