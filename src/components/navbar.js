@@ -1,8 +1,10 @@
 import React from 'react'
-import  '/Users/mudit/Documents/Vs Code React/intern/src/CSS/Navbar.css'
+// import  '/Users/mudit/Documents/Vs Code React/intern/src/CSS/Navbar.css'
+import '../CSS/Navbar.css'
 import pic from'../logo.png'
-import pic1 from'../outline.png'
-
+import pic1 from'../outline.png';
+import { Link } from 'react-router-dom';
+               
 const Navbar= () => {
   return (<>
   <div className="rectangle1">
@@ -19,7 +21,7 @@ const Navbar= () => {
         <li className='contact '>Contact Us</li>
         <li><img src={pic1} className="outline2 " alt="outline" /></li>
         <li className='faq '>FAQs</li>
-        <li className='fundraiser   '>Start Fundraiser</li>
+        <li className='fundraiser' >Start Fundraiser</li>
         <button className='donate  rectangle4'>Donate</button>
         <button className='login  rectangle5'>Login</button>
       </ul>

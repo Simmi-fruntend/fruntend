@@ -10,6 +10,7 @@ import Contactteam from './components/contact-team';
 import Login from './components/login';
 import Api from './components/api';
 import Test from './components/test';
+import Campaign from './components/Campagn/Campaign';
 
 // import LoadingBar from 'react-top-loading-bar'
 // import { Loader } from "@googlemaps/js-api-loader"
@@ -28,8 +29,12 @@ function App() {
     <Route exact path="/login" element={<Login/>}/>
     <Route exact path="/api" element={<Api/>}/>
     <Route exact path="/test" element={<Test/>}/>
+    <Route exact path= '/start-fundraiser' element={<Campaign />} />
     </Routes>
     </Router>
+  // <>
+  //  <Campaign /> *
+  // </>
   );
 }
 
