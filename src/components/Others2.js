@@ -2,17 +2,29 @@ import React, { Component } from 'react'
 import picture from '../Assets/Vector.png'
 import {Link} from 'react-router-dom'
 export default class Others2 extends Component {
-  render() {
-    function changeColor(){
-      document.getElementById("1").style.color = "#FF5F24";
-      document.getElementById("2").style.color = "white";
-      document.getElementById("3").style.color = "white";
+  continue=e=>{
+    e.preventDefault()
+    this.props.nextStep()
+  }
+  changeColor(){
+    document.getElementById("1").style.color = "#FF5F24";
+    document.getElementById("2").style.color = "white";
+    document.getElementById("3").style.color = "white";
 
-      document.getElementById("6").style.border = "";
-      document.getElementById("5").style.border = "";
-      document.getElementById("4").style.border = "2px solid #FF5F24";
-     
-    }
+    document.getElementById("6").style.border = "";
+    document.getElementById("5").style.border = "";
+    document.getElementById("4").style.border = "2px solid #FF5F24";
+   
+  }
+  previous=e=>{
+    e.preventDefault()
+    this.props.prevStep()
+    this.changeColor()
+  }
+  render() {
+    // const {values}=this.props
+    // this.props.values
+ 
     return (
       <>
       <div className='backgroundSecond'>
@@ -46,7 +58,7 @@ export default class Others2 extends Component {
       <input type="date" name="End" id="End" className='endDataInput' />
       </form>
       <div className="submitbox"></div>
-      <div className="gobackBox"><Link to='/others-fundraiser'><button onClick={changeColor} className="goBack">Go Back</button></Link></div>
+      <div className="gobackBox"><button onClick={this.previous} className="goBack">Go Back</button></div>
       
       <div className="sideBox"></div>
 
