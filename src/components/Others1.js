@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
-// import { Country, State, City }  from 'country-state-city';
-// import { useState } from 'react';
-// import { useEffect } from 'react';
+import { Form, Input } from "reactstrap";
+import { Link } from "react-router-dom";
 
 export default class Others1 extends Component {
   constructor(props) {
@@ -21,18 +20,15 @@ export default class Others1 extends Component {
       message: "",
       checkbox1: false,
       checkbox2: false,
+      touched: {
+        name: false,
+        phone: false,
+        email: false,
+      },
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-
-    // this.handleChange = this.handleChange.bind(this);
-    // this.handleChangeEmail = this.handleChangeEmail.bind(this);
-    // this.handleChangeAddress = this.handleChangeAddress.bind(this);
-    // this.handleChangeCity = this.handleChangeCity.bind(this);
-    // this.handleChangeState = this.handleChangeState.bind(this);
-    // this.handleChangeZip = this.handleChangeZip.bind(this);
-    // this.handleChangeTax = this.handleChangeTax.bind(this);
-    // this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleBlur = this.handleBlur.bind(this);
   }
   handleInputChange = (event) => {
     const target = event.target;
@@ -43,7 +39,36 @@ export default class Others1 extends Component {
     });
   };
 
+  handleBlur = (field) => (evt) => {
+    this.setState({
+      touched: { ...this.state.touched, [field]: true },
+    });
+  };
 
+  validate(name, phone, email) {
+    const errors = {
+      name: "",
+      phone: "",
+      email: "",
+    };
+
+    if (this.state.touched.name && name.length < 3)
+      errors.name = " Name should be >= 3 characters";
+    else if (this.state.touched.name && name.length > 10)
+      errors.name = " Name should be <= 20 characters";
+
+    const reg = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/;
+    if (this.state.touched.phone && !reg.test(phone))
+      errors.phone = "Tel. Number should contain only numbers (10)";
+
+    if (
+      this.state.touched.email &&
+      email.split("").filter((x) => x === "@").length !== 1
+    )
+      errors.email = "Email should contain a @";
+
+    return errors;
+  }
 
   handleSubmit = async (e) => {
     e.preventDefault();
@@ -56,8 +81,8 @@ export default class Others1 extends Component {
           MobileNumber: this.state.phone,
           Address: this.state.address,
           AdresssS: this.state.addressS,
-          CheckBox1:this.state.checkbox1,
-          CheckBox2:this.state.checkbox2,
+          CheckBox1: this.state.checkbox1,
+          CheckBox2: this.state.checkbox2,
           City: this.state.city,
           State: this.state.state,
           PinCode: this.state.zip,
@@ -68,6 +93,7 @@ export default class Others1 extends Component {
       console.log(resJson);
       if (res.status === 200) {
         this.setState({ message: "Form submmited to the api succesfully" });
+      //  window.open('/others-beneficiary')
         console.log(this.state.message);
       } else {
         this.setState({ message: "Some error occured" });
@@ -79,6 +105,22 @@ export default class Others1 extends Component {
   };
 
   render() {
+    function changeColor1(){
+       
+      document.getElementById("2").style.color = "#FF5F24";
+      document.getElementById("1").style.color = "white";
+      document.getElementById("3").style.color = "white";
+      
+      document.getElementById("4").style.border = "";
+      document.getElementById("6").style.border = "";
+      document.getElementById("5").style.border = "2px solid #FF5F24";
+     
+    }
+    const errors = this.validate(
+      this.state.name,
+      this.state.phone,
+      this.state.email
+    );
     return (
       <>
         <h1 className="firstheading">Start a Fundraiser:</h1>
@@ -88,29 +130,39 @@ export default class Others1 extends Component {
           <h3 className="secondblank">Contact Number </h3>
           <h3 className="secondblankR">* </h3>
 
-      {/* Form refactored */}
-          <form action="" onSubmit={this.handleSubmit} method="post">
-            <input
+          {/* Form refactored */}
+          <Form action="" onSubmit={this.handleSubmit} method="post">
+            <Input
               type="text"
               name="name"
               id="name"
+              valid={errors.name === ""}
+              invalid={errors.name !== ""}
+              onBlur={this.handleBlur("name")}
               value={this.state.name}
               onChange={this.handleInputChange}
               className="firstblankinput"
             />
+            {/* <FormFeedback>{errors.name}</FormFeedback> */}
             <PhoneInput
               defaultCountry={"IN"}
               placeholder="Enter your mobile number"
               name="phone"
               id="phone"
+              valid={errors.phone === ""}
+              invalid={errors.phone !== ""}
+              onBlur={this.handleBlur("phone")}
               value={this.state.phone}
               onChange={(phone) => this.setState({ phone })}
               className="secondblankinput"
             />
-            <input
+            <Input
               type="email"
               name="email"
               id="email"
+              valid={errors.email === ""}
+              invalid={errors.email !== ""}
+              onBlur={this.handleBlur("email")}
               value={this.state.email}
               onChange={this.handleInputChange}
               className="thirdblankinput"
@@ -164,11 +216,15 @@ export default class Others1 extends Component {
               className="ninthblankinput"
             />
             <div className="othersbox"></div>
+            <Link to='/others-beneficiary'>
             <button
               type="submit"
               className="otherssave"
               value="Save and Continue"
-            >Save and Continue</button>
+              onClick={changeColor1}
+            >
+              Save and Continue
+            </button></Link>
             <input
               type="checkbox"
               checked={this.state.checkbox1}
@@ -183,7 +239,8 @@ export default class Others1 extends Component {
               name="checkbox2"
               id="checkbox2"
             />
-          </form>
+          </Form>
+          
           <h3 className="thirdblank">Email </h3>
           <h5 className="example text-sm">example@example.com</h5>
           <h3 className="fourthblank">Address</h3>

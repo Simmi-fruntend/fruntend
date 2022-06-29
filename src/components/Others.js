@@ -5,6 +5,12 @@ import pic1 from '../Assets/Line.png'
 import {Link} from 'react-router-dom'
 
 export default class Others extends Component {
+  constructor(props){
+    super(props)
+    this.state={
+      color:''
+    }
+  }
   render() {
     function changeColor(){
         document.getElementById("1").style.color = "#FF5F24";
@@ -14,24 +20,29 @@ export default class Others extends Component {
         document.getElementById("6").style.border = "";
         document.getElementById("5").style.border = "";
         document.getElementById("4").style.border = "2px solid #FF5F24";
-    }
-    function changeColor1(){
+       
+      }
+      function changeColor1(){
+       
         document.getElementById("2").style.color = "#FF5F24";
         document.getElementById("1").style.color = "white";
         document.getElementById("3").style.color = "white";
-
+        
         document.getElementById("4").style.border = "";
         document.getElementById("6").style.border = "";
         document.getElementById("5").style.border = "2px solid #FF5F24";
-    }
-    function changeColor2(){
+       
+      }
+      function changeColor2(){
+        
         document.getElementById("3").style.color = "#FF5F24";
         document.getElementById("1").style.color = "white";
         document.getElementById("2").style.color = 'white';
-
+        
         document.getElementById("4").style.border = "";
         document.getElementById("5").style.border = "";
         document.getElementById("6").style.border = "2px solid #FF5F24";
+        
     }
     return (
         <>
