@@ -2568,6 +2568,7 @@ transform: rotate(90.34deg); */
     height: 40px;
     top: 570px;
     bottom: 90.51%;
+    z-index: 1;
 
     background: #FFFFFF;
     border: 2px solid #272726;
