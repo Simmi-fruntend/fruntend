@@ -28,6 +28,20 @@ export default class Others1 extends Component {
         email: false,
       },
       step: 1,
+      raisingFundsFor: "",
+      beneficiaryName: "",
+      beneficiaryPhone: "",
+      beneficiaryAge: "",
+      beneficiarySex: "",
+      beneficiaryAddress: "",
+      beneficiaryAddressS: "",
+      beneficiaryCity: "",
+      beneficiaryState: "",
+      beneficiaryZip: "",
+      titleCompaign: "",
+      beneficiaryStory: "",
+      targetedValue:"",
+      fundEndDate:""
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -91,52 +105,25 @@ export default class Others1 extends Component {
 
     return errors;
   }
+  changeColor1() {
+    document.getElementById("2").style.color = "#FF5F24";
+    document.getElementById("1").style.color = "white";
+    document.getElementById("3").style.color = "white";
 
-  handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      let res = await fetch("https://httpbin.org/post", {
-        method: "POST",
-        body: JSON.stringify({
-          Name: this.state.name,
-          Email: this.state.email,
-          MobileNumber: this.state.phone,
-          Address: this.state.address,
-          AdresssS: this.state.addressS,
-          CheckBox1: this.state.checkbox1,
-          CheckBox2: this.state.checkbox2,
-          City: this.state.city,
-          State: this.state.state,
-          PinCode: this.state.zip,
-          Tax: this.state.tax,
-        }),
-      });
-      let resJson = await res.json();
-      console.log(resJson);
-      if (res.status === 200) {
-        this.setState({ message: "Form submmited to the api succesfully" });
-        console.log("Form submitted successfully to api");
-        this.nextStep();
-        //  window.open('/others-beneficiary')
-      } else {
-        this.setState({ message: "Some error occured" });
-        console.log(this.state.message);
-      }
-    } catch (err) {
-      console.log(err);
-    }
-  };
+    document.getElementById("4").style.border = "";
+    document.getElementById("6").style.border = "";
+    document.getElementById("5").style.border = "2px solid #FF5F24";
+  }
+  handleSubmit=(e)=>{
+    e.preventDefault()
+    this.nextStep()
+    this.changeColor1()
+    
+  }
 
   render() {
-    function changeColor1() {
-      document.getElementById("2").style.color = "#FF5F24";
-      document.getElementById("1").style.color = "white";
-      document.getElementById("3").style.color = "white";
-
-      document.getElementById("4").style.border = "";
-      document.getElementById("6").style.border = "";
-      document.getElementById("5").style.border = "2px solid #FF5F24";
-    }
+  
+   
 
     const errors = this.validate(
       this.state.name,
@@ -158,6 +145,22 @@ export default class Others1 extends Component {
       checkbox2,
       touched,
       step,
+      raisingFundsFor,
+      beneficiaryName,
+      beneficiaryPhone,
+      beneficiaryAge,
+      beneficiarySex,
+      beneficiaryAddress,
+      beneficiaryAddressS,
+      beneficiaryCity,
+      beneficiaryState,
+      beneficiaryZip,
+      titleCompaign,
+      beneficiaryStory, 
+      targetedValue,
+      fundEndDate
+
+
     } = this.state;
     const values = {
       name,
@@ -174,6 +177,20 @@ export default class Others1 extends Component {
       checkbox2,
       touched,
       step,
+      raisingFundsFor,
+      beneficiaryName,
+      beneficiaryPhone,
+      beneficiaryAge,
+      beneficiarySex,
+      beneficiaryAddress,
+      beneficiaryAddressS,
+      beneficiaryCity,
+      beneficiaryState,
+      beneficiaryZip,
+      titleCompaign,
+      beneficiaryStory,
+      targetedValue,
+      fundEndDate
     };
     switch (step) {
       case 1:
@@ -274,10 +291,9 @@ export default class Others1 extends Component {
                 <div className="othersbox"></div>
                 {/* <Link to='/others-beneficiary'> */}
                 <button
-                  type="submit"
+                  
                   className="otherssave"
-                  value="Save and Continue"
-                  onClick={changeColor1}
+                  type="submit"
                 >
                   Save and Continue
                 </button>
@@ -320,7 +336,13 @@ export default class Others1 extends Component {
       case 2:
         return (
           <>
-            <Others2 nextStep={this.nextStep} values={values} prevStep={this.prevStep} />
+            <Others2
+              nextStep={this.nextStep}
+              handleInputChange={this.handleInputChange}
+              values={values}
+              prevStep={this.prevStep}
+
+            />
           </>
         );
 

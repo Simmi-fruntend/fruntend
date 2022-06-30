@@ -10,6 +10,7 @@ import Others from './components/Others';
 import Others1 from './components/Others1';
 import Others2 from './components/Others2';
 import Others3 from './components/Others3';
+// import Others4 from './components/others4';
 
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
     <Route exact path="/others-fundraiser"  element={<Others1/>}/>
     <Route exact path="/others-beneficiary"  element={<Others2/>}/>
     <Route exact path="/others-congratulations"  element={<Others3/>}/>
+    {/* <Route exact path="/others"  element={<Others4/>}/> */}
     </Routes>
     </Router>
   );

@@ -3271,24 +3271,25 @@ line-height: 30px;
 color: rgba(39, 39, 38, 0.57);
 }
 
-.submit{
+
+.submitButton{
     position: absolute;
 width: 227.08px;
 height: 62px;
-left: 1207px;
-top: 1584px;
-
+left: 40px;
+top: 1px;
+z-index: 2;
 font-family: 'Inter';
 font-style: normal;
 font-weight: 700;
 font-size: 25px;
 line-height: 30px;
 display: flex;
-z-index: 2;
 align-items: center;
 text-align: center;
 
 color: white;
+
 }
 .submitbox{
     position: absolute;
