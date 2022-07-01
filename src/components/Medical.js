@@ -1,59 +1,128 @@
-import React from 'react'
+import React, { Component } from "react";
 import pic from "../Assets/image3.png";
-import pic1 from"../Assets/Ellipse2.png";
-import pic2 from"../Assets/Ellipse1.png";
-const Medical = () => {
-  return (
-    <div>
+import pic1 from "../Assets/Ellipse2.png";
+import { Form, Input } from "reactstrap";
+import pic2 from "../Assets/Ellipse1.png";
+export default class Medical extends Component {
+
+  continue = () => {
+    // e.preventDefault();
+    this.props.nextStep();
+  };
+  previous = () => {
+    // e.preventDefault();
+    this.props.prevStep();
+  };
+  render() {
+    const { handleInputChange } = this.props;
+    return (
+      <div>
         {/* <div className="medicalImage"></div> */}
-        <img src={pic} className='medicalImage' alt="imageshown" />
+        <img src={pic} className="medicalImage" alt="imageshown" />
         <div className="rectangle2722"></div>
 
-        <img src={pic1} className='change' alt="pic1" />
+        <img src={pic1} className="change" alt="pic1" />
         <img src={pic2} className="change1" alt="sidebar" />
         <div className="polygon1"></div>
+        <h1 className="cause">Cause Details</h1>
+        <h3 className="target">Target Amount</h3>
+        <h3 className="targetR">*</h3>
+        <h5 className="small">Should be minimum ₹ 2000</h5>
 
-        <h1 className='cause'>Cause Details</h1>
-        <h3 className='target'>Target Amount</h3>
-        <h3 className='targetR'>*</h3>
-        <input type="text" className='rectangleTarget' placeholder="How much do you want to raise ?" />
-        <h5 className='small'>Should be minimum ₹ 2000</h5>
+        <h3 className="end">End Date</h3>
+        <h3 className="endR">*</h3>
 
-        <h3 className='end'>End Date</h3>
-        <h3 className='endR'>*</h3>
-        <input type="date" className='rectangleEnd' placeholder="dd-mm-yy" />
+        <Form>
+          <Input
+            type="text"
+            className="rectangleTarget"
+            onChange={handleInputChange}
+            name="targetAmount"
+            id="targetAmount"
+            placeholder="How much do you want to raise ?"
+          />
+          <Input
+            type="date"
+            className="rectangleEnd"
+            name="date"
+            id="date"
+            placeholder="dd-mm-yy"
+            onChange={handleInputChange}
+          />
+          <Input
+            type="text"
+            className="rectangleHospital"
+            name="hospitalName"
+            id="hospitalName"
+            placeholder="Enter the hospital name"
+            onChange={handleInputChange}
+          />
+          <Input
+            type="text"
+            className="rectangleLocation"
+            name="hospitalLocation"
+            id="hospitalLocation"
+            placeholder="Enter the Location"
+            onChange={handleInputChange}
+          />
+          <Input
+            type="text"
+            className="ailmentLocation"
+            name="medicalAilment"
+            id="medicalAilment"
+            placeholder="Medical Ailment"
+            onChange={handleInputChange}
+          />
+          <Input type="text" className="rectangleSituation" />
+          <Input
+            type="text"
+            className="rectangleDoctor"
+            name="doctorName"
+            id="doctorName"
+            placeholder="Enter Doctor's Name"
+            onChange={handleInputChange}
+          />
+          <input
+            type="number"
+            className="rectanglephone"
+            name="doctorNumber"
+            id="doctorNumber"
+            placeholder="Enter Doctor's number"
+            onChange={handleInputChange}
+          />
+          <input
+            type="number"
+            className="rectanglecontact"
+            name="hospitalNumber"
+            id="hospitalNumber"
+            placeholder="Enter Hospital's phone number"
+            onChange={handleInputChange}
+          />
+        </Form>
 
-        <h1 className='hospital'>Hospital Details</h1>
-        <h3 className='hName'>Hospital Name </h3>
-        <h3 className='hNameR'>*</h3>
-        <input type="text" className='rectangleHospital' placeholder="Enter the hospital name" />
-        <h3 className="location">
-        Location
-        </h3>
-        <input type="text" className='rectangleLocation' placeholder="Enter the Location" />
-        <h3 className='ailment'>Aliment </h3>
-        <input type="text" className='ailmentLocation' placeholder="Medical Ailment" />
+        <h1 className="hospital">Hospital Details</h1>
+        <h3 className="hName">Hospital Name </h3>
+        <h3 className="hNameR">*</h3>
+        <h3 className="location">Location</h3>
+        <h3 className="ailment">Aliment </h3>
 
-        <h3 className='situation'>Current situation</h3>
-        <input type="text" className='rectangleSituation' />
+        <h3 className="situation">Current situation</h3>
 
-        <h3 className='doctor'>Doctor’s Name</h3>
-        <input type="text" className='rectangleDoctor' placeholder="Enter Doctor's Name" />
-        <div className="backRectangle2"><button className='back2'>Back</button></div>
-        <div className="scRectangle2"><button className='SC2'>Save & Continue</button></div>
-
-        <h3 className='phoneDoctor'>Doctor’s Phone no.</h3>
-        <input type="number" className='rectanglephone' placeholder="Enter Doctor's number"/>
-
-        <h3 className='contactHospital'>Contact no.</h3>
-        <input type="number" className='rectanglecontact' placeholder="Enter Hospital's phone number"/>
+        <h3 className="doctor">Doctor’s Name</h3>
+        <div className="backRectangle2">
+          <button onClick={this.previous} className="back2">Back</button>
+        </div>
+        <div className="scRectangle2">
+          <button onClick={this.continue} className="SC2">Save & Continue</button>
+        </div>
+        <h3 className="phoneDoctor">Doctor’s Phone no.</h3>
+        <h3 className="contactHospital">Contact no.</h3>
 
         <div className="question2 ">?</div>
         <div className="ellipseQ2"></div>
         <div className="question3 ">?</div>
         <div className="ellipseQ3"></div>
-    </div>
-  )
+      </div>
+    );
+  }
 }
-
-export default Medical

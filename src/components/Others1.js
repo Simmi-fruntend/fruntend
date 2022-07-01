@@ -90,16 +90,17 @@ export default class Others1 extends Component {
 
     if (this.state.touched.name && name.length < 3)
       errors.name = " Name should be >= 3 characters";
-    else if (this.state.touched.name && name.length > 10)
+    else if (this.state.touched.name && name.length > 20)
       errors.name = " Name should be <= 20 characters";
 
-    const reg = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/;
+    const reg = /\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/;
     if (this.state.touched.phone && !reg.test(phone))
-      errors.phone = "Tel. Number should contain only numbers (10)";
-
+    errors.phone = "Tel. Number should contain only numbers (10)";
+    
+    const reg1 = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/;
     if (
       this.state.touched.email &&
-      email.split("").filter((x) => x === "@").length !== 1
+      !reg1.test(email)
     )
       errors.email = "Email should contain a @";
 
@@ -118,7 +119,6 @@ export default class Others1 extends Component {
     e.preventDefault()
     this.nextStep()
     this.changeColor1()
-    
   }
 
   render() {

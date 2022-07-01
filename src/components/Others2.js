@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import picture from "../Assets/Vector.png";
 import { Link } from "react-router-dom";
-import { Form, Input } from "reactstrap";
+import { Form,Input } from "reactstrap";
 // import axios from 'axios'
 
 export default class Others2 extends Component {
