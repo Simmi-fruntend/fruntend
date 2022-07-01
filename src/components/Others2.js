@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import picture from "../Assets/Vector.png";
 import { Link } from "react-router-dom";
 import { Form, Input } from "reactstrap";
-import axios from 'axios'
+// import axios from 'axios'
 
 export default class Others2 extends Component {
   constructor(props){
@@ -31,7 +31,7 @@ export default class Others2 extends Component {
   
   };
   // On file upload (click the upload button)
-  onFileUpload = () => {
+  onFileUpload = async() => {
     
     // Create an object of formData
     const formData = new FormData();
@@ -44,7 +44,18 @@ export default class Others2 extends Component {
     console.log(this.state.documentFile);
     // Request made to the backend api
     // Send formData object
-    axios.post("https://httpbin.org/post", formData);
+    // axios.post("https://httpbin.org/post", formData,{headers:{"Content-Type":"multipart/form-data"}})
+    fetch("https://httpbin.org/post",{
+      method:'POST',
+      body:formData,
+    }
+  )
+  .then((response)=>response.json())
+  .then((result)=>{
+    console.log('Success: ',result)
+  })
+  .catch((error)=>console.error('Error : ',error))
+   
   };
   changeColor() {
     document.getElementById("1").style.color = "#FF5F24";
