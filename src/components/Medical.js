@@ -13,6 +13,28 @@ export default class Medical extends Component {
     // e.preventDefault();
     this.props.prevStep();
   };
+  changeColor() {
+    document.getElementById("4").style.color = "white";
+    document.getElementById("1").style.color = "black";
+    document.getElementById("2").style.color = "white";
+    document.getElementById("3").style.color = "white";
+  }
+  changeColor3() {
+    document.getElementById("4").style.color = "white";
+    document.getElementById("1").style.color = "white";
+    document.getElementById("2").style.color = "white";
+    document.getElementById("3").style.color = "black";
+  }
+  clickBack=(e)=>{
+    e.preventDefault()
+    this.changeColor()
+    this.previous()
+  }
+  clickContinue=(e)=>{
+    e.preventDefault()
+    this.changeColor3()
+    this.continue()
+  }
   render() {
     const { handleInputChange } = this.props;
     return (
@@ -110,10 +132,10 @@ export default class Medical extends Component {
 
         <h3 className="doctor">Doctor’s Name</h3>
         <div className="backRectangle2">
-          <button onClick={this.previous} className="back2">Back</button>
+          <button onClick={this.clickBack} className="back2">Back</button>
         </div>
         <div className="scRectangle2">
-          <button onClick={this.continue} className="SC2">Save & Continue</button>
+          <button onClick={this.clickContinue} className="SC2">Save & Continue</button>
         </div>
         <h3 className="phoneDoctor">Doctor’s Phone no.</h3>
         <h3 className="contactHospital">Contact no.</h3>

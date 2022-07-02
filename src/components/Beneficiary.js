@@ -11,6 +11,10 @@ class Beneficiary extends Component {
     super(props);
     this.state = {
       cameraFile: null,
+      coverPhoto:null,
+      estimationLetter:null,
+      medicalBill:null,
+      medicalReports:null,
       name: "",
       age: "",
       relation: "",
@@ -25,6 +29,8 @@ class Beneficiary extends Component {
       doctorName: "",
       doctorNumber: "",
       hospitalNumber: "",
+      fundraiserName:"",
+      story:""
     };
     this.handleInputChange = this.handleInputChange.bind(this);
   }
@@ -59,9 +65,29 @@ class Beneficiary extends Component {
     });
     console.log(this.state.step);
   };
+  changeColor2() {
+    document.getElementById("4").style.color = "white";
+    document.getElementById("1").style.color = "white";
+    document.getElementById("2").style.color = "black";
+    document.getElementById("3").style.color = "white";
+  }
+   click=(e)=>{
+    e.preventDefault()
+    this.changeColor2()
+    this.nextStep()
+  }
+  uploadFiles(){
+    document.getElementById("cameraFile").click()
+    console.log("fisr function called")
+    
+  }
   render() {
     const {
       cameraFile,
+      coverPhoto,
+      estimationLetter,
+      medicalBill,
+      medicalReports,
       name,
       age,
       relation,
@@ -76,9 +102,15 @@ class Beneficiary extends Component {
       doctorName,
       doctorNumber,
       hospitalNumber,
+      fundraiserName,
+      story
     } = this.state;
     const values = {
       cameraFile,
+      coverPhoto,
+      estimationLetter,
+      medicalBill,
+      medicalReports,
       name,
       age,
       relation,
@@ -93,6 +125,8 @@ class Beneficiary extends Component {
       doctorName,
       doctorNumber,
       hospitalNumber,
+      fundraiserName,
+      story
     };
 
     switch (step) {
@@ -159,6 +193,7 @@ class Beneficiary extends Component {
                 type="file"
                 name="cameraFile"
                 id="cameraFile"
+                style={{display:"none"}}
                 onChange={this.handleFileChange}
                 value={this.state.cameraFile}
               ></Input>
@@ -170,7 +205,7 @@ class Beneficiary extends Component {
             <h1 className="textY">Your Fundraiser</h1>
 
             <h3 className="upload">Upload a Photo</h3>
-            <button>
+            <button  onClick={this.uploadFiles.bind(this)}>
               <img src={pic} className="pic" alt="showit" />
             </button>
 
@@ -189,11 +224,11 @@ class Beneficiary extends Component {
             <h4 className="email">Email</h4>
             <h4 className="emailR">*</h4>
 
-            <div className="backRectangle">
+            {/* <div className="backRectangle">
               <button className="back">Back</button>
-            </div>
+            </div> */}
             <div className="scRectangle">
-              <button onClick={this.nextStep} className="SC">
+              <button onClick={this.click} className="SC">
                 Save & Continue
               </button>
             </div>
