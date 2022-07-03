@@ -42,15 +42,15 @@ export default class Fund extends Component {
     document.getElementById("coverPhoto").click();
     console.log("fisr function called");
   }
-  handleFileChange = (event) => {
-    // Update the state
-    this.setState({
-      coverPhoto: event.target.files[0],
-    });
-  };
+  // handleFileChange = (event) => {
+  //   // Update the state
+  //   this.setState({
+  //     coverPhoto: event.target.files[0],
+  //   });
+  // };
 
   render() {
-    const { handleInputChange } = this.props;
+    const { handleInputChange,handleFileChange } = this.props;
     return (
       <div>
         <img src={pic} className="medicalImage" alt="imageshown" />
@@ -81,7 +81,7 @@ export default class Fund extends Component {
             type="file"
             name="coverPhoto"
             style={{display:'none'}}
-            onChange={this.handleFileChange}
+            onChange={handleFileChange}
             id="coverPhoto"
           ></Input>
         </Form>

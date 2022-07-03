@@ -12,13 +12,13 @@ class Beneficiary extends Component {
     this.state = {
       cameraFile: null,
       coverPhoto:null,
-      estimationLetter:null,
-      medicalBill:null,
-      medicalReports:null,
+      estimationLetter:'',
+      medicalBill:'',
+      medicalReports:'',
       name: "",
       age: "",
       relation: "",
-      phonenumber: null,
+      phoneNumber: "",
       email: "",
       step: 1,
       targetAmount: "",
@@ -36,8 +36,10 @@ class Beneficiary extends Component {
   }
   handleFileChange = (event) => {
     // Update the state
+    const target=event.target
+    const name=target.name
     this.setState({
-      cameraFile: event.target.files[0],
+      [name]: event.target.files[0],
     });
   };
   handleInputChange = (event) => {
@@ -78,7 +80,7 @@ class Beneficiary extends Component {
   }
   uploadFiles(){
     document.getElementById("cameraFile").click()
-    console.log("fisr function called")
+    console.log("fisrt function called")
     
   }
   render() {
@@ -91,7 +93,7 @@ class Beneficiary extends Component {
       name,
       age,
       relation,
-      phonenumber,
+      phoneNumber,
       email,
       step,
       targetAmount,
@@ -114,7 +116,7 @@ class Beneficiary extends Component {
       name,
       age,
       relation,
-      phonenumber,
+      phoneNumber,
       email,
       step,
       targetAmount,
@@ -139,6 +141,30 @@ class Beneficiary extends Component {
             {/* <h4 className='name'>Name</h4> */}
             <h4 className="nameR">*</h4>
             <img src={pic1} className="chang" alt="sidebar" />
+            <div className="rectangle2706"></div>
+            <h4 className="textPurpose">Change Purpose ?</h4>
+            <h1 className="textF">Tell us more about </h1>
+            <h1 className="textY">Your Fundraiser</h1>
+
+            <h3 className="upload">Upload a Photo</h3>
+            <button  onClick={this.uploadFiles.bind(this)}>
+              <img src={pic} className="pic" alt="showit" />
+            </button>
+
+            <div className="polygon "></div>
+
+            <h4 className="age">Age</h4>
+            <h4 className="ageR">*</h4>
+
+            <h4 className="relation">Beneficiary’s Relation with you</h4>
+            <h4 className="relationR">*</h4>
+            <div className="question ">?</div>
+            <div className="ellipseQ"></div>
+
+            <h4 className="phone">Phone no.</h4>
+            <h4 className="phoneR">*</h4>
+            <h4 className="email">Email</h4>
+            <h4 className="emailR">*</h4>
 
             <Form onSubmit={this.handleSubmit} method="post">
               <Label className="name" htmlFor="name">
@@ -173,11 +199,11 @@ class Beneficiary extends Component {
               />
               <Input
                 type="number"
-                name="mobileNumber"
-                id="mobileNumber"
+                name="phoneNumber"
+                id="phoneNumber"
                 className="phoneRectangle"
                 placeholder="Enter mobile number"
-                value={this.state.phonenumber}
+                // value={this.state.phoneNumber}
                 onChange={this.handleInputChange}
               />
               <Input
@@ -195,46 +221,16 @@ class Beneficiary extends Component {
                 id="cameraFile"
                 style={{display:"none"}}
                 onChange={this.handleFileChange}
-                value={this.state.cameraFile}
+                // value={this.state.cameraFile}
               ></Input>
             </Form>
 
-            <div className="rectangle2706"></div>
-            <h4 className="textPurpose">Change Purpose ?</h4>
-            <h1 className="textF">Tell us more about </h1>
-            <h1 className="textY">Your Fundraiser</h1>
-
-            <h3 className="upload">Upload a Photo</h3>
-            <button  onClick={this.uploadFiles.bind(this)}>
-              <img src={pic} className="pic" alt="showit" />
-            </button>
-
-            <div className="polygon "></div>
-
-            <h4 className="age">Age</h4>
-            <h4 className="ageR">*</h4>
-
-            <h4 className="relation">Beneficiary’s Relation with you</h4>
-            <h4 className="relationR">*</h4>
-            <div className="question ">?</div>
-            <div className="ellipseQ"></div>
-
-            <h4 className="phone">Phone no.</h4>
-            <h4 className="phoneR">*</h4>
-            <h4 className="email">Email</h4>
-            <h4 className="emailR">*</h4>
-
-            {/* <div className="backRectangle">
-              <button className="back">Back</button>
-            </div> */}
             <div className="scRectangle">
               <button onClick={this.click} className="SC">
                 Save & Continue
               </button>
             </div>
 
-            {/* <div className="imageBg"></div>
-      <div className="rectangle2721"></div> */}
           </div>
         );
       case 2:
@@ -257,6 +253,7 @@ class Beneficiary extends Component {
               handleInputChange={this.handleInputChange}
               values={values}
               prevStep={this.prevStep}
+              handleFileChange={this.handleFileChange}
             />
           </>
         );

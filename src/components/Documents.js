@@ -7,6 +7,7 @@ import pic4 from "../Assets/Ellipse4.png";
 import pic5 from "../Assets/image6.png";
 import pic6 from "../Assets/image7.png";
 import { Form, Input } from "reactstrap";
+
 export default class Documents extends React.Component {
   previous = () => {
     // e.preventDefault();
@@ -24,11 +25,83 @@ export default class Documents extends React.Component {
     this.previous();
   };
 
-  handleSubmit() {}
+  onFileUpload = async(e) => {
+    // e.preventDefault()
+    // Create an object of formData
+    const formData = new FormData();
+    // Update the formData object
+    formData.append("Medical Bill", this.state.medicalBill,)
+    formData.append("Estimation letter", this.state.estimationLetter,)
+    formData.append("Medical Reports" ,this.state.medicalReports)
+    formData.append("Cover  Photo" ,this.props.values.coverPhoto)
+    formData.append("Camera File" ,this.props.values.cameraFile)
+    // Details of the uploaded file
+    console.log(this.state.medicalBill);
+    console.log(this.state.medicalReports);
+    console.log(this.state.estimationLetter);
+    console.log(this.props.values.coverPhoto);
+    console.log(this.props.values.cameraFile);
+    fetch("https://httpbin.org/post",{
+      method:'POST',
+      body:formData,
+    }
+  )
+  .then((response)=>response.json())
+  .then((result)=>{
+    console.log('Success: ',result)
+  })
+  .catch((error)=>console.error('Error : ',error))
+   
+  };
+
+  handleSubmit = async (e) => {
+    this.onFileUpload()
+    e.preventDefault();
+
+  
+    // Update the formData object
+    try {
+      let res = await fetch("https://httpbin.org/post", {
+        method: "POST",
+        body: JSON.stringify({
+          name: this.props.values.name,
+          age: this.props.values.age,
+          relation: this.props.values.relation,
+          phoneNumber: this.props.values.phoneNumber,
+          email: this.props.values.email,
+          targetAmount: this.props.values.targetAmount,
+          date: this.props.values.date,
+          hospitalName: this.props.values.hospitalName,
+          hospitalLocation: this.props.values.hospitalLocation,
+          medicalAilment: this.props.values.medicalAilment,
+          doctorName: this.props.values.doctorName,
+          doctorNumber: this.props.values.doctorNumber,
+          hospitalNumber: this.props.values.hospitalNumber,
+          fundraiserName:this.props.values.fundraiserName,
+          story:this.props.values.story
+        })
+      });
+      let resJson = await res.json();
+      console.log(resJson);
+      if (res.status === 200) {
+        this.setState({ message: "Form submmited to the api succesfully" });
+        console.log('form submitted to the api succesfully');
+        console.log(res.status)
+        // this.continue();
+        //  window.open('/others-beneficiary')
+      } else {
+        this.setState({ message: "Some error occured" });
+        console.log(this.state.message);
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
 
   uploadFiles() {
     document.getElementById("estimationLetter").click();
-    console.log("fisr function called");
+    console.log("fisrt function called");
   }
   uploadFiles1() {
     document.getElementById("medicalBill").click();
@@ -36,7 +109,7 @@ export default class Documents extends React.Component {
   }
   uploadFiles2() {
     document.getElementById("medicalReports").click();
-    console.log("second function called");
+    console.log("third function called");
   }
   handleFileChange = (event) => {
     // Update the state
@@ -112,7 +185,7 @@ export default class Documents extends React.Component {
             name="medicalReports"
           />
            <div className="saveAC">
-          <button type="submit" className="Save">
+          <button type="submit"  className="Save">
             Submit
           </button>
         </div>
