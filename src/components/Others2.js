@@ -58,7 +58,7 @@ export default class Others2 extends Component {
       body: formData,
       headers: {
         Authorization:
-          "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU3MjIwODAwLCJpYXQiOjE2NTcyMjA1MDAsImp0aSI6ImQyYzg2NzMwM2VlNTQ1YTg5OGQ3OGZiNmVmOTgyYjY0IiwidXNlcl9pZCI6MX0.gP5KCHRnQ477VgFaSPv74oPlg95BCbPulA4RkJ2Axn0",
+          "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU3MjIwODAwLCJpYXQiOjE2NTcyMjA1MDAsImp0aSI6ImQyYzg2NzMwM2VlNTQ1YTg5OGQ3OGZiNmVmOTgyYjY0IiwidXNlcl9pZCI6MX0.gP5KCHRnQ477VgFaSPv74oPlg95BCbPulA4RkJ2Axn0",
       },
     })
       .then((response) => response.json())
