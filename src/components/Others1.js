@@ -41,7 +41,8 @@ export default class Others1 extends Component {
       titleCompaign: "",
       beneficiaryStory: "",
       targetedValue:"",
-      fundEndDate:""
+      fundEndDate:"",
+
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -158,8 +159,7 @@ export default class Others1 extends Component {
       titleCompaign,
       beneficiaryStory, 
       targetedValue,
-      fundEndDate
-
+      fundEndDate,
 
     } = this.state;
     const values = {
@@ -190,7 +190,7 @@ export default class Others1 extends Component {
       titleCompaign,
       beneficiaryStory,
       targetedValue,
-      fundEndDate
+      fundEndDate,
     };
     switch (step) {
       case 1:

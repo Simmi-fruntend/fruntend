@@ -1,61 +1,71 @@
 import React, { Component } from "react";
 import picture from "../Assets/Vector.png";
 import { Link } from "react-router-dom";
-import { Form,Input } from "reactstrap";
+import { Form, Input } from "reactstrap";
 // import axios from 'axios'
 
 export default class Others2 extends Component {
-  constructor(props){
-    super(props)
-    this.state={
-      videoFile:null,
-      documentFile:null
-      
-    }
+  constructor(props) {
+    super(props);
+    this.state = {
+      videoFile: null,
+      documentFile: null,
+      beneficiaryPhoto: null,
+    };
   }
-   // On file select (from the pop up)
-   onFileChange = event => {
-    
+  // On file select (from the pop up)
+  onFileChange = (event) => {
     // Update the state
     this.setState({
-       videoFile: event.target.files[0],
+      videoFile: event.target.files[0],
     });
-  
   };
-   onFileChange1 = event => {
-    
+  onFileChange1 = (event) => {
     // Update the state
     this.setState({
-       documentFile: event.target.files[0]
+      documentFile: event.target.files[0],
     });
-  
   };
+  onFileChange2 = (event) => {
+    // Update the state
+    this.setState({
+      beneficiaryPhoto: event.target.files[0],
+    });
+  };
+  uploadFiles() {
+    document.getElementById("beneficiaryPhoto").click();
+    console.log("third function called");
+  }
   // On file upload (click the upload button)
-  onFileUpload = async() => {
-    
+  onFileUpload = async () => {
     // Create an object of formData
     const formData = new FormData();
-  
+
     // Update the formData object
-    formData.append("video file", this.state.videoFile,)
-    formData.append("document file" ,this.state.documentFile)
+    formData.append("video file", this.state.videoFile);
+    formData.append("document file", this.state.documentFile);
+    formData.append("document file", this.state.beneficiaryPhoto);
     // Details of the uploaded file
     console.log(this.state.videoFile);
     console.log(this.state.documentFile);
+    console.log(this.state.beneficiaryPhoto);
+
     // Request made to the backend api
     // Send formData object
     // axios.post("https://httpbin.org/post", formData,{headers:{"Content-Type":"multipart/form-data"}})
-    fetch("https://httpbin.org/post",{
-      method:'POST',
-      body:formData,
-    }
-  )
-  .then((response)=>response.json())
-  .then((result)=>{
-    console.log('Success: ',result)
-  })
-  .catch((error)=>console.error('Error : ',error))
-   
+    fetch("http://127.0.0.1:8000/api/fundraiser_others/create/", {
+      method: "POST",
+      body: formData,
+      headers: {
+        Authorization:
+          "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU3MjE3MzIxLCJpYXQiOjE2NTcyMTcwMjEsImp0aSI6IjM0ZTZhODRhNWExMDQ0MmM5OWUwZDdmYzBkYWIxMzZkIiwidXNlcl9pZCI6MX0.webId7YlUWAoq0epwPrS_v4iZn7JWy-_CZXcj7w4E3I",
+      },
+    })
+      .then((response) => response.json())
+      .then((result) => {
+        console.log("Success: ", result);
+      })
+      .catch((error) => console.error("Error : ", error));
   };
   changeColor() {
     document.getElementById("1").style.color = "#FF5F24";
@@ -86,47 +96,53 @@ export default class Others2 extends Component {
     this.changeColor();
   };
 
-  
   handleSubmit = async (e) => {
-    this.onFileUpload()
+    this.onFileUpload();
     e.preventDefault();
     try {
-      let res = await fetch("https://httpbin.org/post", {
-        method: "POST",
-        body: JSON.stringify({
-          Name: this.props.values.name,
-          Email: this.props.values.email,
-          MobileNumber: this.props.values.phone,
-          Address: this.props.values.address,
-          AdresssS: this.props.values.addressS,
-          CheckBox1: this.props.values.checkbox1,
-          CheckBox2: this.props.values.checkbox2,
-          City: this.props.values.city,
-          State: this.props.values.state,
-          PinCode: this.props.values.zip,
-          Tax: this.props.values.tax,
-          raisingFundsFor: this.props.values.raisingFundsFor,
-          beneficiaryName: this.props.values.beneficiaryName,
-          beneficiaryPhone: this.props.values.beneficiaryPhone,
-          beneficiaryAge: this.props.values.beneficiaryAge,
-          beneficiarySex: this.props.values.beneficiarySex,
-          beneficiaryAddress: this.props.values.beneficiaryAddress,
-          beneficiaryAddressS: this.props.values.beneficiaryAddressS,
-          beneficiaryCity: this.props.values.beneficiaryCity,
-          beneficiaryState: this.props.values.beneficiaryState,
-          beneficiaryZip: this.props.values.beneficiaryZip,
-          titleCompaign: this.props.values.titleCompaign,
-          beneficiaryStory: this.props.values.beneficiaryStory,
-          targetedValue:this.props.values.targetedValue,
-          fundEndDate:this.props.values.fundEndDate
-        }),
-      });
+      let res = await fetch(
+        "http://127.0.0.1:8000/api/fundraiser_others/create/",
+        {
+          method: "POST",
+          body: JSON.stringify({
+            Name: this.props.values.name,
+            Email: this.props.values.email,
+            MobileNumber: this.props.values.phone,
+            Address: this.props.values.address,
+            AdresssS: this.props.values.addressS,
+            CheckBox1: this.props.values.checkbox1,
+            CheckBox2: this.props.values.checkbox2,
+            City: this.props.values.city,
+            State: this.props.values.state,
+            PinCode: this.props.values.zip,
+            Tax: this.props.values.tax,
+            raisingFundsFor: this.props.values.raisingFundsFor,
+            beneficiaryName: this.props.values.beneficiaryName,
+            beneficiaryPhone: this.props.values.beneficiaryPhone,
+            beneficiaryAge: this.props.values.beneficiaryAge,
+            beneficiarySex: this.props.values.beneficiarySex,
+            beneficiaryAddress: this.props.values.beneficiaryAddress,
+            beneficiaryAddressS: this.props.values.beneficiaryAddressS,
+            beneficiaryCity: this.props.values.beneficiaryCity,
+            beneficiaryState: this.props.values.beneficiaryState,
+            beneficiaryZip: this.props.values.beneficiaryZip,
+            titleCompaign: this.props.values.titleCompaign,
+            beneficiaryStory: this.props.values.beneficiaryStory,
+            targetedValue: this.props.values.targetedValue,
+            fundEndDate: this.props.values.fundEndDate,
+          }),
+          headers: {
+            Authorization:
+              "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU3MjE3MzIxLCJpYXQiOjE2NTcyMTcwMjEsImp0aSI6IjM0ZTZhODRhNWExMDQ0MmM5OWUwZDdmYzBkYWIxMzZkIiwidXNlcl9pZCI6MX0.webId7YlUWAoq0epwPrS_v4iZn7JWy-_CZXcj7w4E3I",
+          },
+        }
+      );
       let resJson = await res.json();
       console.log(resJson);
       if (res.status === 200) {
         this.setState({ message: "Form submmited to the api succesfully" });
-        console.log('form submitted to the api succesfully');
-        console.log(res.status)
+        console.log("form submitted to the api succesfully");
+        console.log(res.status);
         this.continue();
         //  window.open('/others-beneficiary')
       } else {
@@ -139,8 +155,8 @@ export default class Others2 extends Component {
   };
 
   render() {
-    const {  handleInputChange } = this.props;
-   
+    const { handleInputChange } = this.props;
+
     return (
       <>
         <div className="backgroundSecond">
@@ -154,7 +170,7 @@ export default class Others2 extends Component {
           <h3 className="raise6">Beneficiary Address: </h3>
           <h3 className="raise7">Title of the Compaign: </h3>
           <h3 className="raise8">Beneficiary Story</h3>
-          <Form  onSubmit={this.handleSubmit} method="post">
+          <Form onSubmit={this.handleSubmit} method="post">
             <Input
               type="text"
               name="raisingFundsFor"
@@ -162,7 +178,7 @@ export default class Others2 extends Component {
               className="raiseText1"
               onChange={handleInputChange}
               // defaultValue={values.raisingFundsFor}
-              />
+            />
             <Input
               type="text"
               name="beneficiaryName"
@@ -170,7 +186,7 @@ export default class Others2 extends Component {
               className="raiseText2"
               onChange={handleInputChange}
               // defaultValue={values.beneficiaryName}
-              />
+            />
             <Input
               type="text"
               name="beneficiaryPhone"
@@ -178,7 +194,6 @@ export default class Others2 extends Component {
               className="raiseText3"
               onChange={handleInputChange}
               // defaultValue={values.beneficiaryPhone}
-              
             />
             <Input
               type="text"
@@ -195,7 +210,6 @@ export default class Others2 extends Component {
               className="raiseText5"
               onChange={handleInputChange}
               // defaultValue={values.beneficiarySex}
-
             />
             <Input
               type="text"
@@ -204,7 +218,6 @@ export default class Others2 extends Component {
               className="raiseText6"
               onChange={handleInputChange}
               // defaultValue={values.beneficiaryAddress}
-
             />
             <Input
               type="text"
@@ -213,7 +226,6 @@ export default class Others2 extends Component {
               className="raiseText7"
               onChange={handleInputChange}
               // defaultValue={values.beneficiaryAddressS}
-
             />
             <Input
               type="text"
@@ -222,7 +234,6 @@ export default class Others2 extends Component {
               className="raiseText8"
               onChange={handleInputChange}
               // defaultValue={values.beneficiaryCity}
-
             />
             <Input
               type="text"
@@ -231,7 +242,6 @@ export default class Others2 extends Component {
               className="raiseText9"
               onChange={handleInputChange}
               // defaultValue={values.beneficiaryState}
-
             />
             <Input
               type="text"
@@ -240,7 +250,6 @@ export default class Others2 extends Component {
               className="raiseText10"
               onChange={handleInputChange}
               // defaultValue={values.beneficiaryZip}
-
             />
             <Input
               type="text"
@@ -249,7 +258,6 @@ export default class Others2 extends Component {
               className="raiseText11"
               onChange={handleInputChange}
               // defaultValue={values.titleCompaign}
-
             />
             <textarea
               type="text"
@@ -260,7 +268,6 @@ export default class Others2 extends Component {
               className="raiseText12"
               onChange={handleInputChange}
               // defaultValue={values.beneficiaryStory}
-
             />
             <Input
               type="file"
@@ -285,12 +292,28 @@ export default class Others2 extends Component {
               className="targetMoney"
               onChange={handleInputChange}
             />
-            <Input type="date" name="fundEndDate" id="fundEndDate" className="endDataInput" />
-          <div className="submitbox">
-            <button type="submit" onClick={this.handleSubmit} className="submitButton">
-              Submit
-            </button>
-          </div>
+            <Input
+              type="file"
+              name="beneficiaryPhoto"
+              id="beneficiaryPhoto"
+              onChange={this.onFileChange2}
+              style={{ display: "none" }}
+            ></Input>
+            <Input
+              type="date"
+              name="fundEndDate"
+              id="fundEndDate"
+              className="endDataInput"
+            />
+            <div className="submitbox">
+              <button
+                type="submit"
+                onClick={this.handleSubmit}
+                className="submitButton"
+              >
+                Submit
+              </button>
+            </div>
           </Form>
           <div className="gobackBox">
             <button onClick={this.previous} className="goBack">
@@ -299,9 +322,10 @@ export default class Others2 extends Component {
           </div>
 
           <div className="sideBox"></div>
-
-          <div className="inputPhoto"></div>
-          <img src={picture} alt="" className="vectorBeneficiary"></img>
+          <button onClick={this.uploadFiles.bind(this)}>
+            <div className="inputPhoto"></div>
+            <img src={picture} alt="" className="vectorBeneficiary"></img>
+          </button>
           <h3 className="plusVector">+</h3>
           <h3 className="uploadBeneficiary">Upload Beneficiary’s Photo</h3>
           <h3 className="uploadVideo">Upload a Video:</h3>

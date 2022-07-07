@@ -41,9 +41,12 @@ export default class Documents extends React.Component {
     console.log(this.state.estimationLetter);
     console.log(this.props.values.coverPhoto);
     console.log(this.props.values.cameraFile);
-    fetch("https://httpbin.org/post",{
+    fetch("http://127.0.0.1:8000/api/medical_fundraiser/create/",{
       method:'POST',
       body:formData,
+      headers:{
+        'Authorization':'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU3MDEwNDk4LCJpYXQiOjE2NTcwMTAxOTgsImp0aSI6IjA0NzgxNGZlZWY0OTQ5NGM4YWNkNTFlMDQ1NGRmZjJjIiwidXNlcl9pZCI6MX0.HncuCvd66f1FEOigF8QfcxMagWSMGQrszRRceHrodWE'
+      }
     }
   )
   .then((response)=>response.json())
@@ -61,7 +64,7 @@ export default class Documents extends React.Component {
   
     // Update the formData object
     try {
-      let res = await fetch("https://httpbin.org/post", {
+      let res = await fetch("http://127.0.0.1:8000/api/medical_fundraiser/create/", {
         method: "POST",
         body: JSON.stringify({
           name: this.props.values.name,
@@ -79,7 +82,10 @@ export default class Documents extends React.Component {
           hospitalNumber: this.props.values.hospitalNumber,
           fundraiserName:this.props.values.fundraiserName,
           story:this.props.values.story
-        })
+        }),
+        headers:{
+          'Authorization':'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU3MDEwNDk4LCJpYXQiOjE2NTcwMTAxOTgsImp0aSI6IjA0NzgxNGZlZWY0OTQ5NGM4YWNkNTFlMDQ1NGRmZjJjIiwidXNlcl9pZCI6MX0.HncuCvd66f1FEOigF8QfcxMagWSMGQrszRRceHrodWE'
+        }
       });
       let resJson = await res.json();
       console.log(resJson);
