@@ -45,11 +45,11 @@ export default class Others2 extends Component {
     formData.append("video file", this.state.videoFile);
     formData.append("document file", this.state.documentFile);
     formData.append("document file", this.state.beneficiaryPhoto);
+
     // Details of the uploaded file
     console.log(this.state.videoFile);
     console.log(this.state.documentFile);
     console.log(this.state.beneficiaryPhoto);
-
     // Request made to the backend api
     // Send formData object
     // axios.post("https://httpbin.org/post", formData,{headers:{"Content-Type":"multipart/form-data"}})
@@ -58,7 +58,7 @@ export default class Others2 extends Component {
       body: formData,
       headers: {
         Authorization:
-          "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU3MjE3MzIxLCJpYXQiOjE2NTcyMTcwMjEsImp0aSI6IjM0ZTZhODRhNWExMDQ0MmM5OWUwZDdmYzBkYWIxMzZkIiwidXNlcl9pZCI6MX0.webId7YlUWAoq0epwPrS_v4iZn7JWy-_CZXcj7w4E3I",
+          "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU3MjIwODAwLCJpYXQiOjE2NTcyMjA1MDAsImp0aSI6ImQyYzg2NzMwM2VlNTQ1YTg5OGQ3OGZiNmVmOTgyYjY0IiwidXNlcl9pZCI6MX0.gP5KCHRnQ477VgFaSPv74oPlg95BCbPulA4RkJ2Axn0",
       },
     })
       .then((response) => response.json())
@@ -105,35 +105,37 @@ export default class Others2 extends Component {
         {
           method: "POST",
           body: JSON.stringify({
-            Name: this.props.values.name,
-            Email: this.props.values.email,
-            MobileNumber: this.props.values.phone,
-            Address: this.props.values.address,
-            AdresssS: this.props.values.addressS,
+            name: this.props.values.name,
+            email_id: this.props.values.email,
+            contact_number: this.props.values.phone,
+            street_address: this.props.values.address,
+            street_address1: this.props.values.addressS,
             CheckBox1: this.props.values.checkbox1,
             CheckBox2: this.props.values.checkbox2,
-            City: this.props.values.city,
-            State: this.props.values.state,
-            PinCode: this.props.values.zip,
+            city: this.props.values.city,
+            state: this.props.values.state,
+            postal_code: this.props.values.zip,
             Tax: this.props.values.tax,
-            raisingFundsFor: this.props.values.raisingFundsFor,
-            beneficiaryName: this.props.values.beneficiaryName,
-            beneficiaryPhone: this.props.values.beneficiaryPhone,
-            beneficiaryAge: this.props.values.beneficiaryAge,
-            beneficiarySex: this.props.values.beneficiarySex,
-            beneficiaryAddress: this.props.values.beneficiaryAddress,
-            beneficiaryAddressS: this.props.values.beneficiaryAddressS,
-            beneficiaryCity: this.props.values.beneficiaryCity,
-            beneficiaryState: this.props.values.beneficiaryState,
-            beneficiaryZip: this.props.values.beneficiaryZip,
-            titleCompaign: this.props.values.titleCompaign,
-            beneficiaryStory: this.props.values.beneficiaryStory,
-            targetedValue: this.props.values.targetedValue,
-            fundEndDate: this.props.values.fundEndDate,
+            to_whom_fund_raised: this.props.values.raisingFundsFor,
+            beneficiary_name: this.props.values.beneficiaryName,
+            beneficiary_contact_number: this.props.values.beneficiaryPhone,
+            beneficiary_age: this.props.values.beneficiaryAge,
+            beneficiary_sex: this.props.values.beneficiarySex,
+            beneficiary_address: this.props.values.beneficiaryAddress,
+            beneficiary_address1: this.props.values.beneficiaryAddressS,
+            beneficiary_city: this.props.values.beneficiaryCity,
+            beneficiary_state: this.props.values.beneficiaryState,
+            beneficiary_postalcode: this.props.values.beneficiaryZip,
+            title_of_campaign: this.props.values.titleCompaign,
+            beneficiary_story: this.props.values.beneficiaryStory,
+            target_amount: this.props.values.targetedValue,
+            end_date: this.props.values.fundEndDate,
           }),
           headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
             Authorization:
-              "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU3MjE3MzIxLCJpYXQiOjE2NTcyMTcwMjEsImp0aSI6IjM0ZTZhODRhNWExMDQ0MmM5OWUwZDdmYzBkYWIxMzZkIiwidXNlcl9pZCI6MX0.webId7YlUWAoq0epwPrS_v4iZn7JWy-_CZXcj7w4E3I",
+              "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU3MjIwODAwLCJpYXQiOjE2NTcyMjA1MDAsImp0aSI6ImQyYzg2NzMwM2VlNTQ1YTg5OGQ3OGZiNmVmOTgyYjY0IiwidXNlcl9pZCI6MX0.gP5KCHRnQ477VgFaSPv74oPlg95BCbPulA4RkJ2Axn0",
           },
         }
       );
