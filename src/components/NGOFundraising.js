@@ -37,8 +37,8 @@ export default class NGOFundraising extends Component {
       <div className='ellipseSupport' id='3'></div>
       <div className='ellipseSupport1' id='4'></div>
 
-      <Link to='/ngo-fundraising-program'><button onClick={changeColor } id='1' className="program">Select a Program</button></Link>
-      <Link to='/ngo-fundraising-initiate'><button onClick={changeColor2 } id='2' className="program2">Initiate a fundraiser</button></Link>
+      <Link to='/ngo-fundraising-program'><button onClick={changeColor } id='1' className="hover:text-amber-500 program">Select a Program</button></Link>
+      <Link to='/ngo-fundraising-initiate'><button onClick={changeColor2 } id='2' className="program2 hover:text-amber-500">Initiate a fundraiser</button></Link>
       </>
     )
   }

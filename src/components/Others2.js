@@ -53,12 +53,12 @@ export default class Others2 extends Component {
     // Request made to the backend api
     // Send formData object
     // axios.post("https://httpbin.org/post", formData,{headers:{"Content-Type":"multipart/form-data"}})
-    fetch("http://127.0.0.1:8000/api/fundraiser_others/create/", {
+    fetch("https://httpbin.org/post", {
       method: "POST",
       body: formData,
       headers: {
         Authorization:
-          "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU3MjY0NTAwLCJpYXQiOjE2NTcyNjQyMDAsImp0aSI6ImQ4M2U5YWQ4MDRhNTQ1NDFhYWEyNjgyOWZhZDUzZDdlIiwidXNlcl9pZCI6MX0.0DJEnn5JekBEuSucvkX0HJ3m9EZPcbYAetVY5SO2Evo",
+          "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU3Mjg2NzIyLCJpYXQiOjE2NTcyODY0MjIsImp0aSI6ImY4Y2NiMWFjNjVmOTQ3YWQ5ZmJhM2M5ZTEyMzExYTdiIiwidXNlcl9pZCI6MX0.RBUVKGTTBxTB457o_RYkw8wEkj3hPM4NVOvzV0chpsk",
       },
     })
       .then((response) => response.json())
@@ -101,14 +101,16 @@ export default class Others2 extends Component {
     e.preventDefault();
     try {
       let res = await fetch(
-        "http://127.0.0.1:8000/api/fundraiser_others/create/",
+        "https://httpbin.org/post",
         {
           method: "POST",
           headers: {
             'Accept': 'application/json',
-            'Content-Type': 'application/json',
+            'Content-Type': "application/json",
+            // "charset":"UTF-8",
+            'Accept-Charset':  "*",
             Authorization:
-              "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU3MjY0NTAwLCJpYXQiOjE2NTcyNjQyMDAsImp0aSI6ImQ4M2U5YWQ4MDRhNTQ1NDFhYWEyNjgyOWZhZDUzZDdlIiwidXNlcl9pZCI6MX0.0DJEnn5JekBEuSucvkX0HJ3m9EZPcbYAetVY5SO2Evo",
+              "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU3Mjg2NzIyLCJpYXQiOjE2NTcyODY0MjIsImp0aSI6ImY4Y2NiMWFjNjVmOTQ3YWQ5ZmJhM2M5ZTEyMzExYTdiIiwidXNlcl9pZCI6MX0.RBUVKGTTBxTB457o_RYkw8wEkj3hPM4NVOvzV0chpsk",
           },
           body: JSON.stringify({
             name: this.props.values.name,
@@ -147,8 +149,7 @@ export default class Others2 extends Component {
         console.log("form submitted to the api succesfully");
         console.log(res.status);
         console.log(res.statusText);
-
-        this.continue();
+        this.continue()
         //  window.open('/others-beneficiary')
       } else {
         this.setState({ message: "Some error occured" });

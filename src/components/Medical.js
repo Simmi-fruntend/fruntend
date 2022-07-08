@@ -64,7 +64,7 @@ export default class Medical extends Component {
             placeholder="How much do you want to raise ?"
           />
           <Input
-            type="date"
+            type="text"
             className="rectangleEnd"
             name="date"
             id="date"
