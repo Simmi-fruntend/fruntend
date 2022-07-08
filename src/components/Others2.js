@@ -58,7 +58,7 @@ export default class Others2 extends Component {
       body: formData,
       headers: {
         Authorization:
-          "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU3MjIwODAwLCJpYXQiOjE2NTcyMjA1MDAsImp0aSI6ImQyYzg2NzMwM2VlNTQ1YTg5OGQ3OGZiNmVmOTgyYjY0IiwidXNlcl9pZCI6MX0.gP5KCHRnQ477VgFaSPv74oPlg95BCbPulA4RkJ2Axn0",
+          "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU3MjY0NTAwLCJpYXQiOjE2NTcyNjQyMDAsImp0aSI6ImQ4M2U5YWQ4MDRhNTQ1NDFhYWEyNjgyOWZhZDUzZDdlIiwidXNlcl9pZCI6MX0.0DJEnn5JekBEuSucvkX0HJ3m9EZPcbYAetVY5SO2Evo",
       },
     })
       .then((response) => response.json())
@@ -104,6 +104,12 @@ export default class Others2 extends Component {
         "http://127.0.0.1:8000/api/fundraiser_others/create/",
         {
           method: "POST",
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            Authorization:
+              "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU3MjY0NTAwLCJpYXQiOjE2NTcyNjQyMDAsImp0aSI6ImQ4M2U5YWQ4MDRhNTQ1NDFhYWEyNjgyOWZhZDUzZDdlIiwidXNlcl9pZCI6MX0.0DJEnn5JekBEuSucvkX0HJ3m9EZPcbYAetVY5SO2Evo",
+          },
           body: JSON.stringify({
             name: this.props.values.name,
             email_id: this.props.values.email,
@@ -130,13 +136,8 @@ export default class Others2 extends Component {
             beneficiary_story: this.props.values.beneficiaryStory,
             target_amount: this.props.values.targetedValue,
             end_date: this.props.values.fundEndDate,
-          }),
-          headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-            Authorization:
-              "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU3MjIwODAwLCJpYXQiOjE2NTcyMjA1MDAsImp0aSI6ImQyYzg2NzMwM2VlNTQ1YTg5OGQ3OGZiNmVmOTgyYjY0IiwidXNlcl9pZCI6MX0.gP5KCHRnQ477VgFaSPv74oPlg95BCbPulA4RkJ2Axn0",
-          },
+          })
+      
         }
       );
       let resJson = await res.json();
@@ -145,6 +146,8 @@ export default class Others2 extends Component {
         this.setState({ message: "Form submmited to the api succesfully" });
         console.log("form submitted to the api succesfully");
         console.log(res.status);
+        console.log(res.statusText);
+
         this.continue();
         //  window.open('/others-beneficiary')
       } else {
