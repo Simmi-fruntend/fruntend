@@ -124,7 +124,6 @@ export default class Others1 extends Component {
 
   render() {
   
-   
 
     const errors = this.validate(
       this.state.name,

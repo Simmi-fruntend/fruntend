@@ -30,11 +30,11 @@ export default class Documents extends React.Component {
     // Create an object of formData
     const formData = new FormData();
     // Update the formData object
-    formData.append("Medical Bill", this.state.medicalBill);
-    formData.append("Estimation letter", this.state.estimationLetter);
-    formData.append("Medical Reports", this.state.medicalReports);
-    formData.append("Cover  Photo", this.props.values.coverPhoto);
-    formData.append("Camera File", this.props.values.cameraFile);
+    formData.append("medical_bill", this.state.medicalBill);
+    formData.append("estimation_letter", this.state.estimationLetter);
+    formData.append("medical_reports", this.state.medicalReports);
+    formData.append("cover_photo", this.props.values.coverPhoto);
+    formData.append("camera_file", this.props.values.cameraFile);
     formData.append("patient_name", this.props.values.name);
     formData.append("patient_age", this.props.values.age);
     formData.append("relation", this.props.values.relation);

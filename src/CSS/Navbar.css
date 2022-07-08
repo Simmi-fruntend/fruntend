@@ -3553,7 +3553,7 @@ top: 950px;
     left: -1px;
     top: 126px;
     
-    background: rgba(1, 0, 0, 0.64);
+    background: rgba(0, 0, 0, 0.64);
 
 }
 .showerText{
@@ -3599,7 +3599,7 @@ left: calc(50% - 250px/2 + 38.5px);
 top: 180px;
 
 background: url(../Assets/Ngo.png);
-filter: blur(2px);
+filter: blur(4px);
 }
 
 .menu1{
@@ -3694,4 +3694,222 @@ line-height: 42px;
 
 color: #FFFFFF;
 
+}
+
+.imageNGO{
+    position: absolute;
+width: 465px;
+height: 755px;
+left: 874px;
+top: 701px;
+
+background: url(../Assets/ImageNGO.png);
+filter: drop-shadow(2px 5px 4px rgba(0, 0, 0, 0.25));
+border-radius: 10px;
+}
+
+.BG2{
+    /* Rectangle 2730 */
+
+
+position: absolute;
+width: 1772px;
+height: 1510px;
+z-index: -1;
+left: 2px;
+top: 126px;
+
+background: url(../Assets/BG2.png);
+}
+.filled{
+    position: absolute;
+width: 700px;
+height: 61px;
+left: 82px;
+top: 613px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 50px;
+line-height: 61px;
+/* identical to box height */
+
+display: flex;
+align-items: center;
+
+color: #000000;
+}
+
+.boxHeading{
+    position: absolute;
+width: 722px;
+height: 111px;
+left: 102px;
+top: 693px;
+
+background: rgba(255, 95, 36, 0.3);
+border-radius: 15px;
+}
+
+.boxText{
+    
+position: absolute;
+width: 682px;
+height: 72px;
+left: 126px;
+top: 713px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 30px;
+line-height: 36px;
+display: flex;
+align-items: center;
+
+color: #000000;
+}
+.fundraiserTitle{
+    position: absolute;
+width: 367px;
+height: 42px;
+left: 112px;
+top: 887px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 35px;
+line-height: 42px;
+display: flex;
+align-items: center;
+
+color: #000000;
+
+}
+.fundraiserEndDate{
+    position: absolute;
+width: 391px;
+height: 42px;
+left: 489px;
+top: 1085px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 35px;
+line-height: 42px;
+display: flex;
+align-items: center;
+
+color: #000000;
+    
+}
+.titleFundraiserNGO{
+    box-sizing: border-box;
+
+position: absolute;
+width: 582px;
+height: 55px;
+left: 152px;
+top: 941px;
+
+border: 1px solid #000000;
+border-radius: 15px;
+}
+.aimFundraiserNGO{
+    box-sizing: border-box;
+
+position: absolute;
+width: 282px;
+height: 55px;
+left: 122px;
+top: 1141px;
+
+border: 1px solid #000000;
+border-radius: 15px;
+}
+.endDateFundraiserNGO{
+    box-sizing: border-box;
+
+position: absolute;
+width: 282px;
+height: 55px;
+left: 522px;
+top: 1141px;
+
+border: 1px solid #000000;
+border-radius: 15px;
+}
+.fundraiserAim{
+    position: absolute;
+    width: 67px;
+    height: 42px;
+    left: 112px;
+    top: 1087px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 35px;
+line-height: 42px;
+display: flex;
+align-items: center;
+
+color: #000000;
+}
+
+.ngocheckboxText{
+    position: absolute;
+width: 812px;
+height: 36px;
+left: 134px;
+top: 1345px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 30px;
+line-height: 36px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #000000;
+
+}
+.checkboxFundraiserNGO{
+   margin-top:172px
+}
+
+.NGOsecondSubmit{
+    position: absolute;
+width: 982px;
+height: 109px;
+left: 152px;
+top: 1477px;
+
+background: #FF5F24;
+border-radius: 10px;
+}
+
+.NGOsecondSubmitText{
+    position: absolute;
+width: 982px;
+height: 109px;
+left: 282px;
+top: 1px;
+z-index: 1;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 40px;
+line-height: 48px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #FFFFFF;
 }
