@@ -7,6 +7,8 @@ import pic4 from "../Assets/Ellipse4.png";
 import pic5 from "../Assets/image6.png";
 import pic6 from "../Assets/image7.png";
 import { Form, Input } from "reactstrap";
+import axios from "axios";
+import FormData from "form-data";
 
 export default class Documents extends React.Component {
   previous = () => {
@@ -37,6 +39,7 @@ export default class Documents extends React.Component {
     formData.append("camera_file", this.props.values.cameraFile);
     formData.append("patient_name", this.props.values.name);
     formData.append("patient_age", this.props.values.age);
+    formData.append("email",this.props.values.email)
     formData.append("relation", this.props.values.relation);
     formData.append("phone", this.props.values.phoneNumber);
     formData.append("target_amount", this.props.values.targetAmount);
@@ -49,10 +52,11 @@ export default class Documents extends React.Component {
     formData.append("hospital_number", this.props.values.hospitalNumber);
     formData.append("fundraiser_title", this.props.values.fundraiserName);
     formData.append("fundraiser_description", this.props.values.story);
-    formData.append("current_stituation_details", "sdhbsjdn");
+    formData.append("current_situation_details", "sdhbsjdn");
     formData.append("current_amount_raised", "0");
     formData.append("patient_address", "sadjhbdjsa");
     formData.append("beneficiary", "sdajhdnskjasd");
+
 
     // Details of the uploaded file
     console.log(this.state.medicalBill);
@@ -60,75 +64,18 @@ export default class Documents extends React.Component {
     console.log(this.state.estimationLetter);
     console.log(this.props.values.coverPhoto);
     console.log(this.props.values.cameraFile);
-    fetch("http://127.0.0.1:8000/api/medical_fundraiser/create/", {
-      method: "POST",
-      body: formData,
+    
+    let res = await axios.post("http://127.0.0.1:8000/api/medical_fundraiser/create/", formData, {
       headers: {
         Authorization:
-          "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU3Mjk4NzA3LCJpYXQiOjE2NTcyOTg0MDcsImp0aSI6IjNmOWEwYzExZjI1MzQ2NjE4YzA2NDQ0ZWE2MzEzODUwIiwidXNlcl9pZCI6MX0.bBphxL1HihI1qfGqrCjJBguluuMX6i2TSrZmJE-1jMY",
+          "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU3NDU2OTg1LCJpYXQiOjE2NTc0NTY2ODUsImp0aSI6ImE1YmVhOTE4YzA2YjRiMDE4MmQ2ODEzOGY4MGI0ZDg2IiwidXNlcl9pZCI6MX0.fLxELaZImwkq23X_2tOGzbwrr_P7V7ZBQ8hyM5KCiYY",
+        "Content-Type": "multipart/form-data",
+        "Accept":"application/json"
       },
-    })
-    .then((response) => response.json())
-      .then((result) => {
-        console.log("Success: ", result);
-      })
-      .catch((error) => console.error("Error : ", error));
+    });
+    let data = res.data;
+    console.log(data);
   };
-  
-
-  // handleSubmit = async (e) => {
-  //   this.onFileUpload()
-  //   e.preventDefault();
-
-  //   // Update the formData object
-  //   try {
-  //     let res = await fetch("https://httpbin.org/post", {
-  //       method: "POST",
-  //       body: JSON.stringify({
-  //         patient_name: this.props.values.name,
-  //         patient_age: this.props.values.age,
-  //         beneficiary:'sjdksd',
-  //         patient_address:"kjsnds",
-  //         relation: this.props.values.relation,
-  //         phone: this.props.values.phoneNumber,
-  //         email: this.props.values.email,
-  //         target_amount: this.props.values.targetAmount,
-  //         end_date: this.props.values.date,
-  //         hospital_name: this.props.values.hospitalName,
-  //         hospital_address: this.props.values.hospitalLocation,
-  //         medical_ailment: this.props.values.medicalAilment,
-  //         doctor_name: this.props.values.doctorName,
-  //         doctor_number: this.props.values.doctorNumber,
-  //         hospital_number: this.props.values.hospitalNumber,
-  //         fundraiser_title:this.props.values.fundraiserName,
-  //         fundraiser_description:this.props.values.story,
-  //         current_stituation_details:"critical",
-  //         current_amount_raised:"0"
-  //       }),
-  //       headers:{
-  //         'Accept': 'application/json',
-  //           'Content-Type': "application/json",
-  //           // "charset":"UTF-8",
-  //           'Accept-Charset':  "*",
-  //         'Authorization':'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU3MjkxOTc5LCJpYXQiOjE2NTcyOTE2NzksImp0aSI6ImU5OTRlZGY0NDZjZTQ4ODI4ZmJjOWMzNjEyYmM3YjU5IiwidXNlcl9pZCI6MX0.Tn37thkqPqveBxWVNzznnbkI2wGAGQuXMS1agE0s4Fs'
-  //       }
-  //     });
-  //     let resJson = await res.json();
-  //     console.log(resJson);
-  //     if (res.status === 200) {
-  //       this.setState({ message: "Form submmited to the api succesfully" });
-  //       console.log('form submitted to the api succesfully');
-  //       console.log(res.status)
-  //       // this.continue();
-  //       //  window.open('/others-beneficiary')
-  //     } else {
-  //       this.setState({ message: "Some error occured" });
-  //       console.log(this.state.message);
-  //     }
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // };
 
   uploadFiles() {
     document.getElementById("estimationLetter").click();

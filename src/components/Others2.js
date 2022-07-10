@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import picture from "../Assets/Vector.png";
 import { Link } from "react-router-dom";
 import { Form, Input } from "reactstrap";
+import axios from "axios";
+import FormData from "form-data";
 // import axios from 'axios'
 
 export default class Others2 extends Component {
@@ -37,35 +39,52 @@ export default class Others2 extends Component {
     console.log("third function called");
   }
   // On file upload (click the upload button)
-  onFileUpload = async () => {
+  onFileUpload = async (e) => {
+    e.preventDefault();
     // Create an object of formData
     const formData = new FormData();
-
     // Update the formData object
-    formData.append("video file", this.state.videoFile);
-    formData.append("document file", this.state.documentFile);
-    formData.append("document file", this.state.beneficiaryPhoto);
+    formData.append("name", this.props.values.name);
+    formData.append("contact_number", this.props.values.phone);
+    formData.append("email_id", this.props.values.email);
+    formData.append("street_address", this.props.values.address);
+    formData.append("street_address1", this.props.values.addressS);
+    formData.append("city", this.props.values.city);
+    formData.append("state", this.props.values.state);
+    formData.append("postal_code", this.props.values.zip);
+    formData.append("to_whom_fund_raised",this.props.values.raisingFundsFor)
+    formData.append("beneficiary_name", this.props.values.beneficiaryName);
+    formData.append("beneficiary_contact_number", this.props.values.beneficiaryPhone);
+    formData.append("beneficiary_age", this.props.values.beneficiaryAge);
+    formData.append("beneficiary_sex", this.props.values.beneficiarySex);
+    formData.append("beneficiary_address", this.props.values.beneficiaryAddress);
+    formData.append("beneficiary_address1", this.props.values.beneficiaryAddressS);
+    formData.append("beneficiary_city",this.props.values.beneficiaryCity);
+    formData.append("beneficiary_state", this.props.values.beneficiaryState);
+    formData.append("beneficiary_postalcode", this.props.values.beneficiaryZip);
+    formData.append("title_of_campaign", this.props.values.titleCompaign);
+    formData.append("beneficiary_story", this.props.values.beneficiaryStory);
+    formData.append("tax_Status", this.props.values.tax);
+    formData.append("update_check",  this.props.values.checkbox2);
+    formData.append("terms_check", this.props.values.checkbox1);
+    formData.append("video", this.state.videoFile);
+    formData.append("beneficiary_photo", this.state.beneficiaryPhoto);
+    formData.append("document", this.state.documentFile);
+    formData.append("target_amount", this.props.values.targetedValue);
+    formData.append("end_date",this.props.values.fundEndDate);
 
-    // Details of the uploaded file
-    console.log(this.state.videoFile);
-    console.log(this.state.documentFile);
-    console.log(this.state.beneficiaryPhoto);
-    // Request made to the backend api
-    // Send formData object
-    // axios.post("https://httpbin.org/post", formData,{headers:{"Content-Type":"multipart/form-data"}})
-    fetch("https://httpbin.org/post", {
-      method: "POST",
-      body: formData,
+
+   
+    
+    let res = await axios.post("http://127.0.0.1:8000/api/fundraiser_others/create/", formData, {
       headers: {
         Authorization:
-          "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU3Mjg2NzIyLCJpYXQiOjE2NTcyODY0MjIsImp0aSI6ImY4Y2NiMWFjNjVmOTQ3YWQ5ZmJhM2M5ZTEyMzExYTdiIiwidXNlcl9pZCI6MX0.RBUVKGTTBxTB457o_RYkw8wEkj3hPM4NVOvzV0chpsk",
+          "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU3NDY1ODU4LCJpYXQiOjE2NTc0NjQwNTgsImp0aSI6IjYzNjA3OGVjMGQzNTQ4MThhYTY2ZWFkYWQ0MjZhODY0IiwidXNlcl9pZCI6MX0.kyhxNmNLNmGVoGTmJ0IMv982qL5tqQxK_odYgCK1sJ4",
+        "Accept":"application/json"
       },
-    })
-      .then((response) => response.json())
-      .then((result) => {
-        console.log("Success: ", result);
-      })
-      .catch((error) => console.error("Error : ", error));
+    });
+    let data = res.data;
+    console.log(data);
   };
   changeColor() {
     document.getElementById("1").style.color = "#FF5F24";
@@ -96,70 +115,7 @@ export default class Others2 extends Component {
     this.changeColor();
   };
 
-  handleSubmit = async (e) => {
-    this.onFileUpload();
-    e.preventDefault();
-    try {
-      let res = await fetch(
-        "https://httpbin.org/post",
-        {
-          method: "POST",
-          headers: {
-            'Accept': 'application/json',
-            'Content-Type': "application/json",
-            // "charset":"UTF-8",
-            'Accept-Charset':  "*",
-            Authorization:
-              "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU3Mjg2NzIyLCJpYXQiOjE2NTcyODY0MjIsImp0aSI6ImY4Y2NiMWFjNjVmOTQ3YWQ5ZmJhM2M5ZTEyMzExYTdiIiwidXNlcl9pZCI6MX0.RBUVKGTTBxTB457o_RYkw8wEkj3hPM4NVOvzV0chpsk",
-          },
-          body: JSON.stringify({
-            name: this.props.values.name,
-            email_id: this.props.values.email,
-            contact_number: this.props.values.phone,
-            street_address: this.props.values.address,
-            street_address1: this.props.values.addressS,
-            CheckBox1: this.props.values.checkbox1,
-            CheckBox2: this.props.values.checkbox2,
-            city: this.props.values.city,
-            state: this.props.values.state,
-            postal_code: this.props.values.zip,
-            Tax: this.props.values.tax,
-            to_whom_fund_raised: this.props.values.raisingFundsFor,
-            beneficiary_name: this.props.values.beneficiaryName,
-            beneficiary_contact_number: this.props.values.beneficiaryPhone,
-            beneficiary_age: this.props.values.beneficiaryAge,
-            beneficiary_sex: this.props.values.beneficiarySex,
-            beneficiary_address: this.props.values.beneficiaryAddress,
-            beneficiary_address1: this.props.values.beneficiaryAddressS,
-            beneficiary_city: this.props.values.beneficiaryCity,
-            beneficiary_state: this.props.values.beneficiaryState,
-            beneficiary_postalcode: this.props.values.beneficiaryZip,
-            title_of_campaign: this.props.values.titleCompaign,
-            beneficiary_story: this.props.values.beneficiaryStory,
-            target_amount: this.props.values.targetedValue,
-            end_date: this.props.values.fundEndDate,
-          })
-      
-        }
-      );
-      let resJson = await res.json();
-      console.log(resJson);
-      if (res.status === 200) {
-        this.setState({ message: "Form submmited to the api succesfully" });
-        console.log("form submitted to the api succesfully");
-        console.log(res.status);
-        console.log(res.statusText);
-        this.continue()
-        //  window.open('/others-beneficiary')
-      } else {
-        this.setState({ message: "Some error occured" });
-        console.log(this.state.message);
-      }
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
+  // https://httpbin.org/post
   render() {
     const { handleInputChange } = this.props;
 
@@ -176,7 +132,7 @@ export default class Others2 extends Component {
           <h3 className="raise6">Beneficiary Address: </h3>
           <h3 className="raise7">Title of the Compaign: </h3>
           <h3 className="raise8">Beneficiary Story</h3>
-          <Form onSubmit={this.handleSubmit} method="post">
+          <Form onSubmit={this.onFileUpload} method="post">
             <Input
               type="text"
               name="raisingFundsFor"
@@ -306,15 +262,16 @@ export default class Others2 extends Component {
               style={{ display: "none" }}
             ></Input>
             <Input
-              type="date"
+              type="text"
               name="fundEndDate"
               id="fundEndDate"
               className="endDataInput"
+              onChange={handleInputChange}
             />
             <div className="submitbox">
               <button
                 type="submit"
-                onClick={this.handleSubmit}
+                onClick={this.onFileUpload}
                 className="submitButton"
               >
                 Submit
