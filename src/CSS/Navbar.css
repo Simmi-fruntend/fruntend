@@ -2531,6 +2531,89 @@ transform: rotate(90.34deg); */
     border: 2px solid #272726;
     border-radius: 6px;
 }
+.errorName{
+    position: absolute;
+    width: 900px;
+    left: 1000px;
+    right: -33.68%;
+    height: 40px;
+    top: 210px;
+    bottom: 90.51%;
+}
+.errorPhone{
+    position: absolute;
+    width: 900px;
+    left: 700px;
+    right: -33.68%;
+    height: 40px;
+    top: 330px;
+    bottom: 90.51%;
+
+}
+.errorEmail{
+    position: absolute;
+    width: 900px;
+    left: 700px;
+    right: -33.68%;
+    height: 40px;
+    top: 430px;
+    bottom: 90.51%;
+
+}
+.erroraddress{
+    position: absolute;
+    width: 900px;
+    left: 980px;
+    right: -33.68%;
+    height: 40px;
+    top: 580px;
+    bottom: 90.51%;
+}
+.erroraddressS{
+    position: absolute;
+    width: 900px;
+    left: 980px;
+    right: -33.68%;
+    height: 40px;
+    top: 680px;
+    bottom: 90.51%;
+}
+.errorcity{
+    position: absolute;
+    width: 900px;
+    left: 280px;
+    right: -33.68%;
+    height: 40px;
+    top: 775px;
+    bottom: 90.51%;
+}
+.errorstate{
+    position: absolute;
+    width: 900px;
+    left: 650px;
+    right: -33.68%;
+    height: 40px;
+    top: 775px;
+    bottom: 90.51%;
+}
+.errorzip{
+    position: absolute;
+    width: 900px;
+    left: 280px;
+    right: -33.68%;
+    height: 40px;
+    top: 875px;
+    bottom: 90.51%;
+}
+.errortax{
+    position: absolute;
+    width: 900px;
+    left: 280px;
+    right: -33.68%;
+    height: 40px;
+    top: 1035px;
+    bottom: 90.51%;
+}
 
 .secondblankinput {
     position: absolute;
@@ -3391,17 +3474,35 @@ color: rgba(0, 0, 0, 0.68);
     position: absolute;
 width: 241px;
 height: 36px;
-left: 993px;
+left: 883px;
 top: 514px;
 
 font-family: 'Inter';
 font-style: normal;
-font-weight: 400;
+font-weight: 700;
 font-size: 19px;
 line-height: 23px;
 
 color: rgba(0, 0, 0, 0.65);
 
+}
+.beneficiaryUpload{
+    position: absolute;
+    width: 400px;
+    height: 38px;
+    left: 883px;
+    top: 544px;
+    
+    background: #FFFFFF;
+    border: 2px solid #272726;
+    border-radius: 6px;
+}
+.errorbeneficiary{
+    position: absolute;
+    width: 400px;
+    height: 38px;
+    left: 883px;
+    top: 574px;
 }
 .uploadVideo{
     position: absolute;
@@ -3434,6 +3535,13 @@ background: #FFFFFF;
 border: 2px solid #272726;
 border-radius: 6px;
 }
+.errorVideo{
+    position: absolute;
+    width: 400px;
+    height: 38px;
+    left: 883px;
+    top: 674px;
+}
 .documentUpload{
     position: absolute;
 width: 400px;
@@ -3446,6 +3554,108 @@ border: 2px solid #272726;
 border-radius: 6px;
 }
 
+.errorDocumentFile{
+    position: absolute;
+    width: 400px;
+    height: 38px;
+    left: 883px;
+    top: 774px;
+}
+.errorbeneficiaryName{
+    position: absolute;
+    width: 400px;
+    height: 38px;
+    left: 373px;
+    top: 374px;
+}
+.errorraisingFundsFor{
+    position: absolute;
+    width: 400px;
+    height: 38px;
+    left: 373px;
+    top: 274px;
+
+}
+.errorbeneficiaryPhone{
+    position: absolute;
+    width: 400px;
+    height: 38px;
+    left: 73px;
+    top: 514px;
+}
+.errorbeneficiaryAge{
+    position: absolute;
+    width: 400px;
+    height: 38px;
+    left: 73px;
+    top: 634px;
+}
+.errorbeneficiaryAddress{
+    position: absolute;
+    width: 400px;
+    height: 38px;
+    left: 373px;
+    top: 744px;
+
+}
+.errorbeneficiaryAddressS{
+    position: absolute;
+    width: 400px;
+    height: 38px;
+    left: 373px;
+    top: 844px;
+
+}
+.errorbeneficiaryCity{  
+    position: absolute;
+    width: 400px;
+    height: 38px;
+    left: 233px;
+    top: 944px;
+}
+.errorbeneficiaryZip{  
+    position: absolute;
+    width: 400px;
+    height: 38px;
+    left: 233px;
+    top: 1044px;
+}
+.errortitleCompaign{
+    position: absolute;
+    width: 400px;
+    height: 38px;
+    left: 483px;
+    top: 1244px;
+
+}
+.errorbeneficiaryStory{
+    position: absolute;
+    width: 400px;
+    height: 38px;
+    left: 983px;
+    top: 1394px;
+}
+.errortargetMoney{
+    position: absolute;
+    width: 400px;
+    height: 38px;
+    left: 883px;
+    top: 854px;
+}
+.errorfundEndDate{
+    position: absolute;
+    width: 400px;
+    height: 38px;
+    left: 1183px;
+    top: 854px;
+}
+.errorbeneficiaryState{  
+    position: absolute;
+    width: 400px;
+    height: 38px;
+    left: 533px;
+    top: 944px;
+}
 .uploadDocument{
     position: absolute;
 width: 422.01px;

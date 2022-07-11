@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "react-phone-number-input/style.css";
-import PhoneInput from "react-phone-number-input";
-import { Form, Input } from "reactstrap";
+import { Form, Input, FormFeedback } from "reactstrap";
 import Others2 from "./Others2";
 import Others3 from "./Others3";
 // import { Link } from "react-router-dom";
@@ -26,23 +25,14 @@ export default class Others1 extends Component {
         name: false,
         phone: false,
         email: false,
+        address: false,
+        addressS: false,
+        city: false,
+        state: false,
+        zip: false,
+        tax: false,
       },
       step: 1,
-      raisingFundsFor: "",
-      beneficiaryName: "",
-      beneficiaryPhone: "",
-      beneficiaryAge: "",
-      beneficiarySex: "",
-      beneficiaryAddress: "",
-      beneficiaryAddressS: "",
-      beneficiaryCity: "",
-      beneficiaryState: "",
-      beneficiaryZip: "",
-      titleCompaign: "",
-      beneficiaryStory: "",
-      targetedValue:"",
-      fundEndDate:"",
-
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -82,29 +72,48 @@ export default class Others1 extends Component {
     });
   };
 
-  validate(name, phone, email) {
+  validate(name, phone, email, address, addressS, city, state, zip, tax) {
     const errors = {
       name: "",
       phone: "",
       email: "",
+      address: "",
+      addressS: "",
+      city: "",
+      state: "",
+      zip: "",
+      tax: "",
     };
-
+    if (this.state.touched.address && !address) {
+      errors.address = " Required";
+    }
+    if (this.state.touched.addressS && !addressS) {
+      errors.addressS = " Required";
+    }
+    if (this.state.touched.city && !city) {
+      errors.city = " Required";
+    }
+    if (this.state.touched.state && !state) {
+      errors.state = " Required";
+    }
+    if (this.state.touched.zip && !zip) {
+      errors.zip = " Required";
+    }
+    if (this.state.touched.tax && !tax) {
+      errors.tax = " Required";
+    }
     if (this.state.touched.name && name.length < 3)
       errors.name = " Name should be >= 3 characters";
     else if (this.state.touched.name && name.length > 20)
       errors.name = " Name should be <= 20 characters";
-
-    const reg = /\(?([0-9]{3})\)?([ .-]?)([0-9]{3})\2([0-9]{4})/;
+    const reg = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/;
     if (this.state.touched.phone && !reg.test(phone))
-    errors.phone = "Tel. Number should contain only numbers (10)";
-    
-    const reg1 = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/;
-    if (
-      this.state.touched.email &&
-      !reg1.test(email)
-    )
-      errors.email = "Email should contain a @";
-
+      errors.phone = "Tel. Number should contain only numbers (10)";
+    // eslint-disable-next-line
+    const reg1 =
+      /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+    if (this.state.touched.email && !reg1.test(email))
+      errors.email = "Email should be like- example@email.com";
     return errors;
   }
   changeColor1() {
@@ -116,19 +125,23 @@ export default class Others1 extends Component {
     document.getElementById("6").style.border = "";
     document.getElementById("5").style.border = "2px solid #FF5F24";
   }
-  handleSubmit=(e)=>{
-    e.preventDefault()
-    this.nextStep()
-    this.changeColor1()
-  }
+  handleSubmit = (e) => {
+    e.preventDefault();
+    this.nextStep();
+    this.changeColor1();
+  };
 
   render() {
-  
-
     const errors = this.validate(
       this.state.name,
       this.state.phone,
-      this.state.email
+      this.state.email,
+      this.state.address,
+      this.state.addressS,
+      this.state.city,
+      this.state.state,
+      this.state.zip,
+      this.state.tax
     );
     const {
       name,
@@ -143,23 +156,7 @@ export default class Others1 extends Component {
       message,
       checkbox1,
       checkbox2,
-      touched,
       step,
-      raisingFundsFor,
-      beneficiaryName,
-      beneficiaryPhone,
-      beneficiaryAge,
-      beneficiarySex,
-      beneficiaryAddress,
-      beneficiaryAddressS,
-      beneficiaryCity,
-      beneficiaryState,
-      beneficiaryZip,
-      titleCompaign,
-      beneficiaryStory, 
-      targetedValue,
-      fundEndDate,
-
     } = this.state;
     const values = {
       name,
@@ -174,23 +171,9 @@ export default class Others1 extends Component {
       message,
       checkbox1,
       checkbox2,
-      touched,
       step,
-      raisingFundsFor,
-      beneficiaryName,
-      beneficiaryPhone,
-      beneficiaryAge,
-      beneficiarySex,
-      beneficiaryAddress,
-      beneficiaryAddressS,
-      beneficiaryCity,
-      beneficiaryState,
-      beneficiaryZip,
-      titleCompaign,
-      beneficiaryStory,
-      targetedValue,
-      fundEndDate,
     };
+
     switch (step) {
       case 1:
         return (
@@ -214,10 +197,12 @@ export default class Others1 extends Component {
                   value={this.state.name}
                   onChange={this.handleInputChange}
                   className="firstblankinput"
+                  placeholder="Enter your Name"
+                  required
                 />
-                {/* <FormFeedback>{errors.name}</FormFeedback> */}
-                <PhoneInput
-                  defaultCountry={"IN"}
+                <FormFeedback className="errorName">{errors.name}</FormFeedback>
+                <Input
+                  // defaultCountry={"IN"}
                   placeholder="Enter your mobile number"
                   name="phone"
                   id="phone"
@@ -225,9 +210,13 @@ export default class Others1 extends Component {
                   invalid={errors.phone !== ""}
                   onBlur={this.handleBlur("phone")}
                   value={this.state.phone}
-                  onChange={(phone) => this.setState({ phone })}
+                  onChange={this.handleInputChange}
                   className="secondblankinput"
+                  required
                 />
+                <FormFeedback className="errorPhone">
+                  {errors.phone}
+                </FormFeedback>
                 <Input
                   type="email"
                   name="email"
@@ -238,72 +227,115 @@ export default class Others1 extends Component {
                   value={this.state.email}
                   onChange={this.handleInputChange}
                   className="thirdblankinput"
+                  placeholder="Enter your Email"
+                  required
                 />
-                <input
+                <FormFeedback className="errorEmail">
+                  {errors.email}
+                </FormFeedback>
+                <Input
                   type="address"
                   name="address"
                   id="address"
                   value={this.state.address}
+                  valid={errors.address === ""}
+                  invalid={errors.address !== ""}
+                  onBlur={this.handleBlur("address")}
                   onChange={this.handleInputChange}
                   className="fourthblankinput"
+                  placeholder="Enter your Address"
                 />
-                <input
+                <FormFeedback className="erroraddress">
+                  {errors.address}
+                </FormFeedback>
+                <Input
                   type="address"
                   name="addressS"
                   id="adressS"
                   value={this.state.addressS}
+                  valid={errors.addressS === ""}
+                  invalid={errors.addressS !== ""}
+                  onBlur={this.handleBlur("addressS")}
                   onChange={this.handleInputChange}
                   className="fifthblankinput"
+                  placeholder="Enter your Street Address"
                 />
-                <input
+                <FormFeedback className="erroraddressS">
+                  {errors.addressS}
+                </FormFeedback>
+                <Input
                   type="text"
                   name="city"
                   id="city"
                   value={this.state.city}
+                  valid={errors.city === ""}
+                  invalid={errors.city !== ""}
+                  onBlur={this.handleBlur("city")}
                   onChange={this.handleInputChange}
                   className="sixthblankinput"
+                  placeholder="City"
                 />
-                <input
+                <FormFeedback className="errorcity">
+                  {errors.city}
+                </FormFeedback>
+                <Input
                   type="text"
                   name="state"
                   id="state"
+                  valid={errors.state === ""}
+                  invalid={errors.state !== ""}
+                  onBlur={this.handleBlur("state")}
                   value={this.state.state}
                   onChange={this.handleInputChange}
                   className="seventhblankinput"
+                  placeholder="State"
                 />
-                <input
+                <FormFeedback className="errorstate">
+                  {errors.state}
+                </FormFeedback>
+                <Input
                   type="text"
                   name="zip"
                   id="zip"
                   value={this.state.zip}
+                  valid={errors.zip === ""}
+                  invalid={errors.zip !== ""}
+                  onBlur={this.handleBlur("zip")}
                   onChange={this.handleInputChange}
                   className="eigthblankinput"
+                  placeholder="Zip Code"
                 />
-                <input
+                <FormFeedback className="errorzip">
+                  {errors.zip}
+                </FormFeedback>
+                <Input
                   type="text"
                   name="tax"
                   id="tax"
                   value={this.state.tax}
+                  valid={errors.tax === ""}
+                  invalid={errors.tax !== ""}
+                  onBlur={this.handleBlur("tax")}
                   onChange={this.handleInputChange}
                   className="ninthblankinput"
+                  placeholder="Tax Status"
                 />
+                <FormFeedback className="errortax">
+                  {errors.tax}
+                </FormFeedback>
                 <div className="othersbox"></div>
                 {/* <Link to='/others-beneficiary'> */}
-                <button
-                  
-                  className="otherssave"
-                  type="submit"
-                >
+                <button className="otherssave" type="submit">
                   Save and Continue
                 </button>
-                <input
+                <Input
                   type="checkbox"
                   checked={this.state.checkbox1}
                   onChange={this.handleInputChange}
                   name="checkbox1"
                   id="checkbox"
                 />
-                <input
+                <Input
                   type="checkbox"
                   checked={this.state.checkbox2}
                   onChange={this.handleInputChange}
@@ -337,10 +369,9 @@ export default class Others1 extends Component {
           <>
             <Others2
               nextStep={this.nextStep}
-              handleInputChange={this.handleInputChange}
+              handleBlur={this.handleBlur}
               values={values}
               prevStep={this.prevStep}
-
             />
           </>
         );
