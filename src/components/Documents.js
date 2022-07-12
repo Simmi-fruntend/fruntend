@@ -2,15 +2,28 @@ import React from "react";
 import pic from "../Assets/image3.png";
 import pic1 from "../Assets/Ellipse2.png";
 import pic2 from "../Assets/Ellipse1.png";
-import pic4 from "../Assets/Ellipse4.png";
+// import pic4 from "../Assets/Ellipse4.png";
 // import pic3 from"../image5.png";
-import pic5 from "../Assets/image6.png";
-import pic6 from "../Assets/image7.png";
-import { Form, Input } from "reactstrap";
+// import pic5 from "../Assets/image6.png";
+// import pic6 from "../Assets/image7.png";
+import { Form, Input, FormFeedback } from "reactstrap";
 import axios from "axios";
 import FormData from "form-data";
 
 export default class Documents extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      medicalBill: "",
+      estimationLetter: "",
+      medicalReports: "",
+      touched: {
+        medicalBill: false,
+        estimationLetter: false,
+        medicalReports: false,
+      },
+    };
+  }
   previous = () => {
     // e.preventDefault();
     this.props.prevStep();
@@ -26,6 +39,11 @@ export default class Documents extends React.Component {
     this.changeColor3();
     this.previous();
   };
+  handleBlur = (field) => (evt) => {
+    this.setState({
+      touched: { ...this.state.touched, [field]: true },
+    });
+  };
 
   onFileUpload = async (e) => {
     e.preventDefault();
@@ -39,7 +57,7 @@ export default class Documents extends React.Component {
     formData.append("camera_file", this.props.values.cameraFile);
     formData.append("patient_name", this.props.values.name);
     formData.append("patient_age", this.props.values.age);
-    formData.append("email",this.props.values.email)
+    formData.append("email", this.props.values.email);
     formData.append("relation", this.props.values.relation);
     formData.append("phone", this.props.values.phoneNumber);
     formData.append("target_amount", this.props.values.targetAmount);
@@ -57,22 +75,25 @@ export default class Documents extends React.Component {
     formData.append("patient_address", "sadjhbdjsa");
     formData.append("beneficiary", "sdajhdnskjasd");
 
-
     // Details of the uploaded file
     console.log(this.state.medicalBill);
     console.log(this.state.medicalReports);
     console.log(this.state.estimationLetter);
     console.log(this.props.values.coverPhoto);
     console.log(this.props.values.cameraFile);
-    
-    let res = await axios.post("http://127.0.0.1:8000/api/medical_fundraiser/create/", formData, {
-      headers: {
-        Authorization:
-          "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU3NDU2OTg1LCJpYXQiOjE2NTc0NTY2ODUsImp0aSI6ImE1YmVhOTE4YzA2YjRiMDE4MmQ2ODEzOGY4MGI0ZDg2IiwidXNlcl9pZCI6MX0.fLxELaZImwkq23X_2tOGzbwrr_P7V7ZBQ8hyM5KCiYY",
-        "Content-Type": "multipart/form-data",
-        "Accept":"application/json"
-      },
-    });
+
+    let res = await axios.post(
+      "http://127.0.0.1:8000/api/medical_fundraiser/create/",
+      formData,
+      {
+        headers: {
+          Authorization:
+            "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU3NDU2OTg1LCJpYXQiOjE2NTc0NTY2ODUsImp0aSI6ImE1YmVhOTE4YzA2YjRiMDE4MmQ2ODEzOGY4MGI0ZDg2IiwidXNlcl9pZCI6MX0.fLxELaZImwkq23X_2tOGzbwrr_P7V7ZBQ8hyM5KCiYY",
+          "Content-Type": "multipart/form-data",
+          Accept: "application/json",
+        },
+      }
+    );
     let data = res.data;
     console.log(data);
   };
@@ -108,7 +129,35 @@ export default class Documents extends React.Component {
     });
   };
 
+  validate(medicalBill, medicalReports, estimationLetter) {
+    const errors = {
+      medicalBill: "",
+      medicalReports: "",
+      estimationLetter: "",
+    };
+    if (
+      this.state.touched.medicalBill &&
+      document.getElementById("medicalBill").files.length === 0
+    )
+      errors.medicalBill = "You have not selected any File";
+    if (
+      this.state.touched.medicalReports &&
+      document.getElementById("medicalReports").files.length === 0
+    )
+      errors.medicalReports = "You have not selected any File";
+    if (
+      this.state.touched.estimationLetter &&
+      document.getElementById("estimationLetter").files.length === 0
+    )
+      errors.estimationLetter = "You have not selected any File";
+    return errors;
+  }
   render() {
+    const errors = this.validate(
+      this.state.medicalBill,
+      this.state.medicalReports,
+      this.state.estimationLetter
+    );
     return (
       <div>
         <img src={pic} className="medicalImage" alt="imageshown" />
@@ -124,44 +173,65 @@ export default class Documents extends React.Component {
         <h1 className="head3">3. Medical Reports</h1>
 
         {/* <img src={pic3} alt="checkmark" id='checkmark' className='checkmark' /> */}
-        <div className="toggle">
-          <img src={pic4} alt="sphere" className="sphere" />
-        </div>
-        <img src={pic4} alt="sphere" id="sphere1" className="sphere1 " />
-        <img src={pic4} alt="sphere" id="sphere2" className="sphere2" />
+        {/* <div className="toggle"> */}
+        {/* <img src={pic4} alt="sphere" className="sphere" /> */}
+        {/* </div> */}
+        {/* <img src={pic4} alt="sphere" id="sphere1" className="sphere1 " />
+        <img src={pic4} alt="sphere" id="sphere2" className="sphere2" /> */}
 
-        <button className="plus" onClick={this.uploadFiles.bind(this)}>
+        {/* <button className="plus" onClick={this.uploadFiles.bind(this)}>
           +
-        </button>
-        <button className="plus1" onClick={this.uploadFiles1.bind(this)}>
+        </button> */}
+        {/* <button className="plus1" onClick={this.uploadFiles1.bind(this)}>
           +
         </button>
         <button className="plus2" onClick={this.uploadFiles2.bind(this)}>
           +
-        </button>
+        </button> */}
 
         <Form onSubmit={this.onFileUpload}>
           <Input
             type="file"
-            style={{ display: "none" }}
+            // style={{ display: "none" }}
+            className="estimationLetterChoose"
+            onBlur={this.handleBlur("estimationLetter")}
+            valid={errors.estimationLetter === ""}
+            invalid={errors.estimationLetter !== ""}
             onChange={this.handleFileChange}
             name="estimationLetter"
             id="estimationLetter"
           />
+          <FormFeedback className="errorestimationLetter">
+            {errors.estimationLetter}
+          </FormFeedback>
           <Input
             type="file"
-            style={{ display: "none" }}
+            // style={{ display: "none" }}
+            className="medicalBillChoose"
+            onBlur={this.handleBlur("medicalBill")}
+            valid={errors.medicalBill === ""}
+            invalid={errors.medicalBill !== ""}
             onChange={this.handleFileChange1}
             id="medicalBill"
             name="medicalBill"
           />
+          <FormFeedback className="errormedicalBill">
+            {errors.medicalBill}
+          </FormFeedback>
           <Input
             type="file"
-            style={{ display: "none" }}
+            // style={{ display: "none" }}
+            className="medicalReportsChoose"
+            onBlur={this.handleBlur("medicalReports")}
+            valid={errors.medicalReports === ""}
+            invalid={errors.medicalReports !== ""}
             onChange={this.handleFileChange2}
             id="medicalReports"
             name="medicalReports"
           />
+          <FormFeedback className="errormedicalReports">
+            {errors.medicalReports}
+          </FormFeedback>
           <div className="saveAC">
             <button type="submit" className="Save">
               Submit
@@ -169,12 +239,12 @@ export default class Documents extends React.Component {
           </div>
         </Form>
 
-        <button>
+        {/* <button>
           <img src={pic5} alt="sphere" className="edit" />
-        </button>
-        <button>
+        </button> */}
+        {/* <button>
           <img src={pic6} alt="sphere" className="Delete" />
-        </button>
+        </button> */}
 
         <div className="recSkip">
           <button onClick={this.clickBack} className="skip">

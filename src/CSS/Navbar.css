@@ -3553,7 +3553,63 @@ background: #FFFFFF;
 border: 2px solid #272726;
 border-radius: 6px;
 }
+.estimationLetterChoose{
+    position: absolute;
+    width: 400px;
+    height: 38px;
+    left: 843px;
+    top: 420px;
+    
+    background: #FFFFFF;
+    border: 2px solid #272726;
+    border-radius: 6px;
+}
+.medicalBillChoose{
+    position: absolute;
+    width: 400px;
+    height: 38px;
+    left: 843px;
+    top: 520px;
+    
+    background: #FFFFFF;
+    border: 2px solid #272726;
+    border-radius: 6px;
+}
+.medicalReportsChoose{
+    position: absolute;
+    width: 400px;
+    height: 38px;
+    left: 843px;
+    top: 620px;
+    
+    background: #FFFFFF;
+    border: 2px solid #272726;
+    border-radius: 6px;
+}
+.errorestimationLetter{
+    position: absolute;
+    width: 400px;
+    height: 38px;
+    left: 853px;
+    top: 459px;
+    
+}
+.errormedicalReports{
+    position: absolute;
+    width: 400px;
+    height: 38px;
+    left: 853px;
+    top: 659px;
 
+}
+.errormedicalBill{
+    position: absolute;
+    width: 400px;
+    height: 38px;
+    left: 853px;
+    top: 559px;
+
+}
 .errorDocumentFile{
     position: absolute;
     width: 400px;
