@@ -3602,6 +3602,45 @@ border-radius: 6px;
     top: 659px;
 
 }
+.errorNameMedical{
+    position: absolute;
+    width: 400px;
+    height: 38px;
+    left: 623px;
+    top: 599px;
+}
+.errorAgeMedical{
+    position: absolute;
+    width: 400px;
+    height: 38px;
+    left: 1013px;
+    top: 689px;
+
+}
+.errorPhoneMedical{
+    position: absolute;
+    width: 400px;
+    height: 38px;
+    left: 613px;
+    top: 989px;
+
+}
+.errorEmailMedical{
+    position: absolute;
+    width: 400px;
+    height: 38px;
+    left: 1013px;
+    top: 989px;
+
+}
+.errorRelationMedical{
+    position: absolute;
+    width: 400px;
+    height: 38px;
+    left: 883px;
+    top: 809px;
+
+}
 .errormedicalBill{
     position: absolute;
     width: 400px;

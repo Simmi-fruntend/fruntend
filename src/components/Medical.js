@@ -1,10 +1,13 @@
-import React, { Component } from "react";
+import React from "react";
 import pic from "../Assets/image3.png";
 import pic1 from "../Assets/Ellipse2.png";
 import { Form, Input } from "reactstrap";
 import pic2 from "../Assets/Ellipse1.png";
-export default class Medical extends Component {
-
+// import PropTypes from 'prop-types';
+export default class Medical extends React.Component {
+ 
+ 
+ 
   continue = () => {
     // e.preventDefault();
     this.props.nextStep();
@@ -36,7 +39,8 @@ export default class Medical extends Component {
     this.continue()
   }
   render() {
-    const { handleInputChange } = this.props;
+    const { handleInputChange} = this.props;
+  
     return (
       <div>
         {/* <div className="medicalImage"></div> */}
@@ -60,9 +64,12 @@ export default class Medical extends Component {
             className="rectangleTarget"
             onChange={handleInputChange}
             name="targetAmount"
+          
             id="targetAmount"
             placeholder="How much do you want to raise ?"
+            
           />
+   
           <Input
             type="text"
             className="rectangleEnd"
@@ -148,3 +155,4 @@ export default class Medical extends Component {
     );
   }
 }
+
