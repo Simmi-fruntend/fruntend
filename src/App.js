@@ -1,7 +1,7 @@
 import {BrowserRouter as Router,Routes,Route}from 'react-router-dom'
 import './App.css';
 import Navbar from './components/navbar';
-import Default from './components/defaultPage';
+// import Default from './components/defaultPage';
 import Beneficiary from './components/Beneficiary';
 import Medical from './components/Medical';
 import Fund from './components/Fund';
@@ -13,6 +13,8 @@ import Others3 from './components/Others3';
 // import NGOFundraising from './components/NGOFundraising';
 import NGOFundraisingInitiate from './components/NGOFundraising2';
 import NGOFundraisingProgram from './components/NGOFundraising1';
+import StartFund from './components/Start Funds/start_fund';
+import IndividualFunds from './components/Start Funds/individual-funds';
 // import Others4 from './components/others4';
 
 function App() {
@@ -20,7 +22,7 @@ function App() {
   return (
   <Router>
     <Navbar/>
-    <Default/>
+    {/* <Default/> */}
     {/* <Others/> */}
     {/* <NGOFundraising/> */}
     <Routes>
@@ -33,6 +35,8 @@ function App() {
     <Route exact path="/others-congratulations"  element={<Others3/>}/>
     <Route exact path="/ngo-fundraising-program"  element={<NGOFundraisingProgram/>}/>
     <Route exact path="/ngo-fundraising-initiate"  element={<NGOFundraisingInitiate/>}/>
+    <Route exact path="/start-fund" element={<StartFund/>}/>
+    <Route exact path="/individual-funds" element={<IndividualFunds/>}/>
 
 
     {/* <Route exact path="/others"  element={<Others4/>}/> */}

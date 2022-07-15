@@ -88,14 +88,16 @@ export default class Documents extends React.Component {
       {
         headers: {
           Authorization:
-            "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU3NDU2OTg1LCJpYXQiOjE2NTc0NTY2ODUsImp0aSI6ImE1YmVhOTE4YzA2YjRiMDE4MmQ2ODEzOGY4MGI0ZDg2IiwidXNlcl9pZCI6MX0.fLxELaZImwkq23X_2tOGzbwrr_P7V7ZBQ8hyM5KCiYY",
-          "Content-Type": "multipart/form-data",
+            "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU3NjM3NDc1LCJpYXQiOjE2NTc2MzcxNzUsImp0aSI6Ijk4MjQyNzc2OWQ3NjRjODY4N2RiN2IxYzRmYjg3MzhmIiwidXNlcl9pZCI6MX0.acB0HWxdI_3fAF8H5d8ypxR6U4PiFmCHe5FVpRcVHGk",
           Accept: "application/json",
         },
       }
     );
     let data = res.data;
     console.log(data);
+    if(res.status===200){
+      console.log("Succesfully Submitted")
+    }
   };
 
   uploadFiles() {
