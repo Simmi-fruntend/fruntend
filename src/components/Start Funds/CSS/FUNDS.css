@@ -247,3 +247,184 @@ top: 669px;
 
 border-radius: 3px;
 }
+.IndividualFunds{
+    position: absolute;
+width: 373px;
+height: 58px;
+left: 80px;
+top: 193px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 48px;
+line-height: 58px;
+/* identical to box height */
+
+
+color: #000000;
+}
+
+.FundraiserPurpose{
+    position: absolute;
+width: 517px;
+height: 30px;
+left: 80px;
+top: 270px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 25px;
+line-height: 30px;
+
+color: rgba(0, 0, 0, 0.6);
+}
+.rectangle2805{
+    box-sizing: border-box;
+
+position: absolute;
+width: 975px;
+height: 76px;
+left: 80px;
+top: 401px;
+
+background: #F4F4F4;
+border: 1px solid rgba(32, 32, 32, 0.1);
+border-radius: 5px;
+}
+
+.category{
+    position: absolute;
+width: 211px;
+height: 30px;
+left: 133px;
+top: 424px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 25px;
+line-height: 30px;
+
+color: rgba(0, 0, 0, 0.5);
+}
+
+.dropdown{
+    position: absolute;
+width: 18px;
+height: 16px;
+left: 1003px;
+top: 437px;
+
+}
+.rectangle2807{
+    position: absolute;
+width: 975px;
+height: 73px;
+left: 80px;
+top: 494px;
+
+background: #FFFFFF;
+border-width: 1px 1px 0px 1px;
+border-style: solid;
+border-color: #000000;
+}
+
+.rectangle2808{
+    box-sizing: border-box;
+
+position: absolute;
+width: 975px;
+height: 73px;
+left: 80px;
+top: 567px;
+
+background: #FFFFFF;
+border-width: 0px 1px;
+border-style: solid;
+border-color: #000000;
+}
+
+.rectangle2809{
+    box-sizing: border-box;
+
+position: absolute;
+width: 975px;
+height: 73px;
+left: 80px;
+top: 640px;
+
+background: #FFFFFF;
+border-width: 0px 1px 1px 1px;
+border-style: solid;
+border-color: #000000;
+}
+
+.supportCampaign{
+    position: absolute;
+width: 325px;
+height: 30px;
+left: 133px;
+top: 515px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 25px;
+line-height: 30px;
+
+color: #333333;
+
+}
+.medicalFunds{
+    position: absolute;
+width: 171px;
+height: 30px;
+left: 133px;
+top: 588px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 25px;
+line-height: 30px;
+
+color: #333333;
+
+}
+.others{
+    position: absolute;
+width: 81px;
+height: 30px;
+left: 133px;
+top: 661px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 25px;
+line-height: 30px;
+
+color: #333333;
+
+}
+
+.line35{
+    position: absolute;
+width: 976px;
+height: 0px;
+left: 80px;
+top: 567px;
+
+border: 1px solid #000000;
+}
+.line36{
+    position: absolute;
+width: 976px;
+height: 0px;
+left: 80px;
+top: 640px;
+
+border: 1px solid #000000;
+}
