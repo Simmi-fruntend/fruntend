@@ -15,6 +15,7 @@ import NGOFundraisingInitiate from './components/NGOFundraising2';
 import NGOFundraisingProgram from './components/NGOFundraising1';
 import StartFund from './components/Start Funds/start_fund';
 import IndividualFunds from './components/Start Funds/individual-funds';
+import Token from './components/token';
 // import Others4 from './components/others4';
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
     <Route exact path="/ngo-fundraising-initiate"  element={<NGOFundraisingInitiate/>}/>
     <Route exact path="/start-fund" element={<StartFund/>}/>
     <Route exact path="/individual-funds" element={<IndividualFunds/>}/>
+    <Route exact path="/token" element={<Token/>}/>
 
 
     {/* <Route exact path="/others"  element={<Others4/>}/> */}

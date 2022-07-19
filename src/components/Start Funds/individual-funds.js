@@ -26,3 +26,5 @@ export default class individualFunds extends Component {
     )
   }
 }
+
+//Second page done and it is not possible to do it again this has some to do list and the coding is also done in this part this work is done and backend integration is also done and linking is also done in this My medical others suppoort campaign page is also done
