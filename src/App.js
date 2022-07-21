@@ -16,6 +16,8 @@ import NGOFundraisingProgram from './components/NGOFundraising1';
 import StartFund from './components/Start Funds/start_fund';
 import IndividualFunds from './components/Start Funds/individual-funds';
 import Token from './components/token';
+import FundraisingShowpage from './components/Donations/fundraisingShowpage';
+
 // import Others4 from './components/others4';
 
 function App() {
@@ -39,6 +41,7 @@ function App() {
     <Route exact path="/start-fund" element={<StartFund/>}/>
     <Route exact path="/individual-funds" element={<IndividualFunds/>}/>
     <Route exact path="/token" element={<Token/>}/>
+    <Route exact path='/fundraising-showpage' element={<FundraisingShowpage/>}/>
 
 
     {/* <Route exact path="/others"  element={<Others4/>}/> */}
@@ -46,5 +49,6 @@ function App() {
     </Router>
   );
 }
+//The page is on to do list
 
 export default App;
