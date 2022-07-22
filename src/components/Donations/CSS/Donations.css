@@ -494,6 +494,7 @@ Popup css */
     display: flex;
     justify-content: center;
     align-items: center; 
+    z-index: 10;
 }
 
 .popup-inner{
@@ -842,4 +843,415 @@ top: 660px;
     font-weight: 700;
     background: #FF8C21;
     border-radius: 5px;
+}
+
+/* Get request code */
+.medicalCategory{
+    position: absolute;
+width: 200px;
+height: 60px;
+left: 165px;
+top: 1586px;
+border: 3px solid #FFAB40;
+
+background: #FFAB40;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 10px;
+}
+.memorialCategory{
+    box-sizing: border-box;
+
+position: absolute;
+width: 200px;
+height: 60px;
+left: 405px;
+top: 1586px;
+
+border: 3px solid #FFAB40;
+filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+border-radius: 10px;
+}
+
+.educationCategory{
+    box-sizing: border-box;
+
+position: absolute;
+width: 200px;
+height: 60px;
+left: 645px;
+top: 1586px;
+
+border: 3px solid #FFAB40;
+filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+border-radius: 10px;
+}
+.childrenCategory{
+    box-sizing: border-box;
+
+position: absolute;
+width: 200px;
+height: 60px;
+left: 885px;
+top: 1586px;
+
+border: 3px solid #FFAB40;
+filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+border-radius: 10px;
+}
+
+.MoreButtons{
+    box-sizing: border-box;
+
+position: absolute;
+width: 150px;
+height: 60px;
+left: 1125px;
+top: 1586px;
+
+background: #E9E9E9;
+border: 3px solid #555353;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 10px;
+}
+
+/* get request card */
+.cardContainer{
+    position: absolute;
+width: 306px;
+height: 426px;
+left: 175px;
+top: 1684px;
+
+background: #FFF6E1;
+border-radius: 16px;
+}
+.cardImage{
+    position: absolute;
+    width: 306px;
+    height: 131px;
+    left: 175px;
+    top: 1686px;
+    
+    background: url(../Pictures/CardPic.png), #ABABAB;
+    border-radius: 16px;
+}
+
+.cardText{
+
+position: absolute;
+width: 272px;
+height: 41px;
+left: 187px;
+top: 1835px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 17px;
+line-height: 21px;
+
+color: #555353;
+}
+.cardfamilyfriends{
+    position: absolute;
+width: 126px;
+height: 19px;
+left: 234px;
+top: 1900px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 19px;
+
+color: rgba(0, 0, 0, 0.68);
+}
+
+.ellipseCard{
+
+box-sizing: border-box;
+
+position: absolute;
+width: 37px;
+height: 37px;
+left: 186px;
+top: 1891px;
+text-align: center;
+border-radius: 50%;
+background: rgba(233, 229, 229, 0.66);
+border: 2px solid #395185;
+}
+
+.raisedCard{
+
+position: absolute;
+width: 273px;
+height: 40px;
+left: 189px;
+top: 1940px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 17px;
+line-height: 21px;
+
+color: #555353;
+
+}
+
+.facebookCard{
+    box-sizing: border-box;
+
+position: absolute;
+width: 103px;
+height: 40px;
+left: 183px;
+top: 2053px;
+
+border: 2px solid #395185;
+border-radius: 12px;
+}
+
+.donateCard{
+
+position: absolute;
+width: 103px;
+height: 40px;
+left: 347px;
+top: 2053px;
+
+background: #FF8F0B;
+border-radius: 12px;
+}
+
+.card2{
+    position: absolute;
+width: 306px;
+height: 426px;
+left: 175px;
+top: 2144px;
+
+background: #FFF6E1;
+border-radius: 16px;
+}
+
+.seeMore{
+    position: absolute;
+width: 162px;
+height: 34px;
+left: 686px;
+top: 2611px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 28px;
+line-height: 34px;
+/* identical to box height */
+
+
+color: #FF8C21;
+
+
+}
+
+.seeMoresubtext{
+    position: absolute;
+width: 1039px;
+height: 30px;
+left: 337px;
+top: 2671px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 25px;
+line-height: 30px;
+
+color: rgba(85, 83, 83, 0.66);
+
+}
+.getInTouch{
+    position: absolute;
+width: 1305px;
+height: 362.19px;
+left: 65px;
+top: 2806px;
+}
+/* Footer code */
+.rectangle2652{
+    position: absolute;
+width: 1623px;
+height: 560.3px;
+left: -92px;
+top: 3201px;
+
+background: #111317;
+}
+.rectangle2655{
+
+position: absolute;
+width: 1623px;
+height: 58.03px;
+left: -92px;
+top: 3761.3px;
+
+background: #F7F7F7;
+}
+.footerHeading{
+
+position: absolute;
+width: 317.73px;
+height: 36.02px;
+left: 48.62px;
+top: 3439.13px;
+
+font-family: 'Work Sans';
+font-style: normal;
+font-weight: 600;
+font-size: 30px;
+line-height: 120%;
+/* or 36px */
+
+
+color: #FFAB40;
+
+}
+.footerSubheading{
+    position: absolute;
+width: 476.42px;
+height: 152.08px;
+left: 48.62px;
+top: 3496.16px;
+
+font-family: 'Work Sans';
+font-style: normal;
+font-weight: 400;
+font-size: 25px;
+line-height: 150%;
+/* or 38px */
+
+
+color: rgba(255, 255, 255, 0.9);
+
+}
+.copyrightFooter{
+    position: absolute;
+width: 743.88px;
+height: 34.02px;
+left: 347.03px;
+top: 3773.31px;
+
+font-family: 'Work Sans';
+font-style: normal;
+font-weight: 400;
+font-size: 25px;
+line-height: 135%;
+/* or 34px */
+
+text-align: center;
+letter-spacing: 0.01em;
+
+color: rgba(0, 0, 0, 0.7);
+}
+
+.footerLogo{
+    position: absolute;
+width: 118.53px;
+height: 119.06px;
+left: 49px;
+top: 3274.04px;
+
+/* background: url(logo.png); */
+}
+
+.quickLinksFooter{
+    position: absolute;
+width: 205.02px;
+height: 45.02px;
+left: 683.51px;
+top: 3311.06px;
+
+font-family: 'Work Sans';
+font-style: normal;
+font-weight: 500;
+font-size: 33px;
+line-height: 135%;
+/* or 45px */
+
+text-align: center;
+letter-spacing: 0.01em;
+
+color: #FFFFFF;
+}
+
+.LinksFooter{
+
+position: absolute;
+width: 205.53px;
+height: 34.02px;
+left: 687.18px;
+top: 3380.1px;
+list-style: none;
+font-family: 'Work Sans';
+font-style: normal;
+font-weight: 400;
+font-size: 25px;
+line-height: 135%;
+/* or 34px */
+
+text-align: center;
+letter-spacing: 0.01em;
+
+color: #FFFFFF;
+}
+
+.LinksFooter ul{
+    padding-bottom: 20px;
+}
+
+.LegalFooter{
+    
+position: absolute;
+width: 193.39px;
+height: 45.02px;
+left: 1078.24px;
+top: 3311.06px;
+list-style: none;
+font-family: 'Work Sans';
+font-style: normal;
+font-weight: 500;
+font-size: 33px;
+line-height: 135%;
+/* or 45px */
+
+text-align: center;
+letter-spacing: 0.01em;
+
+color: #FFFFFF;
+}
+
+.rightFooter{
+    position: absolute;
+width: 223.39px;
+height: 34.02px;
+left: 1068.24px;
+top: 3380.1px;
+list-style-type: none;
+font-family: 'Work Sans';
+font-style: normal;
+font-weight: 400;
+font-size: 25px;
+line-height: 135%;
+/* or 34px */
+
+text-align: center;
+letter-spacing: 0.01em;
+
+color: #FFFFFF;
+}
+.rightFooter ul{
+    padding-bottom: 20px;
 }
