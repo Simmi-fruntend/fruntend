@@ -1,273 +1,284 @@
-.info{
+.info {
     position: absolute;
-width: 345px;
-height: 192px;
-left: 212px;
-top: 217px;
+    width: 345px;
+    height: 192px;
+    left: 212px;
+    top: 217px;
 
-font-family: 'Inter';
-font-style: normal;
-font-weight: 900;
-font-size: 40px;
-line-height: 48px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 40px;
+    line-height: 48px;
 
-color: #000000;
+    color: #000000;
 
 }
-.infoY{
-    position: absolute;
-width: 445px;
-height: 192px;
-left: 212px;
-top: 357px;
 
-font-family: 'Inter';
-font-style: normal;
-font-weight: 900;
-font-size: 40px;
-line-height: 48px;
-color: #FF8C21
+.infoY {
+    position: absolute;
+    width: 445px;
+    height: 192px;
+    left: 212px;
+    top: 357px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 40px;
+    line-height: 48px;
+    color: #FF8C21
 }
-.searchDonation{
+
+.searchDonation {
     box-sizing: border-box;
 
-position: absolute;
-width: 400px;
-height: 60px;
-left: 212px;
-top: 426px;
-
-background: #FFFFFF;
-border: 1px solid #000000;
-border-radius: 10px;
-}
-
-.Search{
     position: absolute;
-width: 120px;
-height: 60px;
-left: 212px;
-top: 502px;
+    width: 400px;
+    height: 60px;
+    left: 212px;
+    top: 426px;
 
-background: #FFAB40;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-border-radius: 10px;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    border-radius: 10px;
 }
 
-.Filter{
+.Search {
     position: absolute;
-width: 152px;
-height: 60px;
-left: 427px;
-top: 502px;
+    width: 120px;
+    height: 60px;
+    left: 212px;
+    top: 502px;
 
+    background: #FFAB40;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
 }
-.Trending{
 
-position: absolute;
-width: 148px;
-height: 39px;
-left: 212px;
-top: 582px;
-
-font-family: 'Inter';
-font-style: normal;
-font-weight: 600;
-font-size: 32px;
-line-height: 39px;
-/* identical to box height */
-
-
-color: #000000;
-
-}
-.rectangle12{
+.Filter {
     position: absolute;
-width: 180px;
-height: 50px;
-left: 212px;
-top: 631px;
+    width: 152px;
+    height: 60px;
+    left: 427px;
+    top: 502px;
 
-background: #FFA22C;
-border-radius: 10px;
 }
-.rectangle13{
+
+.Trending {
+
     position: absolute;
-width: 180px;
-height: 50px;
-left: 412px;
-top: 631px;
+    width: 148px;
+    height: 39px;
+    left: 212px;
+    top: 582px;
 
-background: #FFA22C;
-border-radius: 10px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 39px;
+    /* identical to box height */
+
+
+    color: #000000;
+
 }
-.rectangle14{
+
+.rectangle12 {
     position: absolute;
-width: 180px;
-height: 50px;
-left: 292px;
-top: 701px;
+    width: 180px;
+    height: 50px;
+    left: 212px;
+    top: 631px;
 
-background: #FFA22C;
-border-radius: 10px;
+    background: #FFA22C;
+    border-radius: 10px;
 }
-.rectangleMedical{
+
+.rectangle13 {
     position: absolute;
-width: 89px;
-height: 24px;
-left: 48px;
-top: 12px;
+    width: 180px;
+    height: 50px;
+    left: 412px;
+    top: 631px;
 
-font-family: 'Inter';
-font-style: normal;
-font-weight: 600;
-font-size: 20px;
-line-height: 24px;
-
-color: #FFFFFF;
+    background: #FFA22C;
+    border-radius: 10px;
 }
-.rectangleElderly{
+
+.rectangle14 {
     position: absolute;
-width: 89px;
-height: 24px;
-left: 48px;
-top: 12px;
+    width: 180px;
+    height: 50px;
+    left: 292px;
+    top: 701px;
 
-font-family: 'Inter';
-font-style: normal;
-font-weight: 600;
-font-size: 20px;
-line-height: 24px;
-
-color: #FFFFFF;
+    background: #FFA22C;
+    border-radius: 10px;
 }
-.rectangleAnimals{
+
+.rectangleMedical {
     position: absolute;
-width: 89px;
-height: 24px;
-left: 48px;
-top: 12px;
+    width: 89px;
+    height: 24px;
+    left: 48px;
+    top: 12px;
 
-font-family: 'Inter';
-font-style: normal;
-font-weight: 600;
-font-size: 20px;
-line-height: 24px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
 
-color: #FFFFFF;
+    color: #FFFFFF;
 }
 
-.donationDrive{
+.rectangleElderly {
     position: absolute;
-width: 442px;
-height: 48px;
-left: 499px;
-top: 815px;
+    width: 89px;
+    height: 24px;
+    left: 48px;
+    top: 12px;
 
-font-family: 'Inter';
-font-style: normal;
-font-weight: 600;
-font-size: 40px;
-line-height: 48px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
 
-color: #000000;
+    color: #FFFFFF;
 }
-.donationDriveY{
+
+.rectangleAnimals {
     position: absolute;
-width: 442px;
-height: 48px;
-left: 629px;
-top: 815px;
+    width: 89px;
+    height: 24px;
+    left: 48px;
+    top: 12px;
 
-font-family: 'Inter';
-font-style: normal;
-font-weight: 900;
-font-size: 40px;
-line-height: 48px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
 
-color: #FF8C21;
+    color: #FFFFFF;
 }
 
-.sphere1{
+.donationDrive {
     position: absolute;
-width: 79px;
-height: 79px;
-left: 246px;
-top: 922px;
+    width: 442px;
+    height: 48px;
+    left: 499px;
+    top: 815px;
 
-background: #FFA22C;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 48px;
+
+    color: #000000;
 }
 
-.one{
+.donationDriveY {
     position: absolute;
-width: 79px;
-height: 79px;
-left: 25px;
-top: 2px;
+    width: 442px;
+    height: 48px;
+    left: 629px;
+    top: 815px;
 
-font-family: 'Work Sans';
-font-style: normal;
-font-weight: 400;
-font-size: 45px;
-line-height: 53px;
-display: flex;
-align-items: center;
-text-align: center;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 40px;
+    line-height: 48px;
 
-color: #000000;
-
+    color: #FF8C21;
 }
-.Vector1{
+
+.sphere1 {
     position: absolute;
-width: 315px;
-height: 30px;
-left: 357px;
-top: 982px;
+    width: 79px;
+    height: 79px;
+    left: 246px;
+    top: 922px;
 
-/* border: 2px dashed #212529; */
-/* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
-/* transform: rotate(180deg); */
+    background: #FFA22C;
 }
 
-.sphere2{
+.one {
+    position: absolute;
+    width: 79px;
+    height: 79px;
+    left: 25px;
+    top: 2px;
+
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 45px;
+    line-height: 53px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #000000;
+
+}
+
+.Vector1 {
+    position: absolute;
+    width: 315px;
+    height: 30px;
+    left: 357px;
+    top: 982px;
+
+    /* border: 2px dashed #212529; */
+    /* box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
+    /* transform: rotate(180deg); */
+}
+
+.sphere2 {
     position: absolute;
     width: 79px;
     height: 79px;
     left: 674px;
     top: 942px;
-    
+
     background: #FFA22C;
 }
 
-.two{
+.two {
 
-position: absolute;
-width: 79px;
-height: 79px;
-left: 28px;
-top: 2px;
-
-font-family: 'Work Sans';
-font-style: normal;
-font-weight: 400;
-font-size: 45px;
-line-height: 53px;
-display: flex;
-align-items: center;
-text-align: center;
-
-color: #000000;
-}
-
-.Vector2{
     position: absolute;
-width: 328px;
-height: 30px;
-left: 772px;
-top: 942px;
+    width: 79px;
+    height: 79px;
+    left: 28px;
+    top: 2px;
+
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 45px;
+    line-height: 53px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #000000;
 }
 
-.sphere3{
+.Vector2 {
+    position: absolute;
+    width: 328px;
+    height: 30px;
+    left: 772px;
+    top: 942px;
+}
+
+.sphere3 {
 
     position: absolute;
     width: 79px;
@@ -275,216 +286,219 @@ top: 942px;
     left: 1124px;
     top: 942px;
     border-radius: 50px;
-    
+
     background: #FFA22C;
 }
 
-.three{
+.three {
     position: absolute;
-width: 79px;
-height: 79px;
-left: 28px;
-top: 2px;
+    width: 79px;
+    height: 79px;
+    left: 28px;
+    top: 2px;
 
-font-family: 'Work Sans';
-font-style: normal;
-font-weight: 400;
-font-size: 45px;
-line-height: 53px;
-display: flex;
-align-items: center;
-text-align: center;
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 45px;
+    line-height: 53px;
+    display: flex;
+    align-items: center;
+    text-align: center;
 
-color: #000000;
+    color: #000000;
 
 }
 
-.donationButtontext{
+.donationButtontext {
     position: absolute;
-width: 279px;
-height: 72px;
-left: 154px;
-top: 1033px;
+    width: 279px;
+    height: 72px;
+    left: 154px;
+    top: 1033px;
 
-font-family: 'Inter';
-font-style: normal;
-font-weight: 500;
-font-size: 30px;
-line-height: 36px;
-text-align: center;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 36px;
+    text-align: center;
 
-color: #111317;
-
-}
-.donationButtonsubtext{
-
-position: absolute;
-width: 244px;
-height: 54px;
-left: 182px;
-top: 1117px;
-
-font-family: 'Inter';
-font-style: normal;
-font-weight: 400;
-font-size: 22px;
-line-height: 27px;
-
-color: rgba(17, 19, 23, 0.7);
+    color: #111317;
 
 }
 
-.formText{
+.donationButtonsubtext {
+
     position: absolute;
-width: 282px;
-height: 36px;
-left: 623px;
-top: 1033px;
+    width: 244px;
+    height: 54px;
+    left: 182px;
+    top: 1117px;
 
-font-family: 'Inter';
-font-style: normal;
-font-weight: 500;
-font-size: 30px;
-line-height: 36px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 27px;
 
-color: #111317;
+    color: rgba(17, 19, 23, 0.7);
+
 }
-.formSubtext{
+
+.formText {
     position: absolute;
-width: 247px;
-height: 81px;
-left: 611px;
-top: 1090px;
+    width: 282px;
+    height: 36px;
+    left: 623px;
+    top: 1033px;
 
-font-family: 'Inter';
-font-style: normal;
-font-weight: 400;
-font-size: 22px;
-line-height: 27px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 36px;
 
-color: rgba(17, 19, 23, 0.7);
+    color: #111317;
 }
 
-.informationText{
+.formSubtext {
     position: absolute;
-width: 240px;
-height: 108px;
-left: 1070px;
-top: 1022px;
+    width: 247px;
+    height: 81px;
+    left: 611px;
+    top: 1090px;
 
-font-family: 'Inter';
-font-style: normal;
-font-weight: 500;
-font-size: 30px;
-line-height: 36px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 27px;
 
-color: #111317;
-
+    color: rgba(17, 19, 23, 0.7);
 }
 
-.informationSubtext{
+.informationText {
     position: absolute;
-width: 258px;
-height: 81px;
-left: 1074px;
-top: 1139px;
+    width: 240px;
+    height: 108px;
+    left: 1070px;
+    top: 1022px;
 
-font-family: 'Inter';
-font-style: normal;
-font-weight: 400;
-font-size: 22px;
-line-height: 27px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 36px;
 
-color: rgba(17, 19, 23, 0.7);
+    color: #111317;
+
 }
 
-.rectangle2{
+.informationSubtext {
     position: absolute;
-width: 592px;
-height: 106px;
-left: 414px;
-top: 1326px;
+    width: 258px;
+    height: 81px;
+    left: 1074px;
+    top: 1139px;
 
-background: #FFA22C;
-border-radius: 10px;
-/* transform: matrix(1, 0, 0, -1, 0, 0); */
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 27px;
+
+    color: rgba(17, 19, 23, 0.7);
 }
 
-.donationDriveButton{
+.rectangle2 {
     position: absolute;
-width: 592px;
-height: 106px;
-left: 104px;
-top: 1px;
+    width: 592px;
+    height: 106px;
+    left: 414px;
+    top: 1326px;
 
-font-family: 'Work Sans';
-font-style: normal;
-font-weight: 600;
-font-size: 30px;
-line-height: 35px;
-display: flex;
-align-items: center;
-text-align: center;
-
-color: #000000;
-
+    background: #FFA22C;
+    border-radius: 10px;
+    /* transform: matrix(1, 0, 0, -1, 0, 0); */
 }
 
-.TrendingFundraisers{
+.donationDriveButton {
     position: absolute;
-width: 494px;
-height: 58px;
-left: 500px;
-top: 1449px;
+    width: 592px;
+    height: 106px;
+    left: 104px;
+    top: 1px;
 
-font-family: 'Inter';
-font-style: normal;
-font-weight: 500;
-font-size: 48px;
-line-height: 58px;
-/* identical to box height */
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 35px;
+    display: flex;
+    align-items: center;
+    text-align: center;
 
+    color: #000000;
 
-color: #000000;
 }
-.TrendingFundraisersy{
+
+.TrendingFundraisers {
     position: absolute;
     width: 494px;
     height: 58px;
-    left: 700px;
+    left: 500px;
     top: 1449px;
-    
+
     font-family: 'Inter';
     font-style: normal;
     font-weight: 500;
     font-size: 48px;
     line-height: 58px;
     /* identical to box height */
-    
-    
-    color:#FF8C21;
+
+
+    color: #000000;
+}
+
+.TrendingFundraisersy {
+    position: absolute;
+    width: 494px;
+    height: 58px;
+    left: 700px;
+    top: 1449px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 58px;
+    /* identical to box height */
+
+
+    color: #FF8C21;
 }
 
 
-.TrendingFundraisersSubtext{
+.TrendingFundraisersSubtext {
     position: absolute;
-width: 612px;
-height: 30px;
-left: 461px;
-top: 1511px;
+    width: 612px;
+    height: 30px;
+    left: 461px;
+    top: 1511px;
 
-font-family: 'Inter';
-font-style: normal;
-font-weight: 500;
-font-size: 25px;
-line-height: 30px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 30px;
 
-color: rgba(33, 37, 41, 0.58);
+    color: rgba(33, 37, 41, 0.58);
 }
 
 /* 
 Popup css */
-.popup{
+.popup {
     position: fixed;
     top: 0;
     left: 0;
@@ -493,11 +507,11 @@ Popup css */
     background-color: black;
     display: flex;
     justify-content: center;
-    align-items: center; 
+    align-items: center;
     z-index: 10;
 }
 
-.popup-inner{
+.popup-inner {
     position: relative;
     padding: 375px;
     width: 100%;
@@ -505,336 +519,353 @@ Popup css */
     background-color: white;
 
 }
-.popup-inner .close-btn{
+
+.popup-inner .close-btn {
     position: absolute;
     top: 40px;
     right: 16px;
 
 }
-.secureDonation{
+
+.secureDonation {
     position: absolute;
-width: 481px;
-height: 48px;
-left: 53px;
-top: 43px;
+    width: 481px;
+    height: 48px;
+    left: 53px;
+    top: 43px;
 
-font-family: 'Inter';
-font-style: normal;
-font-weight: 700;
-font-size: 40px;
-line-height: 48px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 48px;
 
-color: #000000;
+    color: #000000;
 }
 
-.rectangle2721{
+.rectangle2721 {
     position: absolute;
-width: 800px;
-height: 100px;
-left: 25px;
-top: 141px;
-z-index: 1;
-background: #FF8C21;
-border-radius: 10px 10px 0px 0px;
-}
-
-.currency{
-    position: absolute;
-width: 113px;
-height: 29px;
-left: 53px;
-top: 176px;
-
-font-family: 'Inter';
-font-style: normal;
-font-weight: 500;
-font-size: 24px;
-line-height: 29px;
-/* identical to box height */
-z-index: 1;
-color: black;
-}
-.choosecurrency{
+    width: 800px;
+    height: 100px;
+    left: 25px;
+    top: 141px;
     z-index: 1;
-    background-color: black;
-    color: white;
-    position: absolute;
-width: 224px;
-height: 44px;
-left: 157px;
-top: 169px;
+    background: #FF8C21;
+    border-radius: 10px 10px 0px 0px;
 }
 
-.Amount{
+.currency {
     position: absolute;
-width: 97px;
-height: 29px;
-left: 482px;
-top: 176px;
-z-index: 1;
-
-font-family: 'Inter';
-font-style: normal;
-font-weight: 500;
-font-size: 24px;
-line-height: 29px;
-/* identical to box height */
-
-
-color: #000000;
-}
-.amountInput{
-    background-color: black;
-    color: white;
-z-index: 1;
-position: absolute;
-width: 224px;
-height: 44px;
-left: 157px;
-top: 169px;
-left: 580px;
-}
-
-.rectangle2722{
-    position: absolute;
-width: 800px;
-height: 160px;
-left: 25px;
-top: 241px;
-z-index: 1;
-background: #D9D9D9;
-border-radius: 0px 0px 10px 10px;
-}
-.infoPopup{
-    position: absolute;
-width: 775px;
-height: 48px;
-left: 51px;
-top: 258px;
-z-index: 1;
-font-family: 'Inter';
-font-style: normal;
-font-weight: 500;
-font-size: 20px;
-line-height: 24px;
-
-color: #000000;
-}
-.includeTip{
-    position: absolute;
-width: 177px;
-height: 29px;
-left: 51px;
-top: 339px;
-
-font-family: 'Inter';
-font-style: normal;
-font-weight: 500;
-font-size: 24px;
-line-height: 29px;
-/* identical to box height */
-
-z-index: 1;
-color: #000000;
-}
-
-.tipAmount{
-    position: absolute;
-    width: 97px;
+    width: 113px;
     height: 29px;
-    left: 482px;
-    top: 339px;
-    z-index: 1;
-    
+    left: 53px;
+    top: 176px;
+
     font-family: 'Inter';
     font-style: normal;
     font-weight: 500;
     font-size: 24px;
     line-height: 29px;
     /* identical to box height */
-    
-    
-    color: #000000;
+    z-index: 1;
+    color: black;
 }
-.tipamountInput{
+
+.choosecurrency {
+    z-index: 1;
     background-color: black;
     color: white;
-z-index: 1;
-position: absolute;
-width: 224px;
-height: 44px;
-left: 157px;
-top: 329px;
-z-index: 1;
-left: 580px;
-}
-.amountInput::placeholder,.tipamountInput::placeholder{
-    color:white;
-    font-weight:500
-}
-.popupname{
     position: absolute;
-width: 73px;
-height: 29px;
-left: 51px;
-top: 428px;
-
-font-family: 'Inter';
-font-style: normal;
-font-weight: 300;
-font-size: 24px;
-line-height: 29px;
-/* identical to box height */
-
-
-color: #000000;
-
+    width: 224px;
+    height: 44px;
+    left: 157px;
+    top: 169px;
 }
-.popupName{
+
+.Amount {
     position: absolute;
-width: 200px;
-height: 30px;
-left: 140px;
-top: 428px;
+    width: 97px;
+    height: 29px;
+    left: 482px;
+    top: 176px;
+    z-index: 1;
 
-border: 1px solid #000000;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    /* identical to box height */
+
+
+    color: #000000;
 }
-.popupcountry{
+
+.amountInput {
+    background-color: black;
+    color: white;
+    z-index: 1;
     position: absolute;
-width: 160px;
-height: 29px;
-left: 51px;
-top: 489px;
-
-font-family: 'Inter';
-font-style: normal;
-font-weight: 300;
-font-size: 24px;
-line-height: 29px;
-/* identical to box height */
-
-
-color: #000000;
+    width: 224px;
+    height: 44px;
+    left: 157px;
+    top: 169px;
+    left: 580px;
 }
-.popupCountry{
+
+.rectangle2722 {
     position: absolute;
-width: 100px;
-height: 29px;
-left: 208px;
-top: 489px;
-
-border: 1px solid #000000;
+    width: 800px;
+    height: 160px;
+    left: 25px;
+    top: 241px;
+    z-index: 1;
+    background: #D9D9D9;
+    border-radius: 0px 0px 10px 10px;
 }
 
-.popupphone{
-
-position: absolute;
-width: 170px;
-height: 29px;
-left: 370px;
-top: 489px;
-
-font-family: 'Inter';
-font-style: normal;
-font-weight: 300;
-font-size: 24px;
-line-height: 29px;
-/* identical to box height */
-
-
-color: #000000;
-}
-.popupPhone{
+.infoPopup {
     position: absolute;
-width: 170px;
-height: 29px;
-left: 561px;
-top: 489px;
+    width: 775px;
+    height: 48px;
+    left: 51px;
+    top: 258px;
+    z-index: 1;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
 
-border: 1px solid #000000;
+    color: #000000;
 }
 
-.popupemail{
+.includeTip {
+    position: absolute;
+    width: 177px;
+    height: 29px;
+    left: 51px;
+    top: 339px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    /* identical to box height */
+
+    z-index: 1;
+    color: #000000;
+}
+
+.tipAmount {
+    position: absolute;
+    width: 97px;
+    height: 29px;
+    left: 482px;
+    top: 339px;
+    z-index: 1;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    /* identical to box height */
+
+
+    color: #000000;
+}
+
+.tipamountInput {
+    background-color: black;
+    color: white;
+    z-index: 1;
+    position: absolute;
+    width: 224px;
+    height: 44px;
+    left: 157px;
+    top: 329px;
+    z-index: 1;
+    left: 580px;
+}
+
+.amountInput::placeholder,
+.tipamountInput::placeholder {
+    color: white;
+    font-weight: 500
+}
+
+.popupname {
+    position: absolute;
+    width: 73px;
+    height: 29px;
+    left: 51px;
+    top: 428px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 29px;
+    /* identical to box height */
+
+
+    color: #000000;
+
+}
+
+.popupName {
+    position: absolute;
+    width: 200px;
+    height: 30px;
+    left: 140px;
+    top: 428px;
+
+    border: 1px solid #000000;
+}
+
+.popupcountry {
+    position: absolute;
+    width: 160px;
+    height: 29px;
+    left: 51px;
+    top: 489px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 29px;
+    /* identical to box height */
+
+
+    color: #000000;
+}
+
+.popupCountry {
+    position: absolute;
+    width: 100px;
+    height: 29px;
+    left: 208px;
+    top: 489px;
+
+    border: 1px solid #000000;
+}
+
+.popupphone {
+
+    position: absolute;
+    width: 170px;
+    height: 29px;
+    left: 370px;
+    top: 489px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 29px;
+    /* identical to box height */
+
+
+    color: #000000;
+}
+
+.popupPhone {
+    position: absolute;
+    width: 170px;
+    height: 29px;
+    left: 561px;
+    top: 489px;
+
+    border: 1px solid #000000;
+}
+
+.popupemail {
     position: absolute;
     width: 96px;
     height: 29px;
     left: 51px;
     top: 548px;
-    
+
     font-family: 'Inter';
     font-style: normal;
     font-weight: 300;
     font-size: 24px;
     line-height: 29px;
     /* identical to box height */
-    
-    
+
+
     color: #000000;
 }
-.popupEmail{
-    position: absolute;
-width: 480.02px;
-height: 29px;
-left: 166px;
-top: 548px;
 
-border: 1px solid #000000;
+.popupEmail {
+    position: absolute;
+    width: 480.02px;
+    height: 29px;
+    left: 166px;
+    top: 548px;
+
+    border: 1px solid #000000;
 }
 
-.popupindian{
+.popupindian {
     position: absolute;
     width: 290px;
     height: 29px;
     left: 51px;
     top: 604px;
-    
+
     font-family: 'Inter';
     font-style: normal;
     font-weight: 300;
     font-size: 24px;
     line-height: 29px;
     /* identical to box height */
-    
-    
+
+
     color: #000000;
 }
-.popupIndian{
+
+.popupIndian {
     position: absolute;
-width: 30px;
-height: 29px;
-left: 381px;
-top: 604px;
+    width: 30px;
+    height: 29px;
+    left: 381px;
+    top: 604px;
 }
 
 
-.popupdonate{
+.popupdonate {
     position: absolute;
-width: 248px;
-height: 29px;
-left: 51px;
-top: 660px;
+    width: 248px;
+    height: 29px;
+    left: 51px;
+    top: 660px;
 
-font-family: 'Inter';
-font-style: normal;
-font-weight: 300;
-font-size: 24px;
-line-height: 29px;
-/* identical to box height */
-
-
-color: #000000;
-}
-.popupDonate{
-    position: absolute;
-width: 30px;
-height: 29px;
-left: 381px;
-top: 660px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 29px;
+    /* identical to box height */
 
 
+    color: #000000;
 }
 
-.popupSubmit{
+.popupDonate {
+    position: absolute;
+    width: 30px;
+    height: 29px;
+    left: 381px;
+    top: 660px;
+
+
+}
+
+.popupSubmit {
     position: absolute;
     width: 200px;
     height: 40px;
@@ -846,413 +877,456 @@ top: 660px;
 }
 
 /* Get request code */
-.medicalCategory{
+.medicalCategory {
     position: absolute;
-width: 200px;
-height: 60px;
-left: 165px;
-top: 1586px;
-border: 3px solid #FFAB40;
+    width: 200px;
+    height: 60px;
+    left: 165px;
+    top: 1586px;
+    border: 3px solid #FFAB40;
 
-background: #FFAB40;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-border-radius: 10px;
-}
-.memorialCategory{
-    box-sizing: border-box;
-
-position: absolute;
-width: 200px;
-height: 60px;
-left: 405px;
-top: 1586px;
-
-border: 3px solid #FFAB40;
-filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-border-radius: 10px;
+    background: #FFAB40;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
 }
 
-.educationCategory{
+.memorialCategory {
     box-sizing: border-box;
 
-position: absolute;
-width: 200px;
-height: 60px;
-left: 645px;
-top: 1586px;
+    position: absolute;
+    width: 200px;
+    height: 60px;
+    left: 405px;
+    top: 1586px;
 
-border: 3px solid #FFAB40;
-filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-border-radius: 10px;
-}
-.childrenCategory{
-    box-sizing: border-box;
-
-position: absolute;
-width: 200px;
-height: 60px;
-left: 885px;
-top: 1586px;
-
-border: 3px solid #FFAB40;
-filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-border-radius: 10px;
+    border: 3px solid #FFAB40;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 10px;
 }
 
-.MoreButtons{
+.educationCategory {
     box-sizing: border-box;
 
-position: absolute;
-width: 150px;
-height: 60px;
-left: 1125px;
-top: 1586px;
+    position: absolute;
+    width: 200px;
+    height: 60px;
+    left: 645px;
+    top: 1586px;
 
-background: #E9E9E9;
-border: 3px solid #555353;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-border-radius: 10px;
+    border: 3px solid #FFAB40;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 10px;
+}
+
+.childrenCategory {
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 200px;
+    height: 60px;
+    left: 885px;
+    top: 1586px;
+
+    border: 3px solid #FFAB40;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 10px;
+}
+
+.MoreButtons {
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 150px;
+    height: 60px;
+    left: 1125px;
+    top: 1586px;
+
+    background: #E9E9E9;
+    border: 3px solid #555353;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
 }
 
 /* get request card */
-.cardContainer{
+.cardContainer {
     position: absolute;
-width: 306px;
-height: 426px;
-left: 175px;
-top: 1684px;
+    width: 306px;
+    height: 426px;
+    left: 100px;
+    top: 1684px;
 
-background: #FFF6E1;
-border-radius: 16px;
+    background: #FFF6E1;
+    border-radius: 16px;
 }
-.cardImage{
+
+.cardImage {
     position: absolute;
     width: 306px;
     height: 131px;
     left: 175px;
     top: 1686px;
-    
+
     background: url(../Pictures/CardPic.png), #ABABAB;
     border-radius: 16px;
 }
 
-.cardText{
+.cardText {
 
-position: absolute;
-width: 272px;
-height: 41px;
-left: 187px;
-top: 1835px;
-
-font-family: 'Inter';
-font-style: normal;
-font-weight: bolder;
-font-size: 17px;
-line-height: 21px;
-
-color: #555353;
-}
-.cardfamilyfriends{
     position: absolute;
-width: 300px;
-height: 19px;
-left: 184px;
-top: 1900px;
+    width: 272px;
+    height: 41px;
+    left: 117px;
+    top: 1835px;
 
-font-family: 'Inter';
-font-style: normal;
-font-weight: 400;
-font-size: 16px;
-line-height: 19px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: bolder;
+    font-size: 17px;
+    line-height: 21px;
 
-color: rgba(0, 0, 0, 0.68);
+    color: #555353;
 }
 
-.ellipseCard{
+.cardfamilyfriends {
+    position: absolute;
+    width: 300px;
+    height: 19px;
+    left: 114px;
+    top: 1900px;
 
-box-sizing: border-box;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
 
-position: absolute;
-width: 37px;
-height: 37px;
-left: 186px;
-top: 1891px;
-text-align: center;
-border-radius: 50%;
-background: rgba(233, 229, 229, 0.66);
-border: 2px solid #395185;
+    color: rgba(0, 0, 0, 0.68);
 }
 
-.raisedCard{
+.ellipseCard {
 
-position: absolute;
-width: 273px;
-height: 40px;
-left: 184px;
-top: 1980px;
-z-index: 1;
-
-font-family: 'Inter';
-font-style: normal;
-font-weight: 600;
-font-size: 17px;
-line-height: 21px;
-
-color: #555353;
-
-}
-
-.facebookCard{
     box-sizing: border-box;
 
-position: absolute;
-width: 103px;
-height: 40px;
-left: 183px;
-top: 2053px;
-
-border: 2px solid #395185;
-border-radius: 12px;
-}
-
-.donateCard{
-
-position: absolute;
-width: 103px;
-height: 40px;
-left: 347px;
-top: 2053px;
-
-background: #FF8F0B;
-border-radius: 12px;
-}
-
-.card2{
     position: absolute;
-width: 306px;
-height: 426px;
-left: 175px;
-top: 2144px;
-
-background: #FFF6E1;
-border-radius: 16px;
+    width: 37px;
+    height: 37px;
+    left: 116px;
+    top: 1891px;
+    text-align: center;
+    border-radius: 50%;
+    background: rgba(233, 229, 229, 0.66);
+    border: 2px solid #395185;
 }
 
-.seeMore{
+.raisedCard {
+
     position: absolute;
-width: 162px;
-height: 34px;
-left: 686px;
-top: 2611px;
+    width: 273px;
+    height: 40px;
+    left: 114px;
+    top: 1980px;
+    z-index: 1;
 
-font-family: 'Inter';
-font-style: normal;
-font-weight: 700;
-font-size: 28px;
-line-height: 34px;
-/* identical to box height */
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 21px;
 
-
-color: #FF8C21;
-
+    color: #555353;
 
 }
 
-.seeMoresubtext{
+.facebookCard {
+    box-sizing: border-box;
+
     position: absolute;
-width: 1039px;
-height: 30px;
-left: 337px;
-top: 2671px;
+    width: 103px;
+    height: 40px;
+    left: 113px;
+    top: 2053px;
 
-font-family: 'Inter';
-font-style: normal;
-font-weight: 600;
-font-size: 25px;
-line-height: 30px;
-
-color: rgba(85, 83, 83, 0.66);
-
+    border: 2px solid #395185;
+    border-radius: 12px;
 }
-.getInTouch{
+
+.donateCard {
+
     position: absolute;
-width: 1305px;
-height: 362.19px;
-left: 65px;
-top: 2806px;
+    width: 103px;
+    height: 40px;
+    left: 287px;
+    top: 2053px;
+
+    background: #FF8F0B;
+    border-radius: 12px;
 }
+
+.card2 {
+    position: absolute;
+    width: 306px;
+    height: 426px;
+    left: 175px;
+    top: 2144px;
+
+    background: #FFF6E1;
+    border-radius: 16px;
+}
+
+.seeMore {
+    position: absolute;
+    width: 162px;
+    height: 34px;
+    left: 686px;
+    top: 2611px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 34px;
+    /* identical to box height */
+
+
+    color: #FF8C21;
+
+
+}
+
+.seeMoresubtext {
+    position: absolute;
+    width: 1039px;
+    height: 30px;
+    left: 337px;
+    top: 2671px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 30px;
+
+    color: rgba(85, 83, 83, 0.66);
+
+}
+
+.getInTouch {
+    position: absolute;
+    width: 1305px;
+    height: 362.19px;
+    left: 65px;
+    top: 2806px;
+}
+
 /* Footer code */
-.rectangle2652{
+.rectangle2652 {
     position: absolute;
-width: 1623px;
-height: 560.3px;
-left: -92px;
-top: 3201px;
+    width: 1623px;
+    height: 560.3px;
+    left: -92px;
+    top: 3201px;
 
-background: #111317;
+    background: #111317;
 }
-.rectangle2655{
 
-position: absolute;
-width: 1623px;
-height: 58.03px;
-left: -92px;
-top: 3761.3px;
+.rectangle2655 {
 
-background: #F7F7F7;
-}
-.footerHeading{
-
-position: absolute;
-width: 317.73px;
-height: 36.02px;
-left: 48.62px;
-top: 3439.13px;
-
-font-family: 'Work Sans';
-font-style: normal;
-font-weight: 600;
-font-size: 30px;
-line-height: 120%;
-/* or 36px */
-
-
-color: #FFAB40;
-
-}
-.footerSubheading{
     position: absolute;
-width: 476.42px;
-height: 152.08px;
-left: 48.62px;
-top: 3496.16px;
+    width: 1623px;
+    height: 58.03px;
+    left: -92px;
+    top: 3761.3px;
 
-font-family: 'Work Sans';
-font-style: normal;
-font-weight: 400;
-font-size: 25px;
-line-height: 150%;
-/* or 38px */
-
-
-color: rgba(255, 255, 255, 0.9);
-
+    background: #F7F7F7;
 }
-.copyrightFooter{
+
+.footerHeading {
+
     position: absolute;
-width: 743.88px;
-height: 34.02px;
-left: 347.03px;
-top: 3773.31px;
+    width: 317.73px;
+    height: 36.02px;
+    left: 48.62px;
+    top: 3439.13px;
 
-font-family: 'Work Sans';
-font-style: normal;
-font-weight: 400;
-font-size: 25px;
-line-height: 135%;
-/* or 34px */
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 120%;
+    /* or 36px */
 
-text-align: center;
-letter-spacing: 0.01em;
 
-color: rgba(0, 0, 0, 0.7);
+    color: #FFAB40;
+
 }
 
-.footerLogo{
+.footerSubheading {
     position: absolute;
-width: 118.53px;
-height: 119.06px;
-left: 49px;
-top: 3274.04px;
+    width: 476.42px;
+    height: 152.08px;
+    left: 48.62px;
+    top: 3496.16px;
 
-/* background: url(logo.png); */
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 150%;
+    /* or 38px */
+
+
+    color: rgba(255, 255, 255, 0.9);
+
 }
 
-.quickLinksFooter{
+.copyrightFooter {
     position: absolute;
-width: 205.02px;
-height: 45.02px;
-left: 683.51px;
-top: 3311.06px;
+    width: 743.88px;
+    height: 34.02px;
+    left: 347.03px;
+    top: 3773.31px;
 
-font-family: 'Work Sans';
-font-style: normal;
-font-weight: 500;
-font-size: 33px;
-line-height: 135%;
-/* or 45px */
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 135%;
+    /* or 34px */
 
-text-align: center;
-letter-spacing: 0.01em;
+    text-align: center;
+    letter-spacing: 0.01em;
 
-color: #FFFFFF;
+    color: rgba(0, 0, 0, 0.7);
 }
 
-.LinksFooter{
+.footerLogo {
+    position: absolute;
+    width: 118.53px;
+    height: 119.06px;
+    left: 49px;
+    top: 3274.04px;
 
-position: absolute;
-width: 205.53px;
-height: 34.02px;
-left: 687.18px;
-top: 3380.1px;
-list-style: none;
-font-family: 'Work Sans';
-font-style: normal;
-font-weight: 400;
-font-size: 25px;
-line-height: 135%;
-/* or 34px */
-
-text-align: center;
-letter-spacing: 0.01em;
-
-color: #FFFFFF;
+    /* background: url(logo.png); */
 }
 
-.LinksFooter ul{
+.quickLinksFooter {
+    position: absolute;
+    width: 205.02px;
+    height: 45.02px;
+    left: 683.51px;
+    top: 3311.06px;
+
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 33px;
+    line-height: 135%;
+    /* or 45px */
+
+    text-align: center;
+    letter-spacing: 0.01em;
+
+    color: #FFFFFF;
+}
+
+.LinksFooter {
+
+    position: absolute;
+    width: 205.53px;
+    height: 34.02px;
+    left: 687.18px;
+    top: 3380.1px;
+    list-style: none;
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 135%;
+    /* or 34px */
+
+    text-align: center;
+    letter-spacing: 0.01em;
+
+    color: #FFFFFF;
+}
+
+.LinksFooter ul {
     padding-bottom: 20px;
 }
 
-.LegalFooter{
-    
-position: absolute;
-width: 193.39px;
-height: 45.02px;
-left: 1078.24px;
-top: 3311.06px;
-list-style: none;
-font-family: 'Work Sans';
-font-style: normal;
-font-weight: 500;
-font-size: 33px;
-line-height: 135%;
-/* or 45px */
+.LegalFooter {
 
-text-align: center;
-letter-spacing: 0.01em;
-
-color: #FFFFFF;
-}
-
-.rightFooter{
     position: absolute;
-width: 223.39px;
-height: 34.02px;
-left: 1068.24px;
-top: 3380.1px;
-list-style-type: none;
-font-family: 'Work Sans';
-font-style: normal;
-font-weight: 400;
-font-size: 25px;
-line-height: 135%;
-/* or 34px */
+    width: 193.39px;
+    height: 45.02px;
+    left: 1078.24px;
+    top: 3311.06px;
+    list-style: none;
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 33px;
+    line-height: 135%;
+    /* or 45px */
 
-text-align: center;
-letter-spacing: 0.01em;
+    text-align: center;
+    letter-spacing: 0.01em;
 
-color: #FFFFFF;
+    color: #FFFFFF;
 }
-.rightFooter ul{
+
+.rightFooter {
+    position: absolute;
+    width: 223.39px;
+    height: 34.02px;
+    left: 1068.24px;
+    top: 3380.1px;
+    list-style-type: none;
+    font-family: 'Work Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 135%;
+    /* or 34px */
+
+    text-align: center;
+    letter-spacing: 0.01em;
+
+    color: #FFFFFF;
+}
+
+.rightFooter ul {
     padding-bottom: 20px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    width: 406px;
+    height: 286px;
+    left: 100px;
+    top: 1684px;
+    padding: 10px;
+    background: #FFF6E1;
+    border-radius: 16px;
+}
+
+.card-text {
+    margin: 8px;
+}
+
+.card-button {
+    width: 103px;
+    height: 40px;
+    left: 53px;
+
+    margin-top: 20px;
+
+    margin-right: 62px;
+font-weight: 500;
+    box-sizing: border-box;
+    /* border: 2px solid #395185; */
+
+    background: #FF8F0B;
+    border-radius: 8px;
 }

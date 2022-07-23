@@ -6,6 +6,7 @@ import Vector1 from "./Pictures/Vector1.png";
 import Popup from "./Popup";
 import Touch from "./Pictures/Touch.png";
 import axios from "axios";
+import CardItem from "./Carditems";
 
 export default class fundraisingShowpage extends Component {
   constructor(props) {
@@ -52,7 +53,7 @@ export default class fundraisingShowpage extends Component {
       {
         headers: {
           Authorization:
-            "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU4NTUxNDM0LCJpYXQiOjE2NTg1NTExMzQsImp0aSI6IjlmNmU3MmZiOTBhYzRhZjJhMWQwMzBkZjI2MGY0OTBjIiwidXNlcl9pZCI6MX0.tisvNNjHsrkKaqeLY5vmCNhg6hUDGqwEd1vb3KEsAzQ",
+            "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU4NTY3OTY0LCJpYXQiOjE2NTg1Njc2NjQsImp0aSI6IjEzODhjMmY4NWIxMjRhYmQ5OTYyOWQ4ZmQ2ZWU4NDQyIiwidXNlcl9pZCI6MX0.McBONcYTriyb6-3rLz2d6LuOE0d-cqikKlZWJrOK0-0",
         },
       }
     );
@@ -314,25 +315,29 @@ export default class fundraisingShowpage extends Component {
         </div> */}
 
         {/* get request dynamic code here */}
-        {this.state.data.map((element) => (
-          <div className="card">
-              <div className="cardContainer"></div>
-              {/* cover photo not able to access */}
-              {/* <img src={element.cover_photo} className="" alt="" /> */}
-              <div className="cardImage"></div>
-              <div className="card-body">
-                <h3 className="cardText">{element.fundraiser_title}</h3>
-                <h4 className="cardfamilyfriends">{element.fundraiser_description.slice(0,120)}...</h4>
-                <h4 className="raisedCard">
-                  ₹ {element.current_amount_raised} raised of ₹ 5,00,00,000 goal
-                </h4>
-                <button className="facebookCard">Share</button>
-                <button className="donateCard">Donate</button>
-               
-              </div>
-       
-          </div>
-        ))}
+     
+ <div className="container">
+        <div className="row">
+          {this.state.data.map((element) => {
+              return (
+                <div className="col-md-4" key={element.id}>
+                  <CardItem
+                    fundraiser_title={element.fundraiser_title ? element.fundraiser_title.slice(0, 45) : ""}
+                    fundraiser_description={
+                      element.fundraiser_description
+                        ? element.fundraiser_description.slice(0, 88)
+                        : ""
+                    }
+                    cover_photo={element.cover_photo}
+                    current_amount_raised={element.current_amount_raised}
+                    end_date={element.end_date}
+                  />
+                </div>
+              );
+            })}
+        </div>
+        </div>
+        
         
 
         {/* Footer Code */}
