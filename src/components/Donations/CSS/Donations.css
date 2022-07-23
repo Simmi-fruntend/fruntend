@@ -946,7 +946,7 @@ top: 1835px;
 
 font-family: 'Inter';
 font-style: normal;
-font-weight: 500;
+font-weight: bolder;
 font-size: 17px;
 line-height: 21px;
 
@@ -954,9 +954,9 @@ color: #555353;
 }
 .cardfamilyfriends{
     position: absolute;
-width: 126px;
+width: 300px;
 height: 19px;
-left: 234px;
+left: 184px;
 top: 1900px;
 
 font-family: 'Inter';
@@ -988,8 +988,9 @@ border: 2px solid #395185;
 position: absolute;
 width: 273px;
 height: 40px;
-left: 189px;
-top: 1940px;
+left: 184px;
+top: 1980px;
+z-index: 1;
 
 font-family: 'Inter';
 font-style: normal;

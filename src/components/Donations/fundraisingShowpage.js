@@ -5,12 +5,14 @@ import Vector from "./Pictures/Vector.png";
 import Vector1 from "./Pictures/Vector1.png";
 import Popup from "./Popup";
 import Touch from "./Pictures/Touch.png";
+import axios from "axios";
 
 export default class fundraisingShowpage extends Component {
   constructor(props) {
     super(props);
     this.state = {
       isPopupOpen: false,
+      data: [],
     };
     this.togglePopup = this.togglePopup.bind(this);
   }
@@ -42,6 +44,25 @@ export default class fundraisingShowpage extends Component {
     document.getElementById("1").style.backgroundColor = "white";
     document.getElementById("2").style.backgroundColor = "white";
     document.getElementById("3").style.backgroundColor = "white";
+  }
+
+  getCards = async () => {
+    const res = await axios.get(
+      "http://127.0.0.1:8000/api/medical_fundraiser/",
+      {
+        headers: {
+          Authorization:
+            "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU4NTUxNDM0LCJpYXQiOjE2NTg1NTExMzQsImp0aSI6IjlmNmU3MmZiOTBhYzRhZjJhMWQwMzBkZjI2MGY0OTBjIiwidXNlcl9pZCI6MX0.tisvNNjHsrkKaqeLY5vmCNhg6hUDGqwEd1vb3KEsAzQ",
+        },
+      }
+    );
+    console.log(res.data);
+    this.setState({
+      data: res.data,
+    });
+  };
+  componentDidMount() {
+    this.getCards();
   }
 
   render() {
@@ -269,7 +290,7 @@ export default class fundraisingShowpage extends Component {
 
         {/* Get request code starts here todo */}
         {/* Hardquoted now */}
-        <div className="container2">
+        {/* <div className="container2">
           <div className="cardContainer"></div>
           <div className="cardImage" alt="img" />
           <h4 className="cardText">
@@ -290,9 +311,29 @@ export default class fundraisingShowpage extends Component {
             Note: Some fundraisers are not eligible for any tax deduction such
             as 80G, 501(c), etc.
           </h4>
-        </div>
+        </div> */}
 
-
+        {/* get request dynamic code here */}
+        {this.state.data.map((element) => (
+          <div className="card">
+              <div className="cardContainer"></div>
+              {/* cover photo not able to access */}
+              {/* <img src={element.cover_photo} className="" alt="" /> */}
+              <div className="cardImage"></div>
+              <div className="card-body">
+                <h3 className="cardText">{element.fundraiser_title}</h3>
+                <h4 className="cardfamilyfriends">{element.fundraiser_description.slice(0,120)}...</h4>
+                <h4 className="raisedCard">
+                  ₹ {element.current_amount_raised} raised of ₹ 5,00,00,000 goal
+                </h4>
+                <button className="facebookCard">Share</button>
+                <button className="donateCard">Donate</button>
+               
+              </div>
+       
+          </div>
+        ))}
+        
 
         {/* Footer Code */}
         <img src={Touch} alt="" className="getInTouch" />
