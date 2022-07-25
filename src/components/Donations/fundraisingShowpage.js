@@ -6,14 +6,18 @@ import Vector1 from "./Pictures/Vector1.png";
 import Popup from "./Popup";
 import Touch from "./Pictures/Touch.png";
 import axios from "axios";
-import CardItem from "./Carditems";
+import MedicalItem from "./Medicalitems";
+import OtherItem from "./OtherItems";
 
 export default class fundraisingShowpage extends Component {
   constructor(props) {
     super(props);
     this.state = {
       isPopupOpen: false,
-      data: [],
+      isMedicalClicked: false,
+      isOthersClicked: false,
+      dataMedical: [],
+      dataOthers: [],
     };
     this.togglePopup = this.togglePopup.bind(this);
   }
@@ -47,26 +51,49 @@ export default class fundraisingShowpage extends Component {
     document.getElementById("3").style.backgroundColor = "white";
   }
 
-  getCards = async () => {
+  medicalCards = async (e) => {
+    e.preventDefault();
+    this.changeColor1();
     const res = await axios.get(
       "http://127.0.0.1:8000/api/medical_fundraiser/",
       {
         headers: {
           Authorization:
-            "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU4NTY3OTY0LCJpYXQiOjE2NTg1Njc2NjQsImp0aSI6IjEzODhjMmY4NWIxMjRhYmQ5OTYyOWQ4ZmQ2ZWU4NDQyIiwidXNlcl9pZCI6MX0.McBONcYTriyb6-3rLz2d6LuOE0d-cqikKlZWJrOK0-0",
+            "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU4NzI0NDMxLCJpYXQiOjE2NTg3MjQxMzEsImp0aSI6IjdkMzc1OTcxZjZlMjQyN2RhMzYxOGZmZTRmNTkzZTAyIiwidXNlcl9pZCI6MX0.hK4fIy-OJ3TO4BrxvLdglnK-2HgikGT9qaR9Xagsuzo",
         },
       }
     );
     console.log(res.data);
     this.setState({
-      data: res.data,
+      dataMedical: res.data,
+      dataOthers: [],
+      isMedicalClicked: true,
+      isOthersClicked: false,
     });
   };
-  componentDidMount() {
-    this.getCards();
-  }
+  otherCards = async (e) => {
+    e.preventDefault();
+    this.changeColor2();
+    let res = await axios.get(
+      "http://127.0.0.1:8000/api/fundraiser_others/",
+      {
+        headers: {
+          Authorization:
+            "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU4NzI0NDMxLCJpYXQiOjE2NTg3MjQxMzEsImp0aSI6IjdkMzc1OTcxZjZlMjQyN2RhMzYxOGZmZTRmNTkzZTAyIiwidXNlcl9pZCI6MX0.hK4fIy-OJ3TO4BrxvLdglnK-2HgikGT9qaR9Xagsuzo",
+        },
+      }
+    );
+    console.log((res.data.payload));
+    this.setState({
+      dataMedical: [],
+      dataOthers: res.data.payload,
+      isMedicalClicked: false,
+      isOthersClicked: true,
+    });
+  };
 
   render() {
+
     return (
       <>
         <div className="container" id="container">
@@ -83,7 +110,7 @@ export default class fundraisingShowpage extends Component {
           />
           <button className="Search">Search</button>
           <select name="Filter" id="Filter" className="Filter">
-            <option selected disabled="disabled">
+            <option defaultValue disabled="disabled">
               Filter
             </option>
             <option value="1">Education</option>
@@ -153,9 +180,7 @@ export default class fundraisingShowpage extends Component {
             View the fundraisers that are most active right now
           </h3>
         </div>
-
         {/* Popup Code */}
-
         <Popup trigger={this.state.isPopupOpen} toggle={this.togglePopup}>
           <h1 className="secureDonation">Make a secure Donation:</h1>
           <div className="rectangle2721"></div>
@@ -268,13 +293,12 @@ export default class fundraisingShowpage extends Component {
             </button>
           </form>
         </Popup>
-
         {/* Popup code ends here */}
-        <button className="medicalCategory" id="1" onClick={this.changeColor1}>
+        <button className="medicalCategory" id="1" onClick={this.medicalCards}>
           Medical
         </button>
-        <button className="memorialCategory" id="2" onClick={this.changeColor2}>
-          Memorial
+        <button className="memorialCategory" id="2" onClick={this.otherCards}>
+          Other
         </button>
         <button
           className="educationCategory"
@@ -286,59 +310,64 @@ export default class fundraisingShowpage extends Component {
         <button className="childrenCategory" id="4" onClick={this.changeColor4}>
           Children
         </button>
-
         <button className="MoreButtons">More</button>
-
-        {/* Get request code starts here todo */}
-        {/* Hardquoted now */}
-        {/* <div className="container2">
-          <div className="cardContainer"></div>
-          <div className="cardImage" alt="img" />
-          <h4 className="cardText">
-            Lorem ipsum dolor sit amet, con sectetur adipiscing elit. In in
-            et...
-          </h4>
-          <h4 className="cardfamilyfriends">by family friends</h4>
-          <div className="ellipseCard">FF</div>
-          <h4 className="raisedCard">
-            ₹ 3,90,94,755 raised of ₹ 5,00,00,000 goal
-          </h4>
-          <button className="facebookCard">Share</button>
-          <button className="donateCard">Donate</button>
-          <div className="card2"></div>
-
-          <button className="seeMore">See more -&gt; </button>
-          <h4 className="seeMoresubtext">
-            Note: Some fundraisers are not eligible for any tax deduction such
-            as 80G, 501(c), etc.
-          </h4>
-        </div> */}
-
         {/* get request dynamic code here */}
-     
- <div className="container">
-        <div className="row">
-          {this.state.data.map((element) => {
-              return (
-                <div className="col-md-4" key={element.id}>
-                  <CardItem
-                    fundraiser_title={element.fundraiser_title ? element.fundraiser_title.slice(0, 45) : ""}
-                    fundraiser_description={
-                      element.fundraiser_description
-                        ? element.fundraiser_description.slice(0, 88)
-                        : ""
-                    }
-                    cover_photo={element.cover_photo}
-                    current_amount_raised={element.current_amount_raised}
-                    end_date={element.end_date}
-                  />
-                </div>
-              );
-            })}
-        </div>
-        </div>
+        {this.state.isMedicalClicked &&
         
-        
+          <div className="container">
+            <div className="row">
+              {this.state.dataMedical.map((element) => {
+                return (
+                  <div className="col-md-4" key={element.id}>
+                    <MedicalItem
+                      fundraiser_title={
+                        element.fundraiser_title
+                          ? element.fundraiser_title.slice(0, 45)
+                          : ""
+                      }
+                      fundraiser_description={
+                        element.fundraiser_description
+                          ? element.fundraiser_description.slice(0, 88)
+                          : ""
+                      }
+                      cover_photo={element.cover_photo}
+                      current_amount_raised={element.current_amount_raised}
+                      end_date={element.end_date}
+                    />
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        }
+        {this.state.isOthersClicked&&
+              <div className="container">
+              <div className="row">
+                {this.state.dataOthers.map((element) => {
+                  return (
+                    <div className="col-md-4" key={element.id}>
+                      <OtherItem
+                        title_of_campaign={
+                          element.title_of_campaign
+                            ? element.title_of_campaign.slice(0, 45)
+                            : ""
+                        }
+                        beneficiary_story={
+                          element.beneficiary_story
+                            ? element.beneficiary_story.slice(0, 88)
+                            : ""
+                        }
+                        beneficiary_photo={element.beneficiary_photo}
+                        target_amount={element.target_amount}
+                        end_date={element.end_date}
+                      />
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
+        }
 
         {/* Footer Code */}
         <img src={Touch} alt="" className="getInTouch" />
