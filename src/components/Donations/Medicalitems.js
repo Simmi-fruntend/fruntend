@@ -1,5 +1,4 @@
 import React from "react";
-
 const MedicalItem =(props)=> {
     
     let { fundraiser_title, fundraiser_description ,cover_photo,current_amount_raised,end_date} = props;
@@ -16,7 +15,7 @@ const MedicalItem =(props)=> {
             <h4 className="card-text">
                 Generated on: {end_date}
             </h4>
-            <button className=" card-button">Share</button>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=example.org" target='_blank' rel="noreferrer"><button className=" card-button">Share</button></a>
             <button className="card-button">Donate</button>
           
           </div>

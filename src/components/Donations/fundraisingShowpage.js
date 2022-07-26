@@ -8,7 +8,7 @@ import Touch from "./Pictures/Touch.png";
 import axios from "axios";
 import MedicalItem from "./Medicalitems";
 import OtherItem from "./OtherItems";
-// import AnimatedCards from "./AnimatedCards";
+
 
 export default class fundraisingShowpage extends Component {
   constructor(props) {
@@ -60,7 +60,7 @@ export default class fundraisingShowpage extends Component {
       {
         headers: {
           Authorization:
-            "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU4NzI0NDMxLCJpYXQiOjE2NTg3MjQxMzEsImp0aSI6IjdkMzc1OTcxZjZlMjQyN2RhMzYxOGZmZTRmNTkzZTAyIiwidXNlcl9pZCI6MX0.hK4fIy-OJ3TO4BrxvLdglnK-2HgikGT9qaR9Xagsuzo",
+            "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU4ODE0MTk5LCJpYXQiOjE2NTg4MTM4OTksImp0aSI6IjlhYzM0MjMzOWI2YTQ1OGJiMDhjYTFhYjg0MDhjNTE2IiwidXNlcl9pZCI6MX0.DtUSXBHO-odtB8yKZHSxoWgzt99nlAVw5c4QNYXhGjo",
         },
       }
     );
@@ -75,16 +75,13 @@ export default class fundraisingShowpage extends Component {
   otherCards = async (e) => {
     e.preventDefault();
     this.changeColor2();
-    let res = await axios.get(
-      "http://127.0.0.1:8000/api/fundraiser_others/",
-      {
-        headers: {
-          Authorization:
-            "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU4NzI0NDMxLCJpYXQiOjE2NTg3MjQxMzEsImp0aSI6IjdkMzc1OTcxZjZlMjQyN2RhMzYxOGZmZTRmNTkzZTAyIiwidXNlcl9pZCI6MX0.hK4fIy-OJ3TO4BrxvLdglnK-2HgikGT9qaR9Xagsuzo",
-        },
-      }
-    );
-    console.log((res.data.payload));
+    let res = await axios.get("http://127.0.0.1:8000/api/fundraiser_others/", {
+      headers: {
+        Authorization:
+          "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjU4ODE0MTk5LCJpYXQiOjE2NTg4MTM4OTksImp0aSI6IjlhYzM0MjMzOWI2YTQ1OGJiMDhjYTFhYjg0MDhjNTE2IiwidXNlcl9pZCI6MX0.DtUSXBHO-odtB8yKZHSxoWgzt99nlAVw5c4QNYXhGjo",
+      },
+    });
+    console.log(res.data.payload);
     this.setState({
       dataMedical: [],
       dataOthers: res.data.payload,
@@ -93,20 +90,41 @@ export default class fundraisingShowpage extends Component {
     });
   };
 
+
+  changePicture() {
+    this.setState({
+      imageTwo: !this.state.imageTwo,
+      imageOne: !this.state.imageOne,
+    });
+  }
+
   render() {
+  
 
     return (
       <>
-      {/* Side images */}
-      <div className="Rectangle10"></div>
-      <div className="Rectangle5"></div>
-      <div className="Rectangle8"></div>
-      <div className="Rectangle9"></div>
-      <button className="caretLeft"> &lt;</button>
-      <button className="caretRight">&gt;</button>
-      {/* <AnimatedCards/> */}
+
+      {/* Side Images Dynamic Rendering*/}
 
 
+        {/* Side images static*/}
+        <div className="Rectangle10"></div>
+
+        <div className="Rectangle5"></div>
+
+        <div className="Rectangle8"></div>
+        <div className="Rectangle9"></div>
+
+
+
+        
+        {/* <button className="caretLeft" onClick={this.changePicture}>
+          {" "}
+          &lt;
+        </button>
+        <button className="caretRight" onClick={this.changePicture}>
+          &gt;
+        </button> */}
 
         <div className="container" id="container">
           <h1 className="info">
@@ -324,8 +342,7 @@ export default class fundraisingShowpage extends Component {
         </button>
         <button className="MoreButtons">More</button>
         {/* get request dynamic code here */}
-        {this.state.isMedicalClicked &&
-        
+        {this.state.isMedicalClicked && (
           <div className="container">
             <div className="row">
               {this.state.dataMedical.map((element) => {
@@ -351,35 +368,34 @@ export default class fundraisingShowpage extends Component {
               })}
             </div>
           </div>
-        }
-        {this.state.isOthersClicked&&
-              <div className="container">
-              <div className="row">
-                {this.state.dataOthers.map((element) => {
-                  return (
-                    <div className="col-md-4" key={element.id}>
-                      <OtherItem
-                        title_of_campaign={
-                          element.title_of_campaign
-                            ? element.title_of_campaign.slice(0, 45)
-                            : ""
-                        }
-                        beneficiary_story={
-                          element.beneficiary_story
-                            ? element.beneficiary_story.slice(0, 88)
-                            : ""
-                        }
-                        beneficiary_photo={element.beneficiary_photo}
-                        target_amount={element.target_amount}
-                        end_date={element.end_date}
-                      />
-                    </div>
-                  );
-                })}
-              </div>
+        )}
+        {this.state.isOthersClicked && (
+          <div className="container">
+            <div className="row">
+              {this.state.dataOthers.map((element) => {
+                return (
+                  <div className="col-md-4" key={element.id}>
+                    <OtherItem
+                      title_of_campaign={
+                        element.title_of_campaign
+                          ? element.title_of_campaign.slice(0, 45)
+                          : ""
+                      }
+                      beneficiary_story={
+                        element.beneficiary_story
+                          ? element.beneficiary_story.slice(0, 88)
+                          : ""
+                      }
+                      beneficiary_photo={element.beneficiary_photo}
+                      target_amount={element.target_amount}
+                      end_date={element.end_date}
+                    />
+                  </div>
+                );
+              })}
             </div>
-
-        }
+          </div>
+        )}
 
         {/* Footer Code */}
         <img src={Touch} alt="" className="getInTouch" />
