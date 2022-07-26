@@ -8,6 +8,7 @@ import Touch from "./Pictures/Touch.png";
 import axios from "axios";
 import MedicalItem from "./Medicalitems";
 import OtherItem from "./OtherItems";
+// import AnimatedCards from "./AnimatedCards";
 
 export default class fundraisingShowpage extends Component {
   constructor(props) {
@@ -96,6 +97,17 @@ export default class fundraisingShowpage extends Component {
 
     return (
       <>
+      {/* Side images */}
+      <div className="Rectangle10"></div>
+      <div className="Rectangle5"></div>
+      <div className="Rectangle8"></div>
+      <div className="Rectangle9"></div>
+      <button className="caretLeft"> &lt;</button>
+      <button className="caretRight">&gt;</button>
+      {/* <AnimatedCards/> */}
+
+
+
         <div className="container" id="container">
           <h1 className="info">
             Thousands are crowdfunding for various causes.

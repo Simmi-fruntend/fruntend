@@ -17,6 +17,7 @@ import StartFund from './components/Start Funds/start_fund';
 import IndividualFunds from './components/Start Funds/individual-funds';
 import Token from './components/token';
 import FundraisingShowpage from './components/Donations/fundraisingShowpage';
+import AnimatedCards from './components/Donations/AnimatedCards';
 
 // import Others4 from './components/others4';
 
@@ -42,6 +43,7 @@ function App() {
     <Route exact path="/individual-funds" element={<IndividualFunds/>}/>
     <Route exact path="/token" element={<Token/>}/>
     <Route exact path='/fundraising-showpage' element={<FundraisingShowpage/>}/>
+    <Route exact path='/animation' element={<AnimatedCards/>}/>
 
 
     {/* <Route exact path="/others"  element={<Others4/>}/> */}
